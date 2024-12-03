@@ -35,7 +35,7 @@
                 }
             }
         ],
-        "correctAnswerId": "Option3"
+        "correctAnswerIds": ["Option3", "Option1"]
     },
     {
         "id": "task2",
@@ -73,7 +73,7 @@
                 }
             }
         ],
-        "correctAnswerId": "Option1"
+        "correctAnswerIds": ["Option1", "Option2", "Option3"]
     },
     {
         "id": "task3",
@@ -111,7 +111,7 @@
                 }
             }
         ],
-        "correctAnswerId": "Option3"
+        "correctAnswerIds": ["Option3", "Option4"]
     },
     {
         "id": "task4",
@@ -149,7 +149,7 @@
                 }
             }
         ],
-        "correctAnswerId": "Option3"
+        "correctAnswerIds": ["Option3", "Option2", "Option4"]
     },
     {
         "id": "task5",
@@ -187,7 +187,7 @@
                 }
             }
         ],
-        "correctAnswerId": "Option1"
+        "correctAnswerIds": ["Option1", "Option4"]
     },
     {
         "id": "task6",
@@ -225,7 +225,7 @@
                 }
             }
         ],
-        "correctAnswerId": "Option2"
+        "correctAnswerIds": ["Option2", "Option3", "Option4"]
     },
     {
         "id": "task7",
@@ -263,7 +263,7 @@
                 }
             }
         ],
-        "correctAnswerId": "Option1"
+        "correctAnswerIds": ["Option1", "Option3"]
     },
     {
         "id": "task8",
@@ -301,7 +301,7 @@
                 }
             }
         ],
-        "correctAnswerId": "Option4"
+        "correctAnswerIds": ["Option4", "Option2"]
     },
     {
         "id": "task9",
@@ -339,7 +339,7 @@
                 }
             }
         ],
-        "correctAnswerId": "Option3"
+        "correctAnswerIds": ["Option3", "Option1"]
     },
     {
         "id": "task10",
@@ -377,7 +377,7 @@
                 }
             }
         ],
-        "correctAnswerId": "Option2"
+        "correctAnswerIds": ["Option2", "Option4"]
     },
     {
         "id": "corrupt_task11_missing_question",
@@ -390,7 +390,7 @@
                 }
             }
         ],
-        "correctAnswerId": "Option1"
+        "correctAnswerIds": ["Option1"]
     },
     {
         "id": "corrupt_task12_missing_correct_answer",
@@ -423,7 +423,7 @@
                 }
             }
         ],
-        "correctAnswerId": "Option2"
+        "correctAnswerIds": ["Option2"]
     },
     {
         "id": "corrupt_task13_empty_options",
@@ -432,7 +432,7 @@
             "en": "Question 13"
         },
         "options": [],
-        "correctAnswerId": "Option1"
+        "correctAnswerIds": ["Option1"]
     },
     {
         "id": "corrupt_task14_missing_options",
@@ -440,7 +440,7 @@
             "de": "Frage 14",
             "en": "Question 14"
         },
-        "correctAnswerId": "Option1"
+        "correctAnswerIds": ["Option1"]
     },
     {
         "id": "task_with_additional_fields",
@@ -457,7 +457,7 @@
                 }
             }
         ],
-        "correctAnswerId": "Option1",
+        "correctAnswerIds": ["Option1"],
         "additionalField": "additionalField"
     }
 ]
