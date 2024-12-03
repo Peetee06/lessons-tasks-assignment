@@ -9,14 +9,14 @@
             {
                 "content": [
                     {
-                        "type": "TextComponent",
+                        "type": "text",
                         "text": {
                             "de": "Inhalt Seite 1 von Lektion 1",
                             "en": "Content Page 1 of Lesson 1"
                         }
                     },
                     {
-                        "type": "ImageComponent",
+                        "type": "image",
                         "imageUri": "https://picsum.photos/200/300"
                     }
                 ]
@@ -24,7 +24,7 @@
             {
                 "content": [
                     {
-                        "type": "TextComponent",
+                        "type": "text",
                         "text": {
                             "de": "Inhalt Seite 2 von Lektion 1",
                             "en": "Content Page 2 of Lesson 1"
@@ -35,7 +35,7 @@
             {
                 "content": [
                     {
-                        "type": "TextComponent",
+                        "type": "text",
                         "text": {
                             "de": "Inhalt Seite 3 von Lektion 1",
                             "en": "Content Page 3 of Lesson 1"
@@ -59,7 +59,7 @@
             {
                 "content": [
                     {
-                        "type": "TextComponent",
+                        "type": "text",
                         "text": {
                             "de": "Inhalt Seite 1 von Lektion 2",
                             "en": "Content Page 1 of Lesson 2"
@@ -70,14 +70,14 @@
             {
                 "content": [
                     {
-                        "type": "TextComponent",
+                        "type": "text",
                         "text": {
                             "de": "Inhalt Seite 2 von Lektion 2",
                             "en": "Content Page 2 of Lesson 2"
                         }
                     },
                     {
-                        "type": "ImageComponent",
+                        "type": "image",
                         "imageUri": "https://picsum.photos/300/200"
                     }
                 ]
@@ -85,7 +85,7 @@
             {
                 "content": [
                     {
-                        "type": "TextComponent",
+                        "type": "text",
                         "text": {
                             "de": "Inhalt Seite 3 von Lektion 2",
                             "en": "Content Page 3 of Lesson 2"
@@ -109,7 +109,7 @@
             {
                 "content": [
                     {
-                        "type": "TextComponent",
+                        "type": "text",
                         "text": {
                             "de": "Inhalt Seite 1 von Lektion 3",
                             "en": "Content Page 1 of Lesson 3"
@@ -120,7 +120,7 @@
             {
                 "content": [
                     {
-                        "type": "TextComponent",
+                        "type": "text",
                         "text": {
                             "de": "Inhalt Seite 2 von Lektion 3",
                             "en": "Content Page 2 of Lesson 3"
@@ -131,14 +131,14 @@
             {
                 "content": [
                     {
-                        "type": "TextComponent",
+                        "type": "text",
                         "text": {
                             "de": "Inhalt Seite 3 von Lektion 3",
                             "en": "Content Page 3 of Lesson 3"
                         }
                     },
                     {
-                        "type": "ImageComponent",
+                        "type": "image",
                         "imageUri": "https://picsum.photos/300/300"
                     }
                 ]
@@ -159,14 +159,14 @@
             {
                 "content": [
                     {
-                        "type": "TextComponent",
+                        "type": "text",
                         "text": {
                             "de": "Inhalt Seite 1 von Lektion 4",
                             "en": "Content Page 1 of Lesson 4"
                         }
                     },
                     {
-                        "type": "ImageComponent",
+                        "type": "image",
                         "imageUri": "https://picsum.photos/400/300"
                     }
                 ]
@@ -174,7 +174,7 @@
             {
                 "content": [
                     {
-                        "type": "TextComponent",
+                        "type": "text",
                         "text": {
                             "de": "Inhalt Seite 2 von Lektion 4",
                             "en": "Content Page 2 of Lesson 4"
@@ -185,7 +185,7 @@
             {
                 "content": [
                     {
-                        "type": "TextComponent",
+                        "type": "text",
                         "text": {
                             "de": "Inhalt Seite 3 von Lektion 4",
                             "en": "Content Page 3 of Lesson 4"
@@ -209,7 +209,7 @@
             {
                 "content": [
                     {
-                        "type": "TextComponent",
+                        "type": "text",
                         "text": {
                             "de": "Inhalt Seite 1 von Lektion 5",
                             "en": "Content Page 1 of Lesson 5"
@@ -220,14 +220,14 @@
             {
                 "content": [
                     {
-                        "type": "TextComponent",
+                        "type": "text",
                         "text": {
                             "de": "Inhalt Seite 2 von Lektion 5",
                             "en": "Content Page 2 of Lesson 5"
                         }
                     },
                     {
-                        "type": "ImageComponent",
+                        "type": "image",
                         "imageUri": "https://picsum.photos/500/300"
                     }
                 ]
@@ -235,7 +235,7 @@
             {
                 "content": [
                     {
-                        "type": "TextComponent",
+                        "type": "text",
                         "text": {
                             "de": "Inhalt Seite 3 von Lektion 5",
                             "en": "Content Page 3 of Lesson 5"
@@ -307,7 +307,7 @@
             {
                 "content": [
                     {
-                        "type": "TextComponent",
+                        "type": "text",
                         "text": "Invalid direct string instead of language map"
                     }
                 ]
@@ -325,8 +325,25 @@
             {
                 "content": [
                     {
-                        "type": "ImageComponent",
+                        "type": "image",
                         "url": "not_a_valid_url"
+                    }
+                ]
+            }
+        ],
+        "tasks": []
+    },
+    {
+        "id": "corrupt_lesson_invalid_type",
+        "title": {
+            "de": "Lektion mit ungültigem Typ",
+            "en": "Lesson With Invalid Type"
+        },
+        "pages": [
+            {
+                "content": [
+                    {
+                        "type": "invalid_type"
                     }
                 ]
             }
