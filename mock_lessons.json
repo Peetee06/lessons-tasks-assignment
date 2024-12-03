@@ -1,0 +1,336 @@
+[
+    {
+        "id": "lesson1",
+        "title": {
+            "de": "Einführung zu Thema 1",
+            "en": "Introduction to Topic 1"
+        },
+        "pages": [
+            {
+                "content": [
+                    {
+                        "type": "TextComponent",
+                        "text": {
+                            "de": "Inhalt Seite 1 von Lektion 1",
+                            "en": "Content Page 1 of Lesson 1"
+                        }
+                    },
+                    {
+                        "type": "ImageComponent",
+                        "imageUri": "https://picsum.photos/200/300"
+                    }
+                ]
+            },
+            {
+                "content": [
+                    {
+                        "type": "TextComponent",
+                        "text": {
+                            "de": "Inhalt Seite 2 von Lektion 1",
+                            "en": "Content Page 2 of Lesson 1"
+                        }
+                    }
+                ]
+            },
+            {
+                "content": [
+                    {
+                        "type": "TextComponent",
+                        "text": {
+                            "de": "Inhalt Seite 3 von Lektion 1",
+                            "en": "Content Page 3 of Lesson 1"
+                        }
+                    }
+                ]
+            }
+        ],
+        "tasks": [
+            "task2",
+            "task1"
+        ]
+    },
+    {
+        "id": "lesson2",
+        "title": {
+            "de": "Einführung zu Thema 2",
+            "en": "Introduction to Topic 2"
+        },
+        "pages": [
+            {
+                "content": [
+                    {
+                        "type": "TextComponent",
+                        "text": {
+                            "de": "Inhalt Seite 1 von Lektion 2",
+                            "en": "Content Page 1 of Lesson 2"
+                        }
+                    }
+                ]
+            },
+            {
+                "content": [
+                    {
+                        "type": "TextComponent",
+                        "text": {
+                            "de": "Inhalt Seite 2 von Lektion 2",
+                            "en": "Content Page 2 of Lesson 2"
+                        }
+                    },
+                    {
+                        "type": "ImageComponent",
+                        "imageUri": "https://picsum.photos/300/200"
+                    }
+                ]
+            },
+            {
+                "content": [
+                    {
+                        "type": "TextComponent",
+                        "text": {
+                            "de": "Inhalt Seite 3 von Lektion 2",
+                            "en": "Content Page 3 of Lesson 2"
+                        }
+                    }
+                ]
+            }
+        ],
+        "tasks": [
+            "task8",
+            "task9"
+        ]
+    },
+    {
+        "id": "lesson3",
+        "title": {
+            "de": "Einführung zu Thema 3",
+            "en": "Introduction to Topic 3"
+        },
+        "pages": [
+            {
+                "content": [
+                    {
+                        "type": "TextComponent",
+                        "text": {
+                            "de": "Inhalt Seite 1 von Lektion 3",
+                            "en": "Content Page 1 of Lesson 3"
+                        }
+                    }
+                ]
+            },
+            {
+                "content": [
+                    {
+                        "type": "TextComponent",
+                        "text": {
+                            "de": "Inhalt Seite 2 von Lektion 3",
+                            "en": "Content Page 2 of Lesson 3"
+                        }
+                    }
+                ]
+            },
+            {
+                "content": [
+                    {
+                        "type": "TextComponent",
+                        "text": {
+                            "de": "Inhalt Seite 3 von Lektion 3",
+                            "en": "Content Page 3 of Lesson 3"
+                        }
+                    },
+                    {
+                        "type": "ImageComponent",
+                        "imageUri": "https://picsum.photos/300/300"
+                    }
+                ]
+            }
+        ],
+        "tasks": [
+            "task5",
+            "task10"
+        ]
+    },
+    {
+        "id": "lesson4",
+        "title": {
+            "de": "Einführung zu Thema 4",
+            "en": "Introduction to Topic 4"
+        },
+        "pages": [
+            {
+                "content": [
+                    {
+                        "type": "TextComponent",
+                        "text": {
+                            "de": "Inhalt Seite 1 von Lektion 4",
+                            "en": "Content Page 1 of Lesson 4"
+                        }
+                    },
+                    {
+                        "type": "ImageComponent",
+                        "imageUri": "https://picsum.photos/400/300"
+                    }
+                ]
+            },
+            {
+                "content": [
+                    {
+                        "type": "TextComponent",
+                        "text": {
+                            "de": "Inhalt Seite 2 von Lektion 4",
+                            "en": "Content Page 2 of Lesson 4"
+                        }
+                    }
+                ]
+            },
+            {
+                "content": [
+                    {
+                        "type": "TextComponent",
+                        "text": {
+                            "de": "Inhalt Seite 3 von Lektion 4",
+                            "en": "Content Page 3 of Lesson 4"
+                        }
+                    }
+                ]
+            }
+        ],
+        "tasks": [
+            "task4",
+            "task6"
+        ]
+    },
+    {
+        "id": "lesson5",
+        "title": {
+            "de": "Lektion ohne Aufgaben",
+            "en": "Lesson Without Tasks"
+        },
+        "pages": [
+            {
+                "content": [
+                    {
+                        "type": "TextComponent",
+                        "text": {
+                            "de": "Inhalt Seite 1 von Lektion 5",
+                            "en": "Content Page 1 of Lesson 5"
+                        }
+                    }
+                ]
+            },
+            {
+                "content": [
+                    {
+                        "type": "TextComponent",
+                        "text": {
+                            "de": "Inhalt Seite 2 von Lektion 5",
+                            "en": "Content Page 2 of Lesson 5"
+                        }
+                    },
+                    {
+                        "type": "ImageComponent",
+                        "imageUri": "https://picsum.photos/500/300"
+                    }
+                ]
+            },
+            {
+                "content": [
+                    {
+                        "type": "TextComponent",
+                        "text": {
+                            "de": "Inhalt Seite 3 von Lektion 5",
+                            "en": "Content Page 3 of Lesson 5"
+                        }
+                    }
+                ]
+            }
+        ],
+        "tasks": []
+    },
+    {
+        "id": "lesson6",
+        "title": {
+            "de": "Lektion ohne Seiten",
+            "en": "Lesson Without Pages"
+        },
+        "pages": [],
+        "tasks": [
+            "task2",
+            "task1"
+        ]
+    },
+    {
+        "id": "lesson7",
+        "title": {
+            "de": "Leere Lektion",
+            "en": "Empty Lesson"
+        },
+        "pages": [],
+        "tasks": []
+    },
+    {
+        "id": "corrupt_lesson_without_title",
+        "pages": [],
+        "tasks": [
+            "task2",
+            "task1"
+        ]
+    },
+    {
+        "id": "corrupt_lesson_no_pages",
+        "title": {
+            "de": "Lektion ohne Pages Key",
+            "en": "Lesson Without Pages Key"
+        },
+        "tasks": ["task1"]
+    },
+    {
+        "id": "corrupt_lesson_no_tasks",
+        "title": {
+            "de": "Lektion ohne Tasks Key",
+            "en": "Lesson Without Tasks Key"
+        },
+        "pages": []
+    },
+    {
+        "id": "corrupt_lesson_string_title",
+        "title": "Invalid String Title Instead of Map",
+        "pages": [],
+        "tasks": []
+    },
+    {
+        "id": "corrupt_lesson_invalid_text",
+        "title": {
+            "de": "Lektion mit ungültigem Text",
+            "en": "Lesson With Invalid Text"
+        },
+        "pages": [
+            {
+                "content": [
+                    {
+                        "type": "TextComponent",
+                        "text": "Invalid direct string instead of language map"
+                    }
+                ]
+            }
+        ],
+        "tasks": []
+    },
+    {
+        "id": "corrupt_lesson_invalid_image",
+        "title": {
+            "de": "Lektion mit ungültigem Bild",
+            "en": "Lesson With Invalid Image"
+        },
+        "pages": [
+            {
+                "content": [
+                    {
+                        "type": "ImageComponent",
+                        "url": "not_a_valid_url"
+                    }
+                ]
+            }
+        ],
+        "tasks": []
+    }
+]

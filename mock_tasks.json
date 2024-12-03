@@ -1,0 +1,463 @@
+[
+    {
+        "id": "task1",
+        "question": {
+            "de": "Frage 1",
+            "en": "Question 1"
+        },
+        "options": [
+            {
+                "id": "Option1",
+                "text": {
+                    "de": "Option 1 DE",
+                    "en": "Option 1 EN"
+                }
+            },
+            {
+                "id": "Option2",
+                "text": {
+                    "de": "Option 2 DE",
+                    "en": "Option 2 EN"
+                }
+            },
+            {
+                "id": "Option3",
+                "text": {
+                    "de": "Option 3 DE",
+                    "en": "Option 3 EN"
+                }
+            },
+            {
+                "id": "Option4",
+                "text": {
+                    "de": "Option 4 DE",
+                    "en": "Option 4 EN"
+                }
+            }
+        ],
+        "correctAnswerId": "Option3"
+    },
+    {
+        "id": "task2",
+        "question": {
+            "de": "Frage 2",
+            "en": "Question 2"
+        },
+        "options": [
+            {
+                "id": "Option1",
+                "text": {
+                    "de": "Option 1 DE",
+                    "en": "Option 1 EN"
+                }
+            },
+            {
+                "id": "Option2",
+                "text": {
+                    "de": "Option 2 DE",
+                    "en": "Option 2 EN"
+                }
+            },
+            {
+                "id": "Option3",
+                "text": {
+                    "de": "Option 3 DE",
+                    "en": "Option 3 EN"
+                }
+            },
+            {
+                "id": "Option4",
+                "text": {
+                    "de": "Option 4 DE",
+                    "en": "Option 4 EN"
+                }
+            }
+        ],
+        "correctAnswerId": "Option1"
+    },
+    {
+        "id": "task3",
+        "question": {
+            "de": "Frage 3",
+            "en": "Question 3"
+        },
+        "options": [
+            {
+                "id": "Option1",
+                "text": {
+                    "de": "Option 1 DE",
+                    "en": "Option 1 EN"
+                }
+            },
+            {
+                "id": "Option2",
+                "text": {
+                    "de": "Option 2 DE",
+                    "en": "Option 2 EN"
+                }
+            },
+            {
+                "id": "Option3",
+                "text": {
+                    "de": "Option 3 DE",
+                    "en": "Option 3 EN"
+                }
+            },
+            {
+                "id": "Option4",
+                "text": {
+                    "de": "Option 4 DE",
+                    "en": "Option 4 EN"
+                }
+            }
+        ],
+        "correctAnswerId": "Option3"
+    },
+    {
+        "id": "task4",
+        "question": {
+            "de": "Frage 4",
+            "en": "Question 4"
+        },
+        "options": [
+            {
+                "id": "Option1",
+                "text": {
+                    "de": "Option 1 DE",
+                    "en": "Option 1 EN"
+                }
+            },
+            {
+                "id": "Option2",
+                "text": {
+                    "de": "Option 2 DE",
+                    "en": "Option 2 EN"
+                }
+            },
+            {
+                "id": "Option3",
+                "text": {
+                    "de": "Option 3 DE",
+                    "en": "Option 3 EN"
+                }
+            },
+            {
+                "id": "Option4",
+                "text": {
+                    "de": "Option 4 DE",
+                    "en": "Option 4 EN"
+                }
+            }
+        ],
+        "correctAnswerId": "Option3"
+    },
+    {
+        "id": "task5",
+        "question": {
+            "de": "Frage 5",
+            "en": "Question 5"
+        },
+        "options": [
+            {
+                "id": "Option1",
+                "text": {
+                    "de": "Option 1 DE",
+                    "en": "Option 1 EN"
+                }
+            },
+            {
+                "id": "Option2",
+                "text": {
+                    "de": "Option 2 DE",
+                    "en": "Option 2 EN"
+                }
+            },
+            {
+                "id": "Option3",
+                "text": {
+                    "de": "Option 3 DE",
+                    "en": "Option 3 EN"
+                }
+            },
+            {
+                "id": "Option4",
+                "text": {
+                    "de": "Option 4 DE",
+                    "en": "Option 4 EN"
+                }
+            }
+        ],
+        "correctAnswerId": "Option1"
+    },
+    {
+        "id": "task6",
+        "question": {
+            "de": "Frage 6",
+            "en": "Question 6"
+        },
+        "options": [
+            {
+                "id": "Option1",
+                "text": {
+                    "de": "Option 1 DE",
+                    "en": "Option 1 EN"
+                }
+            },
+            {
+                "id": "Option2",
+                "text": {
+                    "de": "Option 2 DE",
+                    "en": "Option 2 EN"
+                }
+            },
+            {
+                "id": "Option3",
+                "text": {
+                    "de": "Option 3 DE",
+                    "en": "Option 3 EN"
+                }
+            },
+            {
+                "id": "Option4",
+                "text": {
+                    "de": "Option 4 DE",
+                    "en": "Option 4 EN"
+                }
+            }
+        ],
+        "correctAnswerId": "Option2"
+    },
+    {
+        "id": "task7",
+        "question": {
+            "de": "Frage 7",
+            "en": "Question 7"
+        },
+        "options": [
+            {
+                "id": "Option1",
+                "text": {
+                    "de": "Option 1 DE",
+                    "en": "Option 1 EN"
+                }
+            },
+            {
+                "id": "Option2",
+                "text": {
+                    "de": "Option 2 DE",
+                    "en": "Option 2 EN"
+                }
+            },
+            {
+                "id": "Option3",
+                "text": {
+                    "de": "Option 3 DE",
+                    "en": "Option 3 EN"
+                }
+            },
+            {
+                "id": "Option4",
+                "text": {
+                    "de": "Option 4 DE",
+                    "en": "Option 4 EN"
+                }
+            }
+        ],
+        "correctAnswerId": "Option1"
+    },
+    {
+        "id": "task8",
+        "question": {
+            "de": "Frage 8",
+            "en": "Question 8"
+        },
+        "options": [
+            {
+                "id": "Option1",
+                "text": {
+                    "de": "Option 1 DE",
+                    "en": "Option 1 EN"
+                }
+            },
+            {
+                "id": "Option2",
+                "text": {
+                    "de": "Option 2 DE",
+                    "en": "Option 2 EN"
+                }
+            },
+            {
+                "id": "Option3",
+                "text": {
+                    "de": "Option 3 DE",
+                    "en": "Option 3 EN"
+                }
+            },
+            {
+                "id": "Option4",
+                "text": {
+                    "de": "Option 4 DE",
+                    "en": "Option 4 EN"
+                }
+            }
+        ],
+        "correctAnswerId": "Option4"
+    },
+    {
+        "id": "task9",
+        "question": {
+            "de": "Frage 9",
+            "en": "Question 9"
+        },
+        "options": [
+            {
+                "id": "Option1",
+                "text": {
+                    "de": "Option 1 DE",
+                    "en": "Option 1 EN"
+                }
+            },
+            {
+                "id": "Option2",
+                "text": {
+                    "de": "Option 2 DE",
+                    "en": "Option 2 EN"
+                }
+            },
+            {
+                "id": "Option3",
+                "text": {
+                    "de": "Option 3 DE",
+                    "en": "Option 3 EN"
+                }
+            },
+            {
+                "id": "Option4",
+                "text": {
+                    "de": "Option 4 DE",
+                    "en": "Option 4 EN"
+                }
+            }
+        ],
+        "correctAnswerId": "Option3"
+    },
+    {
+        "id": "task10",
+        "question": {
+            "de": "Frage 10",
+            "en": "Question 10"
+        },
+        "options": [
+            {
+                "id": "Option1",
+                "text": {
+                    "de": "Option 1 DE",
+                    "en": "Option 1 EN"
+                }
+            },
+            {
+                "id": "Option2",
+                "text": {
+                    "de": "Option 2 DE",
+                    "en": "Option 2 EN"
+                }
+            },
+            {
+                "id": "Option3",
+                "text": {
+                    "de": "Option 3 DE",
+                    "en": "Option 3 EN"
+                }
+            },
+            {
+                "id": "Option4",
+                "text": {
+                    "de": "Option 4 DE",
+                    "en": "Option 4 EN"
+                }
+            }
+        ],
+        "correctAnswerId": "Option2"
+    },
+    {
+        "id": "corrupt_task11_missing_question",
+        "options": [
+            {
+                "id": "Option1",
+                "text": {
+                    "de": "Option 1 DE",
+                    "en": "Option 1 EN"
+                }
+            }
+        ],
+        "correctAnswerId": "Option1"
+    },
+    {
+        "id": "corrupt_task12_missing_correct_answer",
+        "question": {
+            "de": "Frage 12",
+            "en": "Question 12"
+        },
+        "options": [
+            {
+                "id": "Option1",
+                "text": {
+                    "de": "Option 1 DE",
+                    "en": "Option 1 EN"
+                }
+            }
+        ]
+    },
+    {
+        "id": "corrupt_task12_non_existing_correct_answer",
+        "question": {
+            "de": "Frage 12",
+            "en": "Question 12"
+        },
+        "options": [
+            {
+                "id": "Option1",
+                "text": {
+                    "de": "Option 1 DE",
+                    "en": "Option 1 EN"
+                }
+            }
+        ],
+        "correctAnswerId": "Option2"
+    },
+    {
+        "id": "corrupt_task13_empty_options",
+        "question": {
+            "de": "Frage 13",
+            "en": "Question 13"
+        },
+        "options": [],
+        "correctAnswerId": "Option1"
+    },
+    {
+        "id": "corrupt_task14_missing_options",
+        "question": {
+            "de": "Frage 14",
+            "en": "Question 14"
+        },
+        "correctAnswerId": "Option1"
+    },
+    {
+        "id": "task_with_additional_fields",
+        "question": {
+            "de": "Frage 15",
+            "en": "Question 15"
+        },
+        "options": [
+            {
+                "id": "Option1",
+                "text": {
+                    "de": "Option 1 DE",
+                    "en": "Option 1 EN"
+                }
+            }
+        ],
+        "correctAnswerId": "Option1",
+        "additionalField": "additionalField"
+    }
+]
