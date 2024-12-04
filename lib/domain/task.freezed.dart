@@ -23,7 +23,7 @@ mixin _$Task {
   String get id => throw _privateConstructorUsedError;
   Map<String, String> get title => throw _privateConstructorUsedError;
   List<Answer> get options => throw _privateConstructorUsedError;
-  List<String> get correctAnswers => throw _privateConstructorUsedError;
+  List<String> get correctAnswerIds => throw _privateConstructorUsedError;
 
   /// Serializes this Task to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -43,7 +43,7 @@ abstract class $TaskCopyWith<$Res> {
       {String id,
       Map<String, String> title,
       List<Answer> options,
-      List<String> correctAnswers});
+      List<String> correctAnswerIds});
 }
 
 /// @nodoc
@@ -64,7 +64,7 @@ class _$TaskCopyWithImpl<$Res, $Val extends Task>
     Object? id = null,
     Object? title = null,
     Object? options = null,
-    Object? correctAnswers = null,
+    Object? correctAnswerIds = null,
   }) {
     return _then(_value.copyWith(
       id: null == id
@@ -79,9 +79,9 @@ class _$TaskCopyWithImpl<$Res, $Val extends Task>
           ? _value.options
           : options // ignore: cast_nullable_to_non_nullable
               as List<Answer>,
-      correctAnswers: null == correctAnswers
-          ? _value.correctAnswers
-          : correctAnswers // ignore: cast_nullable_to_non_nullable
+      correctAnswerIds: null == correctAnswerIds
+          ? _value.correctAnswerIds
+          : correctAnswerIds // ignore: cast_nullable_to_non_nullable
               as List<String>,
     ) as $Val);
   }
@@ -98,7 +98,7 @@ abstract class _$$TaskImplCopyWith<$Res> implements $TaskCopyWith<$Res> {
       {String id,
       Map<String, String> title,
       List<Answer> options,
-      List<String> correctAnswers});
+      List<String> correctAnswerIds});
 }
 
 /// @nodoc
@@ -116,7 +116,7 @@ class __$$TaskImplCopyWithImpl<$Res>
     Object? id = null,
     Object? title = null,
     Object? options = null,
-    Object? correctAnswers = null,
+    Object? correctAnswerIds = null,
   }) {
     return _then(_$TaskImpl(
       id: null == id
@@ -131,9 +131,9 @@ class __$$TaskImplCopyWithImpl<$Res>
           ? _value._options
           : options // ignore: cast_nullable_to_non_nullable
               as List<Answer>,
-      correctAnswers: null == correctAnswers
-          ? _value._correctAnswers
-          : correctAnswers // ignore: cast_nullable_to_non_nullable
+      correctAnswerIds: null == correctAnswerIds
+          ? _value._correctAnswerIds
+          : correctAnswerIds // ignore: cast_nullable_to_non_nullable
               as List<String>,
     ));
   }
@@ -146,10 +146,10 @@ class _$TaskImpl implements _Task {
       {required this.id,
       required final Map<String, String> title,
       required final List<Answer> options,
-      required final List<String> correctAnswers})
+      required final List<String> correctAnswerIds})
       : _title = title,
         _options = options,
-        _correctAnswers = correctAnswers;
+        _correctAnswerIds = correctAnswerIds;
 
   factory _$TaskImpl.fromJson(Map<String, dynamic> json) =>
       _$$TaskImplFromJson(json);
@@ -172,17 +172,18 @@ class _$TaskImpl implements _Task {
     return EqualUnmodifiableListView(_options);
   }
 
-  final List<String> _correctAnswers;
+  final List<String> _correctAnswerIds;
   @override
-  List<String> get correctAnswers {
-    if (_correctAnswers is EqualUnmodifiableListView) return _correctAnswers;
+  List<String> get correctAnswerIds {
+    if (_correctAnswerIds is EqualUnmodifiableListView)
+      return _correctAnswerIds;
     // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(_correctAnswers);
+    return EqualUnmodifiableListView(_correctAnswerIds);
   }
 
   @override
   String toString() {
-    return 'Task(id: $id, title: $title, options: $options, correctAnswers: $correctAnswers)';
+    return 'Task(id: $id, title: $title, options: $options, correctAnswerIds: $correctAnswerIds)';
   }
 
   @override
@@ -194,7 +195,7 @@ class _$TaskImpl implements _Task {
             const DeepCollectionEquality().equals(other._title, _title) &&
             const DeepCollectionEquality().equals(other._options, _options) &&
             const DeepCollectionEquality()
-                .equals(other._correctAnswers, _correctAnswers));
+                .equals(other._correctAnswerIds, _correctAnswerIds));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
@@ -204,7 +205,7 @@ class _$TaskImpl implements _Task {
       id,
       const DeepCollectionEquality().hash(_title),
       const DeepCollectionEquality().hash(_options),
-      const DeepCollectionEquality().hash(_correctAnswers));
+      const DeepCollectionEquality().hash(_correctAnswerIds));
 
   /// Create a copy of Task
   /// with the given fields replaced by the non-null parameter values.
@@ -227,7 +228,7 @@ abstract class _Task implements Task {
       {required final String id,
       required final Map<String, String> title,
       required final List<Answer> options,
-      required final List<String> correctAnswers}) = _$TaskImpl;
+      required final List<String> correctAnswerIds}) = _$TaskImpl;
 
   factory _Task.fromJson(Map<String, dynamic> json) = _$TaskImpl.fromJson;
 
@@ -238,7 +239,7 @@ abstract class _Task implements Task {
   @override
   List<Answer> get options;
   @override
-  List<String> get correctAnswers;
+  List<String> get correctAnswerIds;
 
   /// Create a copy of Task
   /// with the given fields replaced by the non-null parameter values.

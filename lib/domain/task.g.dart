@@ -12,7 +12,7 @@ _$TaskImpl _$$TaskImplFromJson(Map<String, dynamic> json) => _$TaskImpl(
       options: (json['options'] as List<dynamic>)
           .map((e) => Answer.fromJson(e as Map<String, dynamic>))
           .toList(),
-      correctAnswers: (json['correctAnswers'] as List<dynamic>)
+      correctAnswerIds: (json['correctAnswerIds'] as List<dynamic>)
           .map((e) => e as String)
           .toList(),
     );
@@ -22,5 +22,5 @@ Map<String, dynamic> _$$TaskImplToJson(_$TaskImpl instance) =>
       'id': instance.id,
       'title': instance.title,
       'options': instance.options,
-      'correctAnswers': instance.correctAnswers,
+      'correctAnswerIds': instance.correctAnswerIds,
     };

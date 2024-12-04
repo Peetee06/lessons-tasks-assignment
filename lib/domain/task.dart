@@ -11,7 +11,7 @@ class Task with _$Task {
     required String id,
     required Localizations title,
     required List<Answer> options,
-    required List<String> correctAnswers,
+    required List<String> correctAnswerIds,
   }) = _Task;
 
   factory Task.fromJson(Map<String, dynamic> json) => _$TaskFromJson(json);

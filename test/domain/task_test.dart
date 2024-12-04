@@ -21,7 +21,7 @@ void main() {
             'text': {'en': 'No', 'de': 'Nein'},
           },
         ],
-        'correctAnswers': ['answer1'],
+        'correctAnswerIds': ['answer1'],
       };
 
       final task = Task.fromJson(json);
@@ -41,7 +41,7 @@ void main() {
             text: {'en': 'No', 'de': 'Nein'},
           ),
         ],
-        correctAnswers: ['answer1'],
+        correctAnswerIds: ['answer1'],
       );
 
       expect(task, expected);
@@ -54,7 +54,7 @@ void main() {
           'de': 'Wähle die richtige Antwort',
         },
         'options': <Answer>[],
-        'correctAnswers': <String>[],
+        'correctAnswerIds': <String>[],
       };
       expect(
         () => Task.fromJson(json),
@@ -66,7 +66,7 @@ void main() {
       const json = {
         'id': 'task1',
         'options': <Answer>[],
-        'correctAnswers': <String>[],
+        'correctAnswerIds': <String>[],
       };
       expect(
         () => Task.fromJson(json),
@@ -81,7 +81,7 @@ void main() {
           'en': 'Choose correct answer',
           'de': 'Wähle die richtige Antwort',
         },
-        'correctAnswers': <String>[],
+        'correctAnswerIds': <String>[],
       };
       expect(
         () => Task.fromJson(json),
@@ -89,7 +89,7 @@ void main() {
       );
     });
 
-    test('should throw an exception if correctAnswers is missing', () {
+    test('should throw an exception if correctAnswerIds is missing', () {
       const json = {
         'id': 'task1',
         'title': {
@@ -104,7 +104,7 @@ void main() {
       );
     });
 
-    test('should handle empty options and correctAnswers lists', () {
+    test('should handle empty options and correctAnswerIds lists', () {
       const json = {
         'id': 'task1',
         'title': {
@@ -112,7 +112,7 @@ void main() {
           'de': 'Wähle die richtige Antwort',
         },
         'options': <Answer>[],
-        'correctAnswers': <String>[],
+        'correctAnswerIds': <String>[],
       };
 
       final task = Task.fromJson(json);
@@ -123,7 +123,7 @@ void main() {
           'de': 'Wähle die richtige Antwort',
         },
         options: [],
-        correctAnswers: [],
+        correctAnswerIds: [],
       );
 
       expect(task, expected);
