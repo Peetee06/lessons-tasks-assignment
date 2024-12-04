@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:lessons_tasks_assignment/counter/counter.dart';
 import 'package:lessons_tasks_assignment/l10n/l10n.dart';
 
 class App extends StatelessWidget {
@@ -16,7 +15,9 @@ class App extends StatelessWidget {
       ),
       localizationsDelegates: AppLocalizations.localizationsDelegates,
       supportedLocales: AppLocalizations.supportedLocales,
-      home: const CounterPage(),
+      home: Builder(
+        builder: (context) => Text(context.l10n.counterAppBarTitle),
+      ),
     );
   }
 }
