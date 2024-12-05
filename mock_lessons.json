@@ -44,7 +44,7 @@
                 ]
             }
         ],
-        "tasks": [
+        "taskIds": [
             "task2",
             "task1"
         ]
@@ -94,7 +94,7 @@
                 ]
             }
         ],
-        "tasks": [
+        "taskIds": [
             "task8",
             "task9"
         ]
@@ -144,7 +144,7 @@
                 ]
             }
         ],
-        "tasks": [
+        "taskIds": [
             "task5",
             "task10"
         ]
@@ -194,7 +194,7 @@
                 ]
             }
         ],
-        "tasks": [
+        "taskIds": [
             "task4",
             "task6"
         ]
@@ -203,7 +203,7 @@
         "id": "lesson5",
         "title": {
             "de": "Lektion ohne Aufgaben",
-            "en": "Lesson Without Tasks"
+            "en": "Lesson Without TaskIds"
         },
         "pages": [
             {
@@ -244,7 +244,7 @@
                 ]
             }
         ],
-        "tasks": []
+        "taskIds": []
     },
     {
         "id": "lesson6",
@@ -253,7 +253,7 @@
             "en": "Lesson Without Pages"
         },
         "pages": [],
-        "tasks": [
+        "taskIds": [
             "task2",
             "task1"
         ]
@@ -265,6 +265,6 @@
             "en": "Empty Lesson"
         },
         "pages": [],
-        "tasks": []
+        "taskIds": []
     }
 ]
