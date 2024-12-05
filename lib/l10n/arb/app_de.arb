@@ -1,10 +1,10 @@
 {
-    "@@locale": "en",
-    "lessonsPageTitle": "Lessons",
+    "@@locale": "de",
+    "lessonsPageTitle": "Lektionen",
     "@lessonsPageTitle": {
         "description": "Title of the lessons page"
     },
-    "lessonsPages": "{count, plural, =0{no pages} =1{one page} other{{count} pages}}",
+    "lessonsPages": "{count, plural, =0{keine Seiten} =1{eine Seite} other{{count} Seiten}}",
     "@lessonsPages": {
         "description": "Number of pages in a lesson",
         "placeholders": {
@@ -14,7 +14,7 @@
             }
         }
     },
-    "lessonsTasks": "{count, plural, =0{no tasks} =1{one task} other{{count} tasks}}",
+    "lessonsTasks": "{count, plural, =0{keine Aufgaben} =1{eine Aufgabe} other{{count} Aufgaben}}",
     "@lessonsTasks": {
         "description": "Number of tasks in a lesson",
         "placeholders": {
@@ -24,11 +24,11 @@
             }
         }
     },
-    "lessonsTryAgain": "Try again",
+    "lessonsTryAgain": "Nochmal versuchen",
     "@lessonsTryAgain": {
         "description": "Text of the button to try again"
     },
-    "lessonsEmpty": "No lessons found",
+    "lessonsEmpty": "Keine Lektionen gefunden",
     "@lessonsEmpty": {
         "description": "Text shown when there are no lessons"
     }
