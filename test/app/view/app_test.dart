@@ -1,20 +1,18 @@
-import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:lessons_tasks_assignment/app/app.dart';
-import 'package:lessons_tasks_assignment/l10n/l10n.dart';
+import 'package:lessons_tasks_assignment/features/lessons/view/lessons_page.dart';
+
+import '../../helpers/helpers.dart';
 
 void main() {
   group('App', () {
-    testWidgets('renders CounterPage', (tester) async {
-      await tester.pumpWidget(
-        const MaterialApp(
-          localizationsDelegates: AppLocalizations.localizationsDelegates,
-          supportedLocales: AppLocalizations.supportedLocales,
-          home: App(),
-        ),
+    testWidgets('renders LessonsPage', (tester) async {
+      await tester.pumpApp(
+        widget: const App(),
       );
-      final BuildContext context = tester.element(find.byType(App));
-      expect(find.text(context.l10n.counterAppBarTitle), findsOneWidget);
+      await tester.pumpAndSettle();
+
+      expect(find.byType(LessonsPage), findsOneWidget);
     });
   });
 }
