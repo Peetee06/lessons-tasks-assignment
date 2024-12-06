@@ -9,7 +9,7 @@ part 'task.g.dart';
 class Task with _$Task {
   const factory Task({
     required String id,
-    required Localizations title,
+    required Localizations question,
     required List<Answer> options,
     required List<String> correctAnswerIds,
   }) = _Task;

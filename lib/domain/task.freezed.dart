@@ -21,7 +21,7 @@ Task _$TaskFromJson(Map<String, dynamic> json) {
 /// @nodoc
 mixin _$Task {
   String get id => throw _privateConstructorUsedError;
-  Map<String, String> get title => throw _privateConstructorUsedError;
+  Map<String, String> get question => throw _privateConstructorUsedError;
   List<Answer> get options => throw _privateConstructorUsedError;
   List<String> get correctAnswerIds => throw _privateConstructorUsedError;
 
@@ -41,7 +41,7 @@ abstract class $TaskCopyWith<$Res> {
   @useResult
   $Res call(
       {String id,
-      Map<String, String> title,
+      Map<String, String> question,
       List<Answer> options,
       List<String> correctAnswerIds});
 }
@@ -62,7 +62,7 @@ class _$TaskCopyWithImpl<$Res, $Val extends Task>
   @override
   $Res call({
     Object? id = null,
-    Object? title = null,
+    Object? question = null,
     Object? options = null,
     Object? correctAnswerIds = null,
   }) {
@@ -71,9 +71,9 @@ class _$TaskCopyWithImpl<$Res, $Val extends Task>
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as String,
-      title: null == title
-          ? _value.title
-          : title // ignore: cast_nullable_to_non_nullable
+      question: null == question
+          ? _value.question
+          : question // ignore: cast_nullable_to_non_nullable
               as Map<String, String>,
       options: null == options
           ? _value.options
@@ -96,7 +96,7 @@ abstract class _$$TaskImplCopyWith<$Res> implements $TaskCopyWith<$Res> {
   @useResult
   $Res call(
       {String id,
-      Map<String, String> title,
+      Map<String, String> question,
       List<Answer> options,
       List<String> correctAnswerIds});
 }
@@ -114,7 +114,7 @@ class __$$TaskImplCopyWithImpl<$Res>
   @override
   $Res call({
     Object? id = null,
-    Object? title = null,
+    Object? question = null,
     Object? options = null,
     Object? correctAnswerIds = null,
   }) {
@@ -123,9 +123,9 @@ class __$$TaskImplCopyWithImpl<$Res>
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as String,
-      title: null == title
-          ? _value._title
-          : title // ignore: cast_nullable_to_non_nullable
+      question: null == question
+          ? _value._question
+          : question // ignore: cast_nullable_to_non_nullable
               as Map<String, String>,
       options: null == options
           ? _value._options
@@ -144,10 +144,10 @@ class __$$TaskImplCopyWithImpl<$Res>
 class _$TaskImpl implements _Task {
   const _$TaskImpl(
       {required this.id,
-      required final Map<String, String> title,
+      required final Map<String, String> question,
       required final List<Answer> options,
       required final List<String> correctAnswerIds})
-      : _title = title,
+      : _question = question,
         _options = options,
         _correctAnswerIds = correctAnswerIds;
 
@@ -156,12 +156,12 @@ class _$TaskImpl implements _Task {
 
   @override
   final String id;
-  final Map<String, String> _title;
+  final Map<String, String> _question;
   @override
-  Map<String, String> get title {
-    if (_title is EqualUnmodifiableMapView) return _title;
+  Map<String, String> get question {
+    if (_question is EqualUnmodifiableMapView) return _question;
     // ignore: implicit_dynamic_type
-    return EqualUnmodifiableMapView(_title);
+    return EqualUnmodifiableMapView(_question);
   }
 
   final List<Answer> _options;
@@ -183,7 +183,7 @@ class _$TaskImpl implements _Task {
 
   @override
   String toString() {
-    return 'Task(id: $id, title: $title, options: $options, correctAnswerIds: $correctAnswerIds)';
+    return 'Task(id: $id, question: $question, options: $options, correctAnswerIds: $correctAnswerIds)';
   }
 
   @override
@@ -192,7 +192,7 @@ class _$TaskImpl implements _Task {
         (other.runtimeType == runtimeType &&
             other is _$TaskImpl &&
             (identical(other.id, id) || other.id == id) &&
-            const DeepCollectionEquality().equals(other._title, _title) &&
+            const DeepCollectionEquality().equals(other._question, _question) &&
             const DeepCollectionEquality().equals(other._options, _options) &&
             const DeepCollectionEquality()
                 .equals(other._correctAnswerIds, _correctAnswerIds));
@@ -203,7 +203,7 @@ class _$TaskImpl implements _Task {
   int get hashCode => Object.hash(
       runtimeType,
       id,
-      const DeepCollectionEquality().hash(_title),
+      const DeepCollectionEquality().hash(_question),
       const DeepCollectionEquality().hash(_options),
       const DeepCollectionEquality().hash(_correctAnswerIds));
 
@@ -226,7 +226,7 @@ class _$TaskImpl implements _Task {
 abstract class _Task implements Task {
   const factory _Task(
       {required final String id,
-      required final Map<String, String> title,
+      required final Map<String, String> question,
       required final List<Answer> options,
       required final List<String> correctAnswerIds}) = _$TaskImpl;
 
@@ -235,7 +235,7 @@ abstract class _Task implements Task {
   @override
   String get id;
   @override
-  Map<String, String> get title;
+  Map<String, String> get question;
   @override
   List<Answer> get options;
   @override

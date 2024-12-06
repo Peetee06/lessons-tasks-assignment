@@ -110,7 +110,7 @@ void main() {
         final responseData = [
           {
             'id': '1',
-            'title': {'en': 'Task 1', 'de': 'Aufgabe 1'},
+            'question': {'en': 'Task 1', 'de': 'Aufgabe 1'},
             'options': [
               {
                 'id': 'a1',
@@ -142,7 +142,7 @@ void main() {
           [
             const Task(
               id: '1',
-              title: {'en': 'Task 1', 'de': 'Aufgabe 1'},
+              question: {'en': 'Task 1', 'de': 'Aufgabe 1'},
               options: [
                 Answer(
                   id: 'a1',
