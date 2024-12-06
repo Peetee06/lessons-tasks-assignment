@@ -15,7 +15,7 @@ class _RestClient implements RestClient {
     this.errorLogger,
   }) {
     baseUrl ??=
-        'https://github.com/Peetee06/lessons-tasks-assignment/blob/main/';
+        'https://raw.githubusercontent.com/Peetee06/lessons-tasks-assignment/refs/heads/main/';
   }
 
   final Dio _dio;
