@@ -21,6 +21,7 @@ jobs:
     with:
       flutter_channel: stable
       coverage_excludes: "**/*.g.dart **/*.freezed.dart **/mocks.mocks.dart"
+      concurrency: 1 # integration test binding collides with binding of unit tests
 
   spell-check:
     uses: VeryGoodOpenSource/very_good_workflows/.github/workflows/spell_check.yml@v1
