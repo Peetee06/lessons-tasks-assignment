@@ -78,7 +78,7 @@ void main() {
       (_) async => [
         const Task(
           id: '1',
-          title: {
+          question: {
             'en': 'Task 1',
             'de': 'Aufgabe 1',
           },
@@ -109,7 +109,7 @@ void main() {
         ),
         const Task(
           id: '2',
-          title: {
+          question: {
             'en': 'Task 2',
             'de': 'Aufgabe 2',
           },
@@ -133,7 +133,7 @@ void main() {
         ),
         const Task(
           id: '3',
-          title: {
+          question: {
             'en': 'Task 3',
             'de': 'Aufgabe 3',
           },
@@ -151,7 +151,7 @@ void main() {
         ),
         const Task(
           id: '4',
-          title: {
+          question: {
             'en': 'Task 4',
             'de': 'Aufgabe 4',
           },
@@ -202,7 +202,7 @@ void main() {
           tasks: [
             const Task(
               id: '1',
-              title: {'en': 'Task 1', 'de': 'Aufgabe 1'},
+              question: {'en': 'Task 1', 'de': 'Aufgabe 1'},
               options: [
                 Answer(
                   id: '1',
@@ -221,7 +221,7 @@ void main() {
             ),
             const Task(
               id: '2',
-              title: {'en': 'Task 2', 'de': 'Aufgabe 2'},
+              question: {'en': 'Task 2', 'de': 'Aufgabe 2'},
               options: [
                 Answer(
                   id: '3',
@@ -254,7 +254,7 @@ void main() {
           tasks: [
             const Task(
               id: '3',
-              title: {'en': 'Task 3', 'de': 'Aufgabe 3'},
+              question: {'en': 'Task 3', 'de': 'Aufgabe 3'},
               options: [
                 Answer(
                   id: '5',
@@ -269,7 +269,7 @@ void main() {
             ),
             const Task(
               id: '4',
-              title: {'en': 'Task 4', 'de': 'Aufgabe 4'},
+              question: {'en': 'Task 4', 'de': 'Aufgabe 4'},
               options: [
                 Answer(
                   id: '7',

@@ -79,7 +79,7 @@ void main() {
           tasks: [
             const Task(
               id: '1',
-              title: {
+              question: {
                 'en': 'Test Task',
                 'de': 'Test Aufgabe',
               },

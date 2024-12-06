@@ -7,7 +7,7 @@ void main() {
     test('should be deserialized from JSON', () {
       const json = {
         'id': 'task1',
-        'title': {
+        'question': {
           'en': 'Choose correct answer',
           'de': 'Wähle die richtige Antwort',
         },
@@ -27,7 +27,7 @@ void main() {
       final task = Task.fromJson(json);
       const expected = Task(
         id: 'task1',
-        title: {
+        question: {
           'en': 'Choose correct answer',
           'de': 'Wähle die richtige Antwort',
         },
@@ -49,7 +49,7 @@ void main() {
 
     test('should throw an exception if id is missing', () {
       const json = {
-        'title': {
+        'question': {
           'en': 'Choose correct answer',
           'de': 'Wähle die richtige Antwort',
         },
@@ -77,7 +77,7 @@ void main() {
     test('should throw an exception if options is missing', () {
       const json = {
         'id': 'task1',
-        'title': {
+        'question': {
           'en': 'Choose correct answer',
           'de': 'Wähle die richtige Antwort',
         },
@@ -92,7 +92,7 @@ void main() {
     test('should throw an exception if correctAnswerIds is missing', () {
       const json = {
         'id': 'task1',
-        'title': {
+        'question': {
           'en': 'Choose correct answer',
           'de': 'Wähle die richtige Antwort',
         },
@@ -107,7 +107,7 @@ void main() {
     test('should handle empty options and correctAnswerIds lists', () {
       const json = {
         'id': 'task1',
-        'title': {
+        'question': {
           'en': 'Choose correct answer',
           'de': 'Wähle die richtige Antwort',
         },
@@ -118,7 +118,7 @@ void main() {
       final task = Task.fromJson(json);
       const expected = Task(
         id: 'task1',
-        title: {
+        question: {
           'en': 'Choose correct answer',
           'de': 'Wähle die richtige Antwort',
         },
