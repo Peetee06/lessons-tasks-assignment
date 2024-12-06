@@ -4,8 +4,9 @@
 
 // ignore_for_file: no_leading_underscores_for_library_prefixes
 import 'dart:async' as _i10;
+import 'dart:typed_data' as _i12;
 
-import 'package:bloc/bloc.dart' as _i17;
+import 'package:bloc/bloc.dart' as _i16;
 import 'package:dio/dio.dart' as _i9;
 import 'package:dio/src/adapter.dart' as _i3;
 import 'package:dio/src/cancel_token.dart' as _i11;
@@ -13,20 +14,20 @@ import 'package:dio/src/dio_mixin.dart' as _i5;
 import 'package:dio/src/options.dart' as _i2;
 import 'package:dio/src/response.dart' as _i6;
 import 'package:dio/src/transformer.dart' as _i4;
-import 'package:lessons_tasks_assignment/domain/lesson.dart' as _i18;
-import 'package:lessons_tasks_assignment/domain/task.dart' as _i13;
+import 'package:lessons_tasks_assignment/domain/lesson.dart' as _i17;
+import 'package:lessons_tasks_assignment/domain/task.dart' as _i19;
 import 'package:lessons_tasks_assignment/features/lessons/cubit/lessons_cubit.dart'
-    as _i14;
+    as _i13;
 import 'package:lessons_tasks_assignment/features/lessons/cubit/lessons_state.dart'
-    as _i15;
+    as _i14;
 import 'package:lessons_tasks_assignment/repositories/lessons/lessons_repository.dart'
     as _i7;
 import 'package:lessons_tasks_assignment/repositories/lessons/models/raw_lesson.dart'
-    as _i12;
+    as _i18;
 import 'package:lessons_tasks_assignment/repositories/lessons/rest_client.dart'
     as _i8;
 import 'package:mockito/mockito.dart' as _i1;
-import 'package:mockito/src/dummies.dart' as _i16;
+import 'package:mockito/src/dummies.dart' as _i15;
 
 // ignore_for_file: type=lint
 // ignore_for_file: avoid_redundant_argument_values
@@ -92,9 +93,8 @@ class _FakeResponse_4<T1> extends _i1.SmartFake implements _i6.Response<T1> {
         );
 }
 
-class _FakeLessonsRepository_5 extends _i1.SmartFake
-    implements _i7.LessonsRepository {
-  _FakeLessonsRepository_5(
+class _FakeResponseBody_5 extends _i1.SmartFake implements _i3.ResponseBody {
+  _FakeResponseBody_5(
     Object parent,
     Invocation parentInvocation,
   ) : super(
@@ -103,8 +103,19 @@ class _FakeLessonsRepository_5 extends _i1.SmartFake
         );
 }
 
-class _FakeRestClient_6 extends _i1.SmartFake implements _i8.RestClient {
-  _FakeRestClient_6(
+class _FakeLessonsRepository_6 extends _i1.SmartFake
+    implements _i7.LessonsRepository {
+  _FakeLessonsRepository_6(
+    Object parent,
+    Invocation parentInvocation,
+  ) : super(
+          parent,
+          parentInvocation,
+        );
+}
+
+class _FakeRestClient_7 extends _i1.SmartFake implements _i8.RestClient {
+  _FakeRestClient_7(
     Object parent,
     Invocation parentInvocation,
   ) : super(
@@ -820,38 +831,57 @@ class MockDio extends _i1.Mock implements _i9.Dio {
       ) as _i10.Future<_i6.Response<T>>);
 }
 
-/// A class which mocks [RestClient].
+/// A class which mocks [HttpClientAdapter].
 ///
 /// See the documentation for Mockito's code generation for more information.
-class MockRestClient extends _i1.Mock implements _i8.RestClient {
-  MockRestClient() {
+class MockHttpClientAdapter extends _i1.Mock implements _i3.HttpClientAdapter {
+  MockHttpClientAdapter() {
     _i1.throwOnMissingStub(this);
   }
 
   @override
-  _i10.Future<List<_i12.RawLesson>> getLessons() => (super.noSuchMethod(
+  _i10.Future<_i3.ResponseBody> fetch(
+    _i2.RequestOptions? options,
+    _i10.Stream<_i12.Uint8List>? requestStream,
+    _i10.Future<void>? cancelFuture,
+  ) =>
+      (super.noSuchMethod(
         Invocation.method(
-          #getLessons,
-          [],
+          #fetch,
+          [
+            options,
+            requestStream,
+            cancelFuture,
+          ],
         ),
-        returnValue:
-            _i10.Future<List<_i12.RawLesson>>.value(<_i12.RawLesson>[]),
-      ) as _i10.Future<List<_i12.RawLesson>>);
+        returnValue: _i10.Future<_i3.ResponseBody>.value(_FakeResponseBody_5(
+          this,
+          Invocation.method(
+            #fetch,
+            [
+              options,
+              requestStream,
+              cancelFuture,
+            ],
+          ),
+        )),
+      ) as _i10.Future<_i3.ResponseBody>);
 
   @override
-  _i10.Future<List<_i13.Task>> getTasks() => (super.noSuchMethod(
+  void close({bool? force = false}) => super.noSuchMethod(
         Invocation.method(
-          #getTasks,
+          #close,
           [],
+          {#force: force},
         ),
-        returnValue: _i10.Future<List<_i13.Task>>.value(<_i13.Task>[]),
-      ) as _i10.Future<List<_i13.Task>>);
+        returnValueForMissingStub: null,
+      );
 }
 
 /// A class which mocks [LessonsCubit].
 ///
 /// See the documentation for Mockito's code generation for more information.
-class MockLessonsCubit extends _i1.Mock implements _i14.LessonsCubit {
+class MockLessonsCubit extends _i1.Mock implements _i13.LessonsCubit {
   MockLessonsCubit() {
     _i1.throwOnMissingStub(this);
   }
@@ -859,26 +889,26 @@ class MockLessonsCubit extends _i1.Mock implements _i14.LessonsCubit {
   @override
   _i7.LessonsRepository get lessonsRepository => (super.noSuchMethod(
         Invocation.getter(#lessonsRepository),
-        returnValue: _FakeLessonsRepository_5(
+        returnValue: _FakeLessonsRepository_6(
           this,
           Invocation.getter(#lessonsRepository),
         ),
       ) as _i7.LessonsRepository);
 
   @override
-  _i15.LessonsState get state => (super.noSuchMethod(
+  _i14.LessonsState get state => (super.noSuchMethod(
         Invocation.getter(#state),
-        returnValue: _i16.dummyValue<_i15.LessonsState>(
+        returnValue: _i15.dummyValue<_i14.LessonsState>(
           this,
           Invocation.getter(#state),
         ),
-      ) as _i15.LessonsState);
+      ) as _i14.LessonsState);
 
   @override
-  _i10.Stream<_i15.LessonsState> get stream => (super.noSuchMethod(
+  _i10.Stream<_i14.LessonsState> get stream => (super.noSuchMethod(
         Invocation.getter(#stream),
-        returnValue: _i10.Stream<_i15.LessonsState>.empty(),
-      ) as _i10.Stream<_i15.LessonsState>);
+        returnValue: _i10.Stream<_i14.LessonsState>.empty(),
+      ) as _i10.Stream<_i14.LessonsState>);
 
   @override
   bool get isClosed => (super.noSuchMethod(
@@ -897,7 +927,7 @@ class MockLessonsCubit extends _i1.Mock implements _i14.LessonsCubit {
       ) as _i10.Future<void>);
 
   @override
-  void emit(_i15.LessonsState? state) => super.noSuchMethod(
+  void emit(_i14.LessonsState? state) => super.noSuchMethod(
         Invocation.method(
           #emit,
           [state],
@@ -906,7 +936,7 @@ class MockLessonsCubit extends _i1.Mock implements _i14.LessonsCubit {
       );
 
   @override
-  void onChange(_i17.Change<_i15.LessonsState>? change) => super.noSuchMethod(
+  void onChange(_i16.Change<_i14.LessonsState>? change) => super.noSuchMethod(
         Invocation.method(
           #onChange,
           [change],
@@ -968,18 +998,46 @@ class MockLessonsRepository extends _i1.Mock implements _i7.LessonsRepository {
   @override
   _i8.RestClient get restClient => (super.noSuchMethod(
         Invocation.getter(#restClient),
-        returnValue: _FakeRestClient_6(
+        returnValue: _FakeRestClient_7(
           this,
           Invocation.getter(#restClient),
         ),
       ) as _i8.RestClient);
 
   @override
-  _i10.Future<List<_i18.Lesson>> getLessons() => (super.noSuchMethod(
+  _i10.Future<List<_i17.Lesson>> getLessons() => (super.noSuchMethod(
         Invocation.method(
           #getLessons,
           [],
         ),
-        returnValue: _i10.Future<List<_i18.Lesson>>.value(<_i18.Lesson>[]),
-      ) as _i10.Future<List<_i18.Lesson>>);
+        returnValue: _i10.Future<List<_i17.Lesson>>.value(<_i17.Lesson>[]),
+      ) as _i10.Future<List<_i17.Lesson>>);
+}
+
+/// A class which mocks [RestClient].
+///
+/// See the documentation for Mockito's code generation for more information.
+class MockRestClient extends _i1.Mock implements _i8.RestClient {
+  MockRestClient() {
+    _i1.throwOnMissingStub(this);
+  }
+
+  @override
+  _i10.Future<List<_i18.RawLesson>> getLessons() => (super.noSuchMethod(
+        Invocation.method(
+          #getLessons,
+          [],
+        ),
+        returnValue:
+            _i10.Future<List<_i18.RawLesson>>.value(<_i18.RawLesson>[]),
+      ) as _i10.Future<List<_i18.RawLesson>>);
+
+  @override
+  _i10.Future<List<_i19.Task>> getTasks() => (super.noSuchMethod(
+        Invocation.method(
+          #getTasks,
+          [],
+        ),
+        returnValue: _i10.Future<List<_i19.Task>>.value(<_i19.Task>[]),
+      ) as _i10.Future<List<_i19.Task>>);
 }

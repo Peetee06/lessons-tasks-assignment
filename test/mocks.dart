@@ -6,8 +6,9 @@ import 'package:mockito/annotations.dart';
 
 @GenerateMocks([
   Dio,
-  RestClient,
+  HttpClientAdapter,
   LessonsCubit,
   LessonsRepository,
+  RestClient,
 ])
 class GeneratedMocks {}
