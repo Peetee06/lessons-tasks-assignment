@@ -1,8 +1,8 @@
 {
     "@@locale": "en",
-    "lessonsPageTitle": "Lessons",
-    "@lessonsPageTitle": {
-        "description": "Title of the lessons page"
+    "lessonsViewTitle": "Lessons",
+    "@lessonsViewTitle": {
+        "description": "Title of the lessons view"
     },
     "lessonsPages": "{count, plural, =0{no pages} =1{one page} other{{count} pages}}",
     "@lessonsPages": {
