@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:lessons_tasks_assignment/common/extensions/localizations_extension.dart';
+import 'package:lessons_tasks_assignment/features/lesson/lesson_route.dart';
 import 'package:lessons_tasks_assignment/features/lessons/cubit/lessons_cubit.dart';
 import 'package:lessons_tasks_assignment/features/lessons/cubit/lessons_state.dart';
+import 'package:lessons_tasks_assignment/features/lessons/lessons_route.dart';
 import 'package:lessons_tasks_assignment/l10n/l10n.dart';
 
 class LessonsPage extends StatelessWidget {
@@ -52,6 +54,9 @@ class LessonsPage extends StatelessWidget {
                                 ),
                               ),
                             ),
+                            onTap: () => LessonRoute(
+                              id: lesson.id,
+                            ).go(context),
                           );
                         },
                       ),
