@@ -31,5 +31,13 @@
     "lessonsEmpty": "Keine Lektionen gefunden",
     "@lessonsEmpty": {
           "description": "Text, der angezeigt wird, wenn keine Lektionen gefunden werden"
+    },
+    "lessonPageForwardButtonLabel": "Weiter",
+    "@lessonPageForwardButtonLabel": {
+        "description": "Text des Buttons zum Weitergehen"
+    },
+    "lessonPageBackButtonLabel": "Zurück",
+    "@lessonPageBackButtonLabel": {
+        "description": "Text des Buttons zum Zurückgehen"
     }
 }

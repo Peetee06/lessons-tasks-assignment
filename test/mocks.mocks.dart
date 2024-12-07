@@ -6,7 +6,6 @@
 import 'dart:async' as _i10;
 import 'dart:typed_data' as _i12;
 
-import 'package:bloc/bloc.dart' as _i16;
 import 'package:dio/dio.dart' as _i9;
 import 'package:dio/src/adapter.dart' as _i3;
 import 'package:dio/src/cancel_token.dart' as _i11;
@@ -14,16 +13,21 @@ import 'package:dio/src/dio_mixin.dart' as _i5;
 import 'package:dio/src/options.dart' as _i2;
 import 'package:dio/src/response.dart' as _i6;
 import 'package:dio/src/transformer.dart' as _i4;
-import 'package:lessons_tasks_assignment/domain/lesson.dart' as _i17;
-import 'package:lessons_tasks_assignment/domain/task.dart' as _i19;
-import 'package:lessons_tasks_assignment/features/lessons/cubit/lessons_cubit.dart'
+import 'package:flutter_bloc/flutter_bloc.dart' as _i16;
+import 'package:lessons_tasks_assignment/domain/lesson.dart' as _i19;
+import 'package:lessons_tasks_assignment/domain/task.dart' as _i21;
+import 'package:lessons_tasks_assignment/features/lesson/cubit/lesson_cubit.dart'
     as _i13;
-import 'package:lessons_tasks_assignment/features/lessons/cubit/lessons_state.dart'
+import 'package:lessons_tasks_assignment/features/lesson/cubit/lesson_state.dart'
     as _i14;
+import 'package:lessons_tasks_assignment/features/lessons/cubit/lessons_cubit.dart'
+    as _i17;
+import 'package:lessons_tasks_assignment/features/lessons/cubit/lessons_state.dart'
+    as _i18;
 import 'package:lessons_tasks_assignment/repositories/lessons/lessons_repository.dart'
     as _i7;
 import 'package:lessons_tasks_assignment/repositories/lessons/models/raw_lesson.dart'
-    as _i18;
+    as _i20;
 import 'package:lessons_tasks_assignment/repositories/lessons/rest_client.dart'
     as _i8;
 import 'package:mockito/mockito.dart' as _i1;
@@ -878,10 +882,119 @@ class MockHttpClientAdapter extends _i1.Mock implements _i3.HttpClientAdapter {
       );
 }
 
+/// A class which mocks [LessonCubit].
+///
+/// See the documentation for Mockito's code generation for more information.
+class MockLessonCubit extends _i1.Mock implements _i13.LessonCubit {
+  MockLessonCubit() {
+    _i1.throwOnMissingStub(this);
+  }
+
+  @override
+  _i7.LessonsRepository get lessonsRepository => (super.noSuchMethod(
+        Invocation.getter(#lessonsRepository),
+        returnValue: _FakeLessonsRepository_6(
+          this,
+          Invocation.getter(#lessonsRepository),
+        ),
+      ) as _i7.LessonsRepository);
+
+  @override
+  _i14.LessonState get state => (super.noSuchMethod(
+        Invocation.getter(#state),
+        returnValue: _i15.dummyValue<_i14.LessonState>(
+          this,
+          Invocation.getter(#state),
+        ),
+      ) as _i14.LessonState);
+
+  @override
+  _i10.Stream<_i14.LessonState> get stream => (super.noSuchMethod(
+        Invocation.getter(#stream),
+        returnValue: _i10.Stream<_i14.LessonState>.empty(),
+      ) as _i10.Stream<_i14.LessonState>);
+
+  @override
+  bool get isClosed => (super.noSuchMethod(
+        Invocation.getter(#isClosed),
+        returnValue: false,
+      ) as bool);
+
+  @override
+  _i10.Future<void> fetchLesson(String? lessonId) => (super.noSuchMethod(
+        Invocation.method(
+          #fetchLesson,
+          [lessonId],
+        ),
+        returnValue: _i10.Future<void>.value(),
+        returnValueForMissingStub: _i10.Future<void>.value(),
+      ) as _i10.Future<void>);
+
+  @override
+  void emit(_i14.LessonState? state) => super.noSuchMethod(
+        Invocation.method(
+          #emit,
+          [state],
+        ),
+        returnValueForMissingStub: null,
+      );
+
+  @override
+  void onChange(_i16.Change<_i14.LessonState>? change) => super.noSuchMethod(
+        Invocation.method(
+          #onChange,
+          [change],
+        ),
+        returnValueForMissingStub: null,
+      );
+
+  @override
+  void addError(
+    Object? error, [
+    StackTrace? stackTrace,
+  ]) =>
+      super.noSuchMethod(
+        Invocation.method(
+          #addError,
+          [
+            error,
+            stackTrace,
+          ],
+        ),
+        returnValueForMissingStub: null,
+      );
+
+  @override
+  void onError(
+    Object? error,
+    StackTrace? stackTrace,
+  ) =>
+      super.noSuchMethod(
+        Invocation.method(
+          #onError,
+          [
+            error,
+            stackTrace,
+          ],
+        ),
+        returnValueForMissingStub: null,
+      );
+
+  @override
+  _i10.Future<void> close() => (super.noSuchMethod(
+        Invocation.method(
+          #close,
+          [],
+        ),
+        returnValue: _i10.Future<void>.value(),
+        returnValueForMissingStub: _i10.Future<void>.value(),
+      ) as _i10.Future<void>);
+}
+
 /// A class which mocks [LessonsCubit].
 ///
 /// See the documentation for Mockito's code generation for more information.
-class MockLessonsCubit extends _i1.Mock implements _i13.LessonsCubit {
+class MockLessonsCubit extends _i1.Mock implements _i17.LessonsCubit {
   MockLessonsCubit() {
     _i1.throwOnMissingStub(this);
   }
@@ -896,19 +1009,19 @@ class MockLessonsCubit extends _i1.Mock implements _i13.LessonsCubit {
       ) as _i7.LessonsRepository);
 
   @override
-  _i14.LessonsState get state => (super.noSuchMethod(
+  _i18.LessonsState get state => (super.noSuchMethod(
         Invocation.getter(#state),
-        returnValue: _i15.dummyValue<_i14.LessonsState>(
+        returnValue: _i15.dummyValue<_i18.LessonsState>(
           this,
           Invocation.getter(#state),
         ),
-      ) as _i14.LessonsState);
+      ) as _i18.LessonsState);
 
   @override
-  _i10.Stream<_i14.LessonsState> get stream => (super.noSuchMethod(
+  _i10.Stream<_i18.LessonsState> get stream => (super.noSuchMethod(
         Invocation.getter(#stream),
-        returnValue: _i10.Stream<_i14.LessonsState>.empty(),
-      ) as _i10.Stream<_i14.LessonsState>);
+        returnValue: _i10.Stream<_i18.LessonsState>.empty(),
+      ) as _i10.Stream<_i18.LessonsState>);
 
   @override
   bool get isClosed => (super.noSuchMethod(
@@ -927,7 +1040,7 @@ class MockLessonsCubit extends _i1.Mock implements _i13.LessonsCubit {
       ) as _i10.Future<void>);
 
   @override
-  void emit(_i14.LessonsState? state) => super.noSuchMethod(
+  void emit(_i18.LessonsState? state) => super.noSuchMethod(
         Invocation.method(
           #emit,
           [state],
@@ -936,7 +1049,7 @@ class MockLessonsCubit extends _i1.Mock implements _i13.LessonsCubit {
       );
 
   @override
-  void onChange(_i16.Change<_i14.LessonsState>? change) => super.noSuchMethod(
+  void onChange(_i16.Change<_i18.LessonsState>? change) => super.noSuchMethod(
         Invocation.method(
           #onChange,
           [change],
@@ -1005,13 +1118,13 @@ class MockLessonsRepository extends _i1.Mock implements _i7.LessonsRepository {
       ) as _i8.RestClient);
 
   @override
-  _i10.Future<List<_i17.Lesson>> getLessons() => (super.noSuchMethod(
+  _i10.Future<List<_i19.Lesson>> getLessons() => (super.noSuchMethod(
         Invocation.method(
           #getLessons,
           [],
         ),
-        returnValue: _i10.Future<List<_i17.Lesson>>.value(<_i17.Lesson>[]),
-      ) as _i10.Future<List<_i17.Lesson>>);
+        returnValue: _i10.Future<List<_i19.Lesson>>.value(<_i19.Lesson>[]),
+      ) as _i10.Future<List<_i19.Lesson>>);
 }
 
 /// A class which mocks [RestClient].
@@ -1023,21 +1136,21 @@ class MockRestClient extends _i1.Mock implements _i8.RestClient {
   }
 
   @override
-  _i10.Future<List<_i18.RawLesson>> getLessons() => (super.noSuchMethod(
+  _i10.Future<List<_i20.RawLesson>> getLessons() => (super.noSuchMethod(
         Invocation.method(
           #getLessons,
           [],
         ),
         returnValue:
-            _i10.Future<List<_i18.RawLesson>>.value(<_i18.RawLesson>[]),
-      ) as _i10.Future<List<_i18.RawLesson>>);
+            _i10.Future<List<_i20.RawLesson>>.value(<_i20.RawLesson>[]),
+      ) as _i10.Future<List<_i20.RawLesson>>);
 
   @override
-  _i10.Future<List<_i19.Task>> getTasks() => (super.noSuchMethod(
+  _i10.Future<List<_i21.Task>> getTasks() => (super.noSuchMethod(
         Invocation.method(
           #getTasks,
           [],
         ),
-        returnValue: _i10.Future<List<_i19.Task>>.value(<_i19.Task>[]),
-      ) as _i10.Future<List<_i19.Task>>);
+        returnValue: _i10.Future<List<_i21.Task>>.value(<_i21.Task>[]),
+      ) as _i10.Future<List<_i21.Task>>);
 }
