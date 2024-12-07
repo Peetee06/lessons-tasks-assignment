@@ -12,7 +12,15 @@ List<RouteBase> get $appRoutes => [
 
 RouteBase get $lessonsRoute => GoRouteData.$route(
       path: '/lessons',
+      name: 'lessons',
       factory: $LessonsRouteExtension._fromState,
+      routes: [
+        GoRouteData.$route(
+          path: ':id',
+          name: 'lesson',
+          factory: $LessonRouteExtension._fromState,
+        ),
+      ],
     );
 
 extension $LessonsRouteExtension on LessonsRoute {
@@ -20,6 +28,25 @@ extension $LessonsRouteExtension on LessonsRoute {
 
   String get location => GoRouteData.$location(
         '/lessons',
+      );
+
+  void go(BuildContext context) => context.go(location);
+
+  Future<T?> push<T>(BuildContext context) => context.push<T>(location);
+
+  void pushReplacement(BuildContext context) =>
+      context.pushReplacement(location);
+
+  void replace(BuildContext context) => context.replace(location);
+}
+
+extension $LessonRouteExtension on LessonRoute {
+  static LessonRoute _fromState(GoRouterState state) => LessonRoute(
+        id: state.pathParameters['id']!,
+      );
+
+  String get location => GoRouteData.$location(
+        '/lessons/${Uri.encodeComponent(id)}',
       );
 
   void go(BuildContext context) => context.go(location);

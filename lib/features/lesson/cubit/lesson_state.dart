@@ -5,8 +5,8 @@ part 'lesson_state.freezed.dart';
 
 @freezed
 class LessonState with _$LessonState {
-  const factory LessonState.initial() = _Initial;
-  const factory LessonState.loading() = _Loading;
-  const factory LessonState.loaded(Lesson lesson) = _Loaded;
-  const factory LessonState.error(String message) = _Error;
+  const factory LessonState.initial() = LessonInitial;
+  const factory LessonState.loading() = LessonLoading;
+  const factory LessonState.loaded(Lesson lesson) = LessonLoaded;
+  const factory LessonState.error(String message) = LessonError;
 }

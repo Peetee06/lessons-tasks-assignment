@@ -43,26 +43,26 @@ mixin _$LessonState {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_Initial value) initial,
-    required TResult Function(_Loading value) loading,
-    required TResult Function(_Loaded value) loaded,
-    required TResult Function(_Error value) error,
+    required TResult Function(LessonInitial value) initial,
+    required TResult Function(LessonLoading value) loading,
+    required TResult Function(LessonLoaded value) loaded,
+    required TResult Function(LessonError value) error,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Initial value)? initial,
-    TResult? Function(_Loading value)? loading,
-    TResult? Function(_Loaded value)? loaded,
-    TResult? Function(_Error value)? error,
+    TResult? Function(LessonInitial value)? initial,
+    TResult? Function(LessonLoading value)? loading,
+    TResult? Function(LessonLoaded value)? loaded,
+    TResult? Function(LessonError value)? error,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(_Loading value)? loading,
-    TResult Function(_Loaded value)? loaded,
-    TResult Function(_Error value)? error,
+    TResult Function(LessonInitial value)? initial,
+    TResult Function(LessonLoading value)? loading,
+    TResult Function(LessonLoaded value)? loaded,
+    TResult Function(LessonError value)? error,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -90,18 +90,18 @@ class _$LessonStateCopyWithImpl<$Res, $Val extends LessonState>
 }
 
 /// @nodoc
-abstract class _$$InitialImplCopyWith<$Res> {
-  factory _$$InitialImplCopyWith(
-          _$InitialImpl value, $Res Function(_$InitialImpl) then) =
-      __$$InitialImplCopyWithImpl<$Res>;
+abstract class _$$LessonInitialImplCopyWith<$Res> {
+  factory _$$LessonInitialImplCopyWith(
+          _$LessonInitialImpl value, $Res Function(_$LessonInitialImpl) then) =
+      __$$LessonInitialImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$InitialImplCopyWithImpl<$Res>
-    extends _$LessonStateCopyWithImpl<$Res, _$InitialImpl>
-    implements _$$InitialImplCopyWith<$Res> {
-  __$$InitialImplCopyWithImpl(
-      _$InitialImpl _value, $Res Function(_$InitialImpl) _then)
+class __$$LessonInitialImplCopyWithImpl<$Res>
+    extends _$LessonStateCopyWithImpl<$Res, _$LessonInitialImpl>
+    implements _$$LessonInitialImplCopyWith<$Res> {
+  __$$LessonInitialImplCopyWithImpl(
+      _$LessonInitialImpl _value, $Res Function(_$LessonInitialImpl) _then)
       : super(_value, _then);
 
   /// Create a copy of LessonState
@@ -110,8 +110,8 @@ class __$$InitialImplCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$InitialImpl implements _Initial {
-  const _$InitialImpl();
+class _$LessonInitialImpl implements LessonInitial {
+  const _$LessonInitialImpl();
 
   @override
   String toString() {
@@ -121,7 +121,7 @@ class _$InitialImpl implements _Initial {
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$InitialImpl);
+        (other.runtimeType == runtimeType && other is _$LessonInitialImpl);
   }
 
   @override
@@ -167,10 +167,10 @@ class _$InitialImpl implements _Initial {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_Initial value) initial,
-    required TResult Function(_Loading value) loading,
-    required TResult Function(_Loaded value) loaded,
-    required TResult Function(_Error value) error,
+    required TResult Function(LessonInitial value) initial,
+    required TResult Function(LessonLoading value) loading,
+    required TResult Function(LessonLoaded value) loaded,
+    required TResult Function(LessonError value) error,
   }) {
     return initial(this);
   }
@@ -178,10 +178,10 @@ class _$InitialImpl implements _Initial {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Initial value)? initial,
-    TResult? Function(_Loading value)? loading,
-    TResult? Function(_Loaded value)? loaded,
-    TResult? Function(_Error value)? error,
+    TResult? Function(LessonInitial value)? initial,
+    TResult? Function(LessonLoading value)? loading,
+    TResult? Function(LessonLoaded value)? loaded,
+    TResult? Function(LessonError value)? error,
   }) {
     return initial?.call(this);
   }
@@ -189,10 +189,10 @@ class _$InitialImpl implements _Initial {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(_Loading value)? loading,
-    TResult Function(_Loaded value)? loaded,
-    TResult Function(_Error value)? error,
+    TResult Function(LessonInitial value)? initial,
+    TResult Function(LessonLoading value)? loading,
+    TResult Function(LessonLoaded value)? loaded,
+    TResult Function(LessonError value)? error,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -202,23 +202,23 @@ class _$InitialImpl implements _Initial {
   }
 }
 
-abstract class _Initial implements LessonState {
-  const factory _Initial() = _$InitialImpl;
+abstract class LessonInitial implements LessonState {
+  const factory LessonInitial() = _$LessonInitialImpl;
 }
 
 /// @nodoc
-abstract class _$$LoadingImplCopyWith<$Res> {
-  factory _$$LoadingImplCopyWith(
-          _$LoadingImpl value, $Res Function(_$LoadingImpl) then) =
-      __$$LoadingImplCopyWithImpl<$Res>;
+abstract class _$$LessonLoadingImplCopyWith<$Res> {
+  factory _$$LessonLoadingImplCopyWith(
+          _$LessonLoadingImpl value, $Res Function(_$LessonLoadingImpl) then) =
+      __$$LessonLoadingImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$LoadingImplCopyWithImpl<$Res>
-    extends _$LessonStateCopyWithImpl<$Res, _$LoadingImpl>
-    implements _$$LoadingImplCopyWith<$Res> {
-  __$$LoadingImplCopyWithImpl(
-      _$LoadingImpl _value, $Res Function(_$LoadingImpl) _then)
+class __$$LessonLoadingImplCopyWithImpl<$Res>
+    extends _$LessonStateCopyWithImpl<$Res, _$LessonLoadingImpl>
+    implements _$$LessonLoadingImplCopyWith<$Res> {
+  __$$LessonLoadingImplCopyWithImpl(
+      _$LessonLoadingImpl _value, $Res Function(_$LessonLoadingImpl) _then)
       : super(_value, _then);
 
   /// Create a copy of LessonState
@@ -227,8 +227,8 @@ class __$$LoadingImplCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$LoadingImpl implements _Loading {
-  const _$LoadingImpl();
+class _$LessonLoadingImpl implements LessonLoading {
+  const _$LessonLoadingImpl();
 
   @override
   String toString() {
@@ -238,7 +238,7 @@ class _$LoadingImpl implements _Loading {
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$LoadingImpl);
+        (other.runtimeType == runtimeType && other is _$LessonLoadingImpl);
   }
 
   @override
@@ -284,10 +284,10 @@ class _$LoadingImpl implements _Loading {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_Initial value) initial,
-    required TResult Function(_Loading value) loading,
-    required TResult Function(_Loaded value) loaded,
-    required TResult Function(_Error value) error,
+    required TResult Function(LessonInitial value) initial,
+    required TResult Function(LessonLoading value) loading,
+    required TResult Function(LessonLoaded value) loaded,
+    required TResult Function(LessonError value) error,
   }) {
     return loading(this);
   }
@@ -295,10 +295,10 @@ class _$LoadingImpl implements _Loading {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Initial value)? initial,
-    TResult? Function(_Loading value)? loading,
-    TResult? Function(_Loaded value)? loaded,
-    TResult? Function(_Error value)? error,
+    TResult? Function(LessonInitial value)? initial,
+    TResult? Function(LessonLoading value)? loading,
+    TResult? Function(LessonLoaded value)? loaded,
+    TResult? Function(LessonError value)? error,
   }) {
     return loading?.call(this);
   }
@@ -306,10 +306,10 @@ class _$LoadingImpl implements _Loading {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(_Loading value)? loading,
-    TResult Function(_Loaded value)? loaded,
-    TResult Function(_Error value)? error,
+    TResult Function(LessonInitial value)? initial,
+    TResult Function(LessonLoading value)? loading,
+    TResult Function(LessonLoaded value)? loaded,
+    TResult Function(LessonError value)? error,
     required TResult orElse(),
   }) {
     if (loading != null) {
@@ -319,15 +319,15 @@ class _$LoadingImpl implements _Loading {
   }
 }
 
-abstract class _Loading implements LessonState {
-  const factory _Loading() = _$LoadingImpl;
+abstract class LessonLoading implements LessonState {
+  const factory LessonLoading() = _$LessonLoadingImpl;
 }
 
 /// @nodoc
-abstract class _$$LoadedImplCopyWith<$Res> {
-  factory _$$LoadedImplCopyWith(
-          _$LoadedImpl value, $Res Function(_$LoadedImpl) then) =
-      __$$LoadedImplCopyWithImpl<$Res>;
+abstract class _$$LessonLoadedImplCopyWith<$Res> {
+  factory _$$LessonLoadedImplCopyWith(
+          _$LessonLoadedImpl value, $Res Function(_$LessonLoadedImpl) then) =
+      __$$LessonLoadedImplCopyWithImpl<$Res>;
   @useResult
   $Res call({Lesson lesson});
 
@@ -335,11 +335,11 @@ abstract class _$$LoadedImplCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$LoadedImplCopyWithImpl<$Res>
-    extends _$LessonStateCopyWithImpl<$Res, _$LoadedImpl>
-    implements _$$LoadedImplCopyWith<$Res> {
-  __$$LoadedImplCopyWithImpl(
-      _$LoadedImpl _value, $Res Function(_$LoadedImpl) _then)
+class __$$LessonLoadedImplCopyWithImpl<$Res>
+    extends _$LessonStateCopyWithImpl<$Res, _$LessonLoadedImpl>
+    implements _$$LessonLoadedImplCopyWith<$Res> {
+  __$$LessonLoadedImplCopyWithImpl(
+      _$LessonLoadedImpl _value, $Res Function(_$LessonLoadedImpl) _then)
       : super(_value, _then);
 
   /// Create a copy of LessonState
@@ -349,7 +349,7 @@ class __$$LoadedImplCopyWithImpl<$Res>
   $Res call({
     Object? lesson = null,
   }) {
-    return _then(_$LoadedImpl(
+    return _then(_$LessonLoadedImpl(
       null == lesson
           ? _value.lesson
           : lesson // ignore: cast_nullable_to_non_nullable
@@ -370,8 +370,8 @@ class __$$LoadedImplCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$LoadedImpl implements _Loaded {
-  const _$LoadedImpl(this.lesson);
+class _$LessonLoadedImpl implements LessonLoaded {
+  const _$LessonLoadedImpl(this.lesson);
 
   @override
   final Lesson lesson;
@@ -385,7 +385,7 @@ class _$LoadedImpl implements _Loaded {
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$LoadedImpl &&
+            other is _$LessonLoadedImpl &&
             (identical(other.lesson, lesson) || other.lesson == lesson));
   }
 
@@ -397,8 +397,8 @@ class _$LoadedImpl implements _Loaded {
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
-  _$$LoadedImplCopyWith<_$LoadedImpl> get copyWith =>
-      __$$LoadedImplCopyWithImpl<_$LoadedImpl>(this, _$identity);
+  _$$LessonLoadedImplCopyWith<_$LessonLoadedImpl> get copyWith =>
+      __$$LessonLoadedImplCopyWithImpl<_$LessonLoadedImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -440,10 +440,10 @@ class _$LoadedImpl implements _Loaded {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_Initial value) initial,
-    required TResult Function(_Loading value) loading,
-    required TResult Function(_Loaded value) loaded,
-    required TResult Function(_Error value) error,
+    required TResult Function(LessonInitial value) initial,
+    required TResult Function(LessonLoading value) loading,
+    required TResult Function(LessonLoaded value) loaded,
+    required TResult Function(LessonError value) error,
   }) {
     return loaded(this);
   }
@@ -451,10 +451,10 @@ class _$LoadedImpl implements _Loaded {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Initial value)? initial,
-    TResult? Function(_Loading value)? loading,
-    TResult? Function(_Loaded value)? loaded,
-    TResult? Function(_Error value)? error,
+    TResult? Function(LessonInitial value)? initial,
+    TResult? Function(LessonLoading value)? loading,
+    TResult? Function(LessonLoaded value)? loaded,
+    TResult? Function(LessonError value)? error,
   }) {
     return loaded?.call(this);
   }
@@ -462,10 +462,10 @@ class _$LoadedImpl implements _Loaded {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(_Loading value)? loading,
-    TResult Function(_Loaded value)? loaded,
-    TResult Function(_Error value)? error,
+    TResult Function(LessonInitial value)? initial,
+    TResult Function(LessonLoading value)? loading,
+    TResult Function(LessonLoaded value)? loaded,
+    TResult Function(LessonError value)? error,
     required TResult orElse(),
   }) {
     if (loaded != null) {
@@ -475,33 +475,33 @@ class _$LoadedImpl implements _Loaded {
   }
 }
 
-abstract class _Loaded implements LessonState {
-  const factory _Loaded(final Lesson lesson) = _$LoadedImpl;
+abstract class LessonLoaded implements LessonState {
+  const factory LessonLoaded(final Lesson lesson) = _$LessonLoadedImpl;
 
   Lesson get lesson;
 
   /// Create a copy of LessonState
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$LoadedImplCopyWith<_$LoadedImpl> get copyWith =>
+  _$$LessonLoadedImplCopyWith<_$LessonLoadedImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$ErrorImplCopyWith<$Res> {
-  factory _$$ErrorImplCopyWith(
-          _$ErrorImpl value, $Res Function(_$ErrorImpl) then) =
-      __$$ErrorImplCopyWithImpl<$Res>;
+abstract class _$$LessonErrorImplCopyWith<$Res> {
+  factory _$$LessonErrorImplCopyWith(
+          _$LessonErrorImpl value, $Res Function(_$LessonErrorImpl) then) =
+      __$$LessonErrorImplCopyWithImpl<$Res>;
   @useResult
   $Res call({String message});
 }
 
 /// @nodoc
-class __$$ErrorImplCopyWithImpl<$Res>
-    extends _$LessonStateCopyWithImpl<$Res, _$ErrorImpl>
-    implements _$$ErrorImplCopyWith<$Res> {
-  __$$ErrorImplCopyWithImpl(
-      _$ErrorImpl _value, $Res Function(_$ErrorImpl) _then)
+class __$$LessonErrorImplCopyWithImpl<$Res>
+    extends _$LessonStateCopyWithImpl<$Res, _$LessonErrorImpl>
+    implements _$$LessonErrorImplCopyWith<$Res> {
+  __$$LessonErrorImplCopyWithImpl(
+      _$LessonErrorImpl _value, $Res Function(_$LessonErrorImpl) _then)
       : super(_value, _then);
 
   /// Create a copy of LessonState
@@ -511,7 +511,7 @@ class __$$ErrorImplCopyWithImpl<$Res>
   $Res call({
     Object? message = null,
   }) {
-    return _then(_$ErrorImpl(
+    return _then(_$LessonErrorImpl(
       null == message
           ? _value.message
           : message // ignore: cast_nullable_to_non_nullable
@@ -522,8 +522,8 @@ class __$$ErrorImplCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$ErrorImpl implements _Error {
-  const _$ErrorImpl(this.message);
+class _$LessonErrorImpl implements LessonError {
+  const _$LessonErrorImpl(this.message);
 
   @override
   final String message;
@@ -537,7 +537,7 @@ class _$ErrorImpl implements _Error {
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$ErrorImpl &&
+            other is _$LessonErrorImpl &&
             (identical(other.message, message) || other.message == message));
   }
 
@@ -549,8 +549,8 @@ class _$ErrorImpl implements _Error {
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
-  _$$ErrorImplCopyWith<_$ErrorImpl> get copyWith =>
-      __$$ErrorImplCopyWithImpl<_$ErrorImpl>(this, _$identity);
+  _$$LessonErrorImplCopyWith<_$LessonErrorImpl> get copyWith =>
+      __$$LessonErrorImplCopyWithImpl<_$LessonErrorImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -592,10 +592,10 @@ class _$ErrorImpl implements _Error {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_Initial value) initial,
-    required TResult Function(_Loading value) loading,
-    required TResult Function(_Loaded value) loaded,
-    required TResult Function(_Error value) error,
+    required TResult Function(LessonInitial value) initial,
+    required TResult Function(LessonLoading value) loading,
+    required TResult Function(LessonLoaded value) loaded,
+    required TResult Function(LessonError value) error,
   }) {
     return error(this);
   }
@@ -603,10 +603,10 @@ class _$ErrorImpl implements _Error {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Initial value)? initial,
-    TResult? Function(_Loading value)? loading,
-    TResult? Function(_Loaded value)? loaded,
-    TResult? Function(_Error value)? error,
+    TResult? Function(LessonInitial value)? initial,
+    TResult? Function(LessonLoading value)? loading,
+    TResult? Function(LessonLoaded value)? loaded,
+    TResult? Function(LessonError value)? error,
   }) {
     return error?.call(this);
   }
@@ -614,10 +614,10 @@ class _$ErrorImpl implements _Error {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(_Loading value)? loading,
-    TResult Function(_Loaded value)? loaded,
-    TResult Function(_Error value)? error,
+    TResult Function(LessonInitial value)? initial,
+    TResult Function(LessonLoading value)? loading,
+    TResult Function(LessonLoaded value)? loaded,
+    TResult Function(LessonError value)? error,
     required TResult orElse(),
   }) {
     if (error != null) {
@@ -627,14 +627,14 @@ class _$ErrorImpl implements _Error {
   }
 }
 
-abstract class _Error implements LessonState {
-  const factory _Error(final String message) = _$ErrorImpl;
+abstract class LessonError implements LessonState {
+  const factory LessonError(final String message) = _$LessonErrorImpl;
 
   String get message;
 
   /// Create a copy of LessonState
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$ErrorImplCopyWith<_$ErrorImpl> get copyWith =>
+  _$$LessonErrorImplCopyWith<_$LessonErrorImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
