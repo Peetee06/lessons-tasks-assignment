@@ -7,14 +7,14 @@ import 'package:lessons_tasks_assignment/features/lessons/cubit/lessons_state.da
 import 'package:lessons_tasks_assignment/features/lessons/lessons_route.dart';
 import 'package:lessons_tasks_assignment/l10n/l10n.dart';
 
-class LessonsPage extends StatelessWidget {
-  const LessonsPage({super.key});
+class LessonsView extends StatelessWidget {
+  const LessonsView({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(context.l10n.lessonsPageTitle),
+        title: Text(context.l10n.lessonsViewTitle),
       ),
       body: BlocBuilder<LessonsCubit, LessonsState>(
         builder: (context, state) {
