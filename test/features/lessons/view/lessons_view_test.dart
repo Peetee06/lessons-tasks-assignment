@@ -1,10 +1,10 @@
-import 'package:flutter/material.dart';
+import 'package:flutter/material.dart' hide Page;
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:lessons_tasks_assignment/domain/answer.dart';
 import 'package:lessons_tasks_assignment/domain/content_component.dart';
 import 'package:lessons_tasks_assignment/domain/lesson.dart';
-import 'package:lessons_tasks_assignment/domain/page.dart' as page;
+import 'package:lessons_tasks_assignment/domain/page.dart';
 import 'package:lessons_tasks_assignment/domain/task.dart';
 import 'package:lessons_tasks_assignment/features/lessons/cubit/lessons_cubit.dart';
 import 'package:lessons_tasks_assignment/features/lessons/cubit/lessons_state.dart';
@@ -62,7 +62,7 @@ void main() {
             'de': 'Test Lektion',
           },
           pages: [
-            page.Page(
+            Page(
               content: [
                 const ContentComponent.text(
                   text: {

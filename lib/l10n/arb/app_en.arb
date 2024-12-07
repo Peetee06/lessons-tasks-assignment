@@ -31,5 +31,13 @@
     "lessonsEmpty": "No lessons found",
     "@lessonsEmpty": {
         "description": "Text shown when there are no lessons"
+    },
+    "lessonPageForwardButtonLabel": "Forward",
+    "@lessonPageForwardButtonLabel": {
+        "description": "Text of the button to go forward"
+    },
+    "lessonPageBackButtonLabel": "Back",
+    "@lessonPageBackButtonLabel": {
+        "description": "Text of the button to go back"
     }
 }
