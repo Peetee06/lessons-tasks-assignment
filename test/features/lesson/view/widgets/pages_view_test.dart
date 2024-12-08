@@ -1,5 +1,4 @@
-import 'dart:ui';
-
+import 'package:flutter/material.dart' hide Page;
 import 'package:flutter_test/flutter_test.dart';
 import 'package:lessons_tasks_assignment/domain/content_component.dart';
 import 'package:lessons_tasks_assignment/domain/page.dart';
@@ -14,11 +13,15 @@ void main() {
     Future<void> pumpTestWidget(
       WidgetTester tester, {
       required List<Page> pages,
+      bool hasTasks = false,
       Locale? locale,
     }) {
       return tester.pumpApp(
         locale: locale,
-        widget: LessonPagesView(pages: pages),
+        widget: LessonPagesView(
+          pages: pages,
+          hasTasks: hasTasks,
+        ),
       );
     }
 
@@ -89,6 +92,24 @@ void main() {
         find.byType(SmoothIndicator),
       );
       expect(updatedSmoothIndicator.offset, 1);
+    });
+
+    testWidgets('renders task icon when hasTasks is true',
+        (WidgetTester tester) async {
+      await pumpTestWidget(tester, pages: [], hasTasks: true);
+      expect(find.byIcon(Icons.task_outlined), findsOneWidget);
+    });
+
+    testWidgets('hides task icon by default', (WidgetTester tester) async {
+      await pumpTestWidget(tester, pages: []);
+      expect(find.byIcon(Icons.task_outlined), findsNothing);
+    });
+
+    testWidgets('hides task icon when hasTasks is false',
+        (WidgetTester tester) async {
+      // ignore: avoid_redundant_argument_values
+      await pumpTestWidget(tester, pages: [], hasTasks: false);
+      expect(find.byIcon(Icons.task_outlined), findsNothing);
     });
 
     testWidgets('back button is disabled on first page',
