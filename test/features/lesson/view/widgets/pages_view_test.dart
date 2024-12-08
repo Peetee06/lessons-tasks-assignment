@@ -1,12 +1,18 @@
 import 'package:flutter/material.dart' hide Page;
 import 'package:flutter_test/flutter_test.dart';
+import 'package:go_router/go_router.dart';
 import 'package:lessons_tasks_assignment/domain/content_component.dart';
 import 'package:lessons_tasks_assignment/domain/page.dart';
 import 'package:lessons_tasks_assignment/features/lesson/view/widgets/page_view.dart';
 import 'package:lessons_tasks_assignment/features/lesson/view/widgets/pages_view.dart';
+import 'package:lessons_tasks_assignment/features/lessons/lessons_route.dart';
+import 'package:lessons_tasks_assignment/features/tasks/tasks_route.dart';
+import 'package:lessons_tasks_assignment/l10n/l10n.dart';
+import 'package:mockito/mockito.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
 import '../../../../helpers/helpers.dart';
+import '../../../../mocks.mocks.dart';
 
 void main() {
   group('LessonPagesView', () {
@@ -19,6 +25,7 @@ void main() {
       return tester.pumpApp(
         locale: locale,
         widget: LessonPagesView(
+          id: 'id',
           pages: pages,
           hasTasks: hasTasks,
         ),
@@ -180,6 +187,71 @@ void main() {
       await tester.pumpAndSettle();
       expect(find.byKey(LessonPagesView.backButtonKey), findsNothing);
       expect(find.byKey(LessonPagesView.forwardButtonKey), findsOneWidget);
+    });
+
+    group('navigates to tasks', () {
+      late MockGoRouter router;
+      setUp(() {
+        router = MockGoRouter();
+        when(router.go(any)).thenAnswer((_) {});
+      });
+
+      Future<void> pumpWithGoRouter(
+        WidgetTester tester, {
+        required List<Page> pages,
+      }) {
+        return tester.pumpWidget(
+          MaterialApp(
+            localizationsDelegates: AppLocalizations.localizationsDelegates,
+            supportedLocales: AppLocalizations.supportedLocales,
+            home: InheritedGoRouter(
+              goRouter: router,
+              child: LessonPagesView(
+                id: 'id',
+                pages: pages,
+                hasTasks: true,
+              ),
+            ),
+          ),
+        );
+      }
+
+      testWidgets(
+          'when forward button is pressed on last page when hasTasks is true',
+          (WidgetTester tester) async {
+        await pumpWithGoRouter(
+          tester,
+          pages: [
+            const Page(content: []),
+            const Page(content: []),
+          ],
+        );
+
+        await tester.tap(find.byKey(LessonPagesView.forwardButtonKey));
+        await tester.pumpAndSettle();
+
+        expect(find.byKey(LessonPagesView.forwardButtonKey), findsOneWidget);
+        expect(find.byKey(LessonPagesView.backButtonKey), findsOneWidget);
+
+        await tester.tap(find.byKey(LessonPagesView.forwardButtonKey));
+        verify(router.go(const TasksRoute(id: 'id').location)).called(1);
+      });
+
+      testWidgets(
+          'forward button is pressed on first page when hasTasks is true',
+          (WidgetTester tester) async {
+        await pumpWithGoRouter(
+          tester,
+          pages: [
+            const Page(content: []),
+          ],
+        );
+
+        await tester.tap(find.byKey(LessonPagesView.forwardButtonKey));
+        await tester.pumpAndSettle();
+
+        verify(router.go(const TasksRoute(id: 'id').location)).called(1);
+      });
     });
   });
 }

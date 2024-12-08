@@ -32,6 +32,7 @@ class LessonView extends StatelessWidget {
                 child: Text(message),
               ),
             LessonLoaded(:final lesson) => LessonPagesView(
+                id: lesson.id,
                 pages: lesson.pages,
                 hasTasks: lesson.taskIds.isNotEmpty,
               ),

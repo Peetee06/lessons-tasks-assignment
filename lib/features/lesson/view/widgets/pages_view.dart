@@ -1,16 +1,20 @@
 import 'package:flutter/material.dart' hide Page;
 import 'package:lessons_tasks_assignment/domain/page.dart';
 import 'package:lessons_tasks_assignment/features/lesson/view/widgets/page_view.dart';
+import 'package:lessons_tasks_assignment/features/lessons/lessons_route.dart';
+import 'package:lessons_tasks_assignment/features/tasks/tasks_route.dart';
 import 'package:lessons_tasks_assignment/l10n/l10n.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
 class LessonPagesView extends StatefulWidget {
   const LessonPagesView({
+    required this.id,
     required this.pages,
     required this.hasTasks,
     super.key,
   });
 
+  final String id;
   final List<Page> pages;
   final bool hasTasks;
 
@@ -30,7 +34,7 @@ class _LessonPagesViewState extends State<LessonPagesView> {
   @override
   void initState() {
     super.initState();
-    _canNavigateForward = widget.pages.length > 1;
+    _canNavigateForward = widget.pages.isNotEmpty || widget.hasTasks;
     _pageController = PageController()..addListener(_updateNavigationButtons);
   }
 
@@ -42,8 +46,11 @@ class _LessonPagesViewState extends State<LessonPagesView> {
 
   void _updateNavigationButtons() {
     setState(() {
-      _canNavigateBack = _pageController.page != 0;
-      _canNavigateForward = _pageController.page != widget.pages.length - 1;
+      final isNotFirstPage = _pageController.page != 0;
+      final isNotLastPage = _pageController.page != widget.pages.length - 1;
+
+      _canNavigateBack = isNotFirstPage;
+      _canNavigateForward = isNotLastPage || widget.hasTasks;
     });
   }
 
@@ -55,10 +62,14 @@ class _LessonPagesViewState extends State<LessonPagesView> {
   }
 
   void _navigateForward() {
-    _pageController.nextPage(
-      duration: const Duration(milliseconds: 200),
-      curve: Curves.easeInOut,
-    );
+    if (_pageController.page == widget.pages.length - 1) {
+      TasksRoute(id: widget.id).go(context);
+    } else {
+      _pageController.nextPage(
+        duration: const Duration(milliseconds: 200),
+        curve: Curves.easeInOut,
+      );
+    }
   }
 
   @override
