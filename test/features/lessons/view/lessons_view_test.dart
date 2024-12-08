@@ -1,11 +1,9 @@
 import 'package:flutter/material.dart' hide Page;
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:lessons_tasks_assignment/domain/answer.dart';
 import 'package:lessons_tasks_assignment/domain/content_component.dart';
 import 'package:lessons_tasks_assignment/domain/lesson.dart';
 import 'package:lessons_tasks_assignment/domain/page.dart';
-import 'package:lessons_tasks_assignment/domain/task.dart';
 import 'package:lessons_tasks_assignment/features/lessons/cubit/lessons_cubit.dart';
 import 'package:lessons_tasks_assignment/features/lessons/cubit/lessons_state.dart';
 import 'package:lessons_tasks_assignment/features/lessons/view/lessons_view.dart';
@@ -76,31 +74,13 @@ void main() {
               ],
             ),
           ],
-          tasks: [
-            const Task(
-              id: '1',
-              question: {
-                'en': 'Test Task',
-                'de': 'Test Aufgabe',
-              },
-              options: [
-                Answer(
-                  id: 'a1',
-                  text: {
-                    'en': 'Option 1',
-                    'de': 'Option 1',
-                  },
-                ),
-              ],
-              correctAnswerIds: ['a1'],
-            ),
-          ],
+          taskIds: ['1'],
         ),
         const Lesson(
           id: '2',
           title: {'en': 'Test Lesson 2', 'de': 'Test Lektion 2'},
           pages: [],
-          tasks: [],
+          taskIds: [],
         ),
       ];
       when(cubit.state).thenReturn(LessonsState.loaded(lessons));
@@ -136,7 +116,7 @@ void main() {
           id: '1',
           title: {'en': 'Test Lesson', 'de': 'Test Lektion'},
           pages: [],
-          tasks: [],
+          taskIds: [],
         ),
       ]),
     );

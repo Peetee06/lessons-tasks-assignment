@@ -14,12 +14,19 @@ T _$identity<T>(T value) => value;
 final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
+Lesson _$LessonFromJson(Map<String, dynamic> json) {
+  return _Lesson.fromJson(json);
+}
+
 /// @nodoc
 mixin _$Lesson {
   String get id => throw _privateConstructorUsedError;
   Map<String, String> get title => throw _privateConstructorUsedError;
   List<Page> get pages => throw _privateConstructorUsedError;
-  List<Task> get tasks => throw _privateConstructorUsedError;
+  List<String> get taskIds => throw _privateConstructorUsedError;
+
+  /// Serializes this Lesson to a JSON map.
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
 
   /// Create a copy of Lesson
   /// with the given fields replaced by the non-null parameter values.
@@ -36,7 +43,7 @@ abstract class $LessonCopyWith<$Res> {
       {String id,
       Map<String, String> title,
       List<Page> pages,
-      List<Task> tasks});
+      List<String> taskIds});
 }
 
 /// @nodoc
@@ -57,7 +64,7 @@ class _$LessonCopyWithImpl<$Res, $Val extends Lesson>
     Object? id = null,
     Object? title = null,
     Object? pages = null,
-    Object? tasks = null,
+    Object? taskIds = null,
   }) {
     return _then(_value.copyWith(
       id: null == id
@@ -72,10 +79,10 @@ class _$LessonCopyWithImpl<$Res, $Val extends Lesson>
           ? _value.pages
           : pages // ignore: cast_nullable_to_non_nullable
               as List<Page>,
-      tasks: null == tasks
-          ? _value.tasks
-          : tasks // ignore: cast_nullable_to_non_nullable
-              as List<Task>,
+      taskIds: null == taskIds
+          ? _value.taskIds
+          : taskIds // ignore: cast_nullable_to_non_nullable
+              as List<String>,
     ) as $Val);
   }
 }
@@ -91,7 +98,7 @@ abstract class _$$LessonImplCopyWith<$Res> implements $LessonCopyWith<$Res> {
       {String id,
       Map<String, String> title,
       List<Page> pages,
-      List<Task> tasks});
+      List<String> taskIds});
 }
 
 /// @nodoc
@@ -110,7 +117,7 @@ class __$$LessonImplCopyWithImpl<$Res>
     Object? id = null,
     Object? title = null,
     Object? pages = null,
-    Object? tasks = null,
+    Object? taskIds = null,
   }) {
     return _then(_$LessonImpl(
       id: null == id
@@ -125,25 +132,28 @@ class __$$LessonImplCopyWithImpl<$Res>
           ? _value._pages
           : pages // ignore: cast_nullable_to_non_nullable
               as List<Page>,
-      tasks: null == tasks
-          ? _value._tasks
-          : tasks // ignore: cast_nullable_to_non_nullable
-              as List<Task>,
+      taskIds: null == taskIds
+          ? _value._taskIds
+          : taskIds // ignore: cast_nullable_to_non_nullable
+              as List<String>,
     ));
   }
 }
 
 /// @nodoc
-
+@JsonSerializable()
 class _$LessonImpl implements _Lesson {
   const _$LessonImpl(
       {required this.id,
       required final Map<String, String> title,
       required final List<Page> pages,
-      required final List<Task> tasks})
+      required final List<String> taskIds})
       : _title = title,
         _pages = pages,
-        _tasks = tasks;
+        _taskIds = taskIds;
+
+  factory _$LessonImpl.fromJson(Map<String, dynamic> json) =>
+      _$$LessonImplFromJson(json);
 
   @override
   final String id;
@@ -163,17 +173,17 @@ class _$LessonImpl implements _Lesson {
     return EqualUnmodifiableListView(_pages);
   }
 
-  final List<Task> _tasks;
+  final List<String> _taskIds;
   @override
-  List<Task> get tasks {
-    if (_tasks is EqualUnmodifiableListView) return _tasks;
+  List<String> get taskIds {
+    if (_taskIds is EqualUnmodifiableListView) return _taskIds;
     // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(_tasks);
+    return EqualUnmodifiableListView(_taskIds);
   }
 
   @override
   String toString() {
-    return 'Lesson(id: $id, title: $title, pages: $pages, tasks: $tasks)';
+    return 'Lesson(id: $id, title: $title, pages: $pages, taskIds: $taskIds)';
   }
 
   @override
@@ -184,16 +194,17 @@ class _$LessonImpl implements _Lesson {
             (identical(other.id, id) || other.id == id) &&
             const DeepCollectionEquality().equals(other._title, _title) &&
             const DeepCollectionEquality().equals(other._pages, _pages) &&
-            const DeepCollectionEquality().equals(other._tasks, _tasks));
+            const DeepCollectionEquality().equals(other._taskIds, _taskIds));
   }
 
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(
       runtimeType,
       id,
       const DeepCollectionEquality().hash(_title),
       const DeepCollectionEquality().hash(_pages),
-      const DeepCollectionEquality().hash(_tasks));
+      const DeepCollectionEquality().hash(_taskIds));
 
   /// Create a copy of Lesson
   /// with the given fields replaced by the non-null parameter values.
@@ -202,6 +213,13 @@ class _$LessonImpl implements _Lesson {
   @pragma('vm:prefer-inline')
   _$$LessonImplCopyWith<_$LessonImpl> get copyWith =>
       __$$LessonImplCopyWithImpl<_$LessonImpl>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$LessonImplToJson(
+      this,
+    );
+  }
 }
 
 abstract class _Lesson implements Lesson {
@@ -209,7 +227,9 @@ abstract class _Lesson implements Lesson {
       {required final String id,
       required final Map<String, String> title,
       required final List<Page> pages,
-      required final List<Task> tasks}) = _$LessonImpl;
+      required final List<String> taskIds}) = _$LessonImpl;
+
+  factory _Lesson.fromJson(Map<String, dynamic> json) = _$LessonImpl.fromJson;
 
   @override
   String get id;
@@ -218,7 +238,7 @@ abstract class _Lesson implements Lesson {
   @override
   List<Page> get pages;
   @override
-  List<Task> get tasks;
+  List<String> get taskIds;
 
   /// Create a copy of Lesson
   /// with the given fields replaced by the non-null parameter values.

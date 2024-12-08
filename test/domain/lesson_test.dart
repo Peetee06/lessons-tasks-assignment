@@ -1,10 +1,10 @@
 import 'package:flutter_test/flutter_test.dart';
-import 'package:lessons_tasks_assignment/data/repositories/lessons/models/raw_lesson.dart';
 import 'package:lessons_tasks_assignment/domain/content_component.dart';
+import 'package:lessons_tasks_assignment/domain/lesson.dart';
 import 'package:lessons_tasks_assignment/domain/page.dart';
 
 void main() {
-  group('RawLesson', () {
+  group('Lesson', () {
     test('should be deserialized from JSON', () {
       const json = {
         'id': 'lesson1',
@@ -22,8 +22,8 @@ void main() {
         'taskIds': ['task1', 'task2'],
       };
 
-      final rawLesson = RawLesson.fromJson(json);
-      const expected = RawLesson(
+      final lesson = Lesson.fromJson(json);
+      const expected = Lesson(
         id: 'lesson1',
         title: {'en': 'Lesson 1', 'de': 'Lektion 1'},
         pages: [
@@ -38,7 +38,7 @@ void main() {
         taskIds: ['task1', 'task2'],
       );
 
-      expect(rawLesson, expected);
+      expect(lesson, expected);
     });
 
     test('should throw an exception if id is missing', () {
@@ -48,7 +48,7 @@ void main() {
         'taskIds': <String>[],
       };
       expect(
-        () => RawLesson.fromJson(json),
+        () => Lesson.fromJson(json),
         throwsA(isA<TypeError>()),
       );
     });
@@ -60,7 +60,7 @@ void main() {
         'taskIds': <String>[],
       };
       expect(
-        () => RawLesson.fromJson(json),
+        () => Lesson.fromJson(json),
         throwsA(isA<TypeError>()),
       );
     });
@@ -73,7 +73,7 @@ void main() {
         'taskIds': <String>[],
       };
       expect(
-        () => RawLesson.fromJson(json),
+        () => Lesson.fromJson(json),
         throwsA(isA<TypeError>()),
       );
     });
@@ -85,7 +85,7 @@ void main() {
         'taskIds': <String>[],
       };
       expect(
-        () => RawLesson.fromJson(json),
+        () => Lesson.fromJson(json),
         throwsA(isA<TypeError>()),
       );
     });
@@ -97,7 +97,7 @@ void main() {
         'pages': <Page>[],
       };
       expect(
-        () => RawLesson.fromJson(json),
+        () => Lesson.fromJson(json),
         throwsA(isA<TypeError>()),
       );
     });

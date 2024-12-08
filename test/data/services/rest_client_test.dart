@@ -1,9 +1,9 @@
 import 'package:dio/dio.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:lessons_tasks_assignment/data/repositories/lessons/models/raw_lesson.dart';
 import 'package:lessons_tasks_assignment/data/services/rest_client.dart';
 import 'package:lessons_tasks_assignment/domain/answer.dart';
 import 'package:lessons_tasks_assignment/domain/content_component.dart';
+import 'package:lessons_tasks_assignment/domain/lesson.dart';
 import 'package:lessons_tasks_assignment/domain/page.dart';
 import 'package:lessons_tasks_assignment/domain/task.dart';
 import 'package:mockito/mockito.dart';
@@ -26,7 +26,7 @@ void main() {
     });
 
     group('getLessons', () {
-      test('returns list of RawLesson on successful request', () async {
+      test('returns list of Lesson on successful request', () async {
         final responseData = [
           {
             'id': '1',
@@ -64,7 +64,7 @@ void main() {
         expect(
           result,
           [
-            RawLesson(
+            Lesson(
               id: '1',
               title: {'en': 'Lesson 1', 'de': 'Lektion 1'},
               pages: [
