@@ -39,5 +39,13 @@
     "lessonPageBackButtonLabel": "Back",
     "@lessonPageBackButtonLabel": {
         "description": "Text of the button to go back"
+    },
+    "tasksEmpty": "No tasks available",
+    "@tasksEmpty": {
+        "description": "Text shown when there are no tasks"
+    },
+    "tasksDoneButtonLabel": "Done",
+    "@tasksDoneButtonLabel": {
+        "description": "Text of the button to finish the lesson"
     }
 }
