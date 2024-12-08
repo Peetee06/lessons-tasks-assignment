@@ -5,6 +5,9 @@ import 'package:get_it/get_it.dart';
 import 'package:integration_test/integration_test.dart';
 import 'package:lessons_tasks_assignment/app/view/app.dart';
 import 'package:lessons_tasks_assignment/features/lesson/view/lesson_view.dart';
+import 'package:lessons_tasks_assignment/features/lessons/lessons_route.dart';
+import 'package:lessons_tasks_assignment/features/tasks/tasks_route.dart';
+import 'package:lessons_tasks_assignment/features/tasks/view/tasks_view.dart';
 import 'package:mockito/mockito.dart';
 
 import '../mocks.mocks.dart';
@@ -40,7 +43,12 @@ void main() {
       await tester.tap(find.byType(ListTile).first);
       await tester.pumpAndSettle();
 
-      expect(find.byType(LessonView), findsOneWidget);
+      final BuildContext context = tester.element(find.byType(LessonView));
+
+      const TasksRoute(id: '1').go(context);
+      await tester.pumpAndSettle();
+
+      expect(find.byType(TasksView), findsOneWidget);
     });
   });
 }

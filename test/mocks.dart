@@ -5,6 +5,7 @@ import 'package:lessons_tasks_assignment/data/repositories/tasks/tasks_repositor
 import 'package:lessons_tasks_assignment/data/services/rest_client.dart';
 import 'package:lessons_tasks_assignment/features/lesson/cubit/lesson_cubit.dart';
 import 'package:lessons_tasks_assignment/features/lessons/cubit/lessons_cubit.dart';
+import 'package:lessons_tasks_assignment/features/tasks/cubit/tasks_cubit.dart';
 import 'package:mockito/annotations.dart';
 
 @GenerateMocks([
@@ -15,6 +16,7 @@ import 'package:mockito/annotations.dart';
   LessonsCubit,
   LessonsRepository,
   RestClient,
+  TasksCubit,
   TasksRepository,
 ])
 class GeneratedMocks {}

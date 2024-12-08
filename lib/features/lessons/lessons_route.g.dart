@@ -19,6 +19,13 @@ RouteBase get $lessonsRoute => GoRouteData.$route(
           path: ':id',
           name: 'lesson',
           factory: $LessonRouteExtension._fromState,
+          routes: [
+            GoRouteData.$route(
+              path: 'tasks',
+              name: 'tasks',
+              factory: $TasksRouteExtension._fromState,
+            ),
+          ],
         ),
       ],
     );
@@ -47,6 +54,25 @@ extension $LessonRouteExtension on LessonRoute {
 
   String get location => GoRouteData.$location(
         '/lessons/${Uri.encodeComponent(id)}',
+      );
+
+  void go(BuildContext context) => context.go(location);
+
+  Future<T?> push<T>(BuildContext context) => context.push<T>(location);
+
+  void pushReplacement(BuildContext context) =>
+      context.pushReplacement(location);
+
+  void replace(BuildContext context) => context.replace(location);
+}
+
+extension $TasksRouteExtension on TasksRoute {
+  static TasksRoute _fromState(GoRouterState state) => TasksRoute(
+        id: state.pathParameters['id']!,
+      );
+
+  String get location => GoRouteData.$location(
+        '/lessons/${Uri.encodeComponent(id)}/tasks',
       );
 
   void go(BuildContext context) => context.go(location);
