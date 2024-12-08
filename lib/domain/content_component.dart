@@ -6,7 +6,7 @@ part 'content_component.freezed.dart';
 part 'content_component.g.dart';
 
 @Freezed(unionKey: 'type')
-class ContentComponent with _$ContentComponent {
+sealed class ContentComponent with _$ContentComponent {
   const factory ContentComponent.image({
     @UriJsonConverter() required Uri imageUri,
   }) = ImageComponent;

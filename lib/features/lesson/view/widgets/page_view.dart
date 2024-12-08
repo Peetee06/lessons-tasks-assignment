@@ -1,3 +1,4 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart' hide Page;
 import 'package:lessons_tasks_assignment/common/extensions/localizations_extension.dart';
 import 'package:lessons_tasks_assignment/domain/content_component.dart';
@@ -11,9 +12,14 @@ class LessonPageView extends StatelessWidget {
 
   final Page page;
 
+  static const _verticalSpacing = 20.0;
+  static const _imageSize = 200.0;
+
   @override
   Widget build(BuildContext context) {
-    return ListView.builder(
+    return ListView.separated(
+      separatorBuilder: (context, index) =>
+          const SizedBox(height: _verticalSpacing),
       itemCount: page.content.length,
       itemBuilder: (context, index) {
         final component = page.content[index];
@@ -21,7 +27,12 @@ class LessonPageView extends StatelessWidget {
           TextComponent(:final text) => Text(
               text.localizedTo(Localizations.localeOf(context)),
             ),
-          _ => const SizedBox.shrink(),
+          ImageComponent(:final imageUri) => CachedNetworkImage(
+              imageUrl: imageUri.toString(),
+              fit: BoxFit.scaleDown,
+              width: _imageSize,
+              height: _imageSize,
+            ),
         };
       },
     );
