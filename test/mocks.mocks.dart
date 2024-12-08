@@ -20,6 +20,8 @@ import 'package:flutter_cache_manager/src/cache_store.dart' as _i3;
 import 'package:flutter_cache_manager/src/web/web_helper.dart' as _i4;
 import 'package:lessons_tasks_assignment/data/repositories/lessons/lessons_repository.dart'
     as _i11;
+import 'package:lessons_tasks_assignment/data/repositories/tasks/tasks_repository.dart'
+    as _i25;
 import 'package:lessons_tasks_assignment/data/services/rest_client.dart'
     as _i12;
 import 'package:lessons_tasks_assignment/domain/lesson.dart' as _i23;
@@ -1464,6 +1466,33 @@ class MockRestClient extends _i1.Mock implements _i12.RestClient {
         ),
         returnValue: _i13.Future<List<_i23.Lesson>>.value(<_i23.Lesson>[]),
       ) as _i13.Future<List<_i23.Lesson>>);
+
+  @override
+  _i13.Future<List<_i24.Task>> getTasks() => (super.noSuchMethod(
+        Invocation.method(
+          #getTasks,
+          [],
+        ),
+        returnValue: _i13.Future<List<_i24.Task>>.value(<_i24.Task>[]),
+      ) as _i13.Future<List<_i24.Task>>);
+}
+
+/// A class which mocks [TasksRepository].
+///
+/// See the documentation for Mockito's code generation for more information.
+class MockTasksRepository extends _i1.Mock implements _i25.TasksRepository {
+  MockTasksRepository() {
+    _i1.throwOnMissingStub(this);
+  }
+
+  @override
+  _i12.RestClient get restClient => (super.noSuchMethod(
+        Invocation.getter(#restClient),
+        returnValue: _FakeRestClient_12(
+          this,
+          Invocation.getter(#restClient),
+        ),
+      ) as _i12.RestClient);
 
   @override
   _i13.Future<List<_i24.Task>> getTasks() => (super.noSuchMethod(
