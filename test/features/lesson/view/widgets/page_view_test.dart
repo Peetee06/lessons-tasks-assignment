@@ -1,13 +1,38 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart' hide Page;
+import 'package:flutter_cache_manager/flutter_cache_manager.dart';
 import 'package:flutter_test/flutter_test.dart';
+import 'package:get_it/get_it.dart';
 import 'package:lessons_tasks_assignment/domain/content_component.dart';
 import 'package:lessons_tasks_assignment/domain/page.dart';
 import 'package:lessons_tasks_assignment/features/lesson/view/widgets/page_view.dart';
+import 'package:mockito/mockito.dart';
 
 import '../../../../helpers/helpers.dart';
+import '../../../../mocks.mocks.dart';
 
 void main() {
+  late MockCacheManager cacheManager;
+
+  setUp(() async {
+    cacheManager = MockCacheManager();
+    when(
+      cacheManager.getFileStream(
+        any,
+        key: anyNamed('key'),
+        headers: anyNamed('headers'),
+        withProgress: anyNamed('withProgress'),
+      ),
+    ).thenAnswer(
+      (_) => const Stream<FileResponse>.empty(),
+    );
+    GetIt.I.registerSingleton<BaseCacheManager>(cacheManager);
+  });
+
+  tearDown(() async {
+    GetIt.I.unregister<BaseCacheManager>();
+  });
+
   testWidgets('renders text component', (tester) async {
     await tester.pumpApp(
       locale: const Locale('de'),

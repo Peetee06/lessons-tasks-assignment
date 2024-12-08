@@ -1,5 +1,7 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart' hide Page;
+import 'package:flutter_cache_manager/flutter_cache_manager.dart';
+import 'package:get_it/get_it.dart';
 import 'package:lessons_tasks_assignment/common/extensions/localizations_extension.dart';
 import 'package:lessons_tasks_assignment/domain/content_component.dart';
 import 'package:lessons_tasks_assignment/domain/page.dart';
@@ -32,6 +34,7 @@ class LessonPageView extends StatelessWidget {
               fit: BoxFit.scaleDown,
               width: _imageSize,
               height: _imageSize,
+              cacheManager: GetIt.I<BaseCacheManager>(),
             ),
         };
       },
