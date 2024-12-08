@@ -125,7 +125,7 @@ void main() {
       expect(find.byKey(LessonPagesView.forwardButtonKey), findsOneWidget);
     });
 
-    testWidgets('forward button is disabled on last page',
+    testWidgets('forward button is disabled on last page when no tasks',
         (WidgetTester tester) async {
       await pumpTestWidget(
         tester,
@@ -140,14 +140,16 @@ void main() {
       expect(find.byKey(LessonPagesView.backButtonKey), findsOneWidget);
     });
 
-    testWidgets('back and forward buttons are disabled when only one page',
+    testWidgets(
+        'back and forward buttons are disabled when only one page and no tasks',
         (WidgetTester tester) async {
       await pumpTestWidget(tester, pages: [const Page(content: [])]);
       expect(find.byKey(LessonPagesView.backButtonKey), findsNothing);
       expect(find.byKey(LessonPagesView.forwardButtonKey), findsNothing);
     });
 
-    testWidgets('navigation between pages works', (WidgetTester tester) async {
+    testWidgets('navigation between pages works when no tasks',
+        (WidgetTester tester) async {
       await pumpTestWidget(
         tester,
         pages: [

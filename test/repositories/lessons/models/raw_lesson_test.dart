@@ -1,7 +1,7 @@
 import 'package:flutter_test/flutter_test.dart';
+import 'package:lessons_tasks_assignment/data/repositories/lessons/models/raw_lesson.dart';
 import 'package:lessons_tasks_assignment/domain/content_component.dart';
 import 'package:lessons_tasks_assignment/domain/page.dart';
-import 'package:lessons_tasks_assignment/repositories/lessons/models/raw_lesson.dart';
 
 void main() {
   group('RawLesson', () {

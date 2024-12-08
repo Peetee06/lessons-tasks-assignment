@@ -18,6 +18,12 @@ import 'package:flutter_bloc/flutter_bloc.dart' as _i20;
 import 'package:flutter_cache_manager/flutter_cache_manager.dart' as _i2;
 import 'package:flutter_cache_manager/src/cache_store.dart' as _i3;
 import 'package:flutter_cache_manager/src/web/web_helper.dart' as _i4;
+import 'package:lessons_tasks_assignment/data/repositories/lessons/lessons_repository.dart'
+    as _i11;
+import 'package:lessons_tasks_assignment/data/repositories/lessons/models/raw_lesson.dart'
+    as _i24;
+import 'package:lessons_tasks_assignment/data/services/rest_client.dart'
+    as _i12;
 import 'package:lessons_tasks_assignment/domain/lesson.dart' as _i23;
 import 'package:lessons_tasks_assignment/domain/task.dart' as _i25;
 import 'package:lessons_tasks_assignment/features/lesson/cubit/lesson_cubit.dart'
@@ -28,12 +34,6 @@ import 'package:lessons_tasks_assignment/features/lessons/cubit/lessons_cubit.da
     as _i21;
 import 'package:lessons_tasks_assignment/features/lessons/cubit/lessons_state.dart'
     as _i22;
-import 'package:lessons_tasks_assignment/repositories/lessons/lessons_repository.dart'
-    as _i11;
-import 'package:lessons_tasks_assignment/repositories/lessons/models/raw_lesson.dart'
-    as _i24;
-import 'package:lessons_tasks_assignment/repositories/lessons/rest_client.dart'
-    as _i12;
 import 'package:mockito/mockito.dart' as _i1;
 import 'package:mockito/src/dummies.dart' as _i19;
 
