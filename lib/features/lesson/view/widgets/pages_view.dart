@@ -7,10 +7,12 @@ import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 class LessonPagesView extends StatefulWidget {
   const LessonPagesView({
     required this.pages,
+    required this.hasTasks,
     super.key,
   });
 
   final List<Page> pages;
+  final bool hasTasks;
 
   static const Key backButtonKey = Key('lessonPagesViewBackButton');
   static const Key forwardButtonKey = Key('lessonPagesViewForwardButton');
@@ -68,12 +70,10 @@ class _LessonPagesViewState extends State<LessonPagesView> {
         children: [
           Column(
             children: [
-              SmoothPageIndicator(
+              _PageAndTasksIndicator(
                 controller: _pageController,
-                count: widget.pages.length,
-                effect: WormEffect(
-                  activeDotColor: Theme.of(context).colorScheme.primary,
-                ),
+                pageCount: widget.pages.length,
+                hasTasks: widget.hasTasks,
               ),
               Expanded(
                 child: PageView.builder(
@@ -145,4 +145,38 @@ class _ForwardButton extends StatelessWidget {
       icon: const Icon(Icons.arrow_forward),
     );
   }
+}
+
+class _PageAndTasksIndicator extends StatelessWidget {
+  const _PageAndTasksIndicator({
+    required this.controller,
+    required this.pageCount,
+    required this.hasTasks,
+  });
+
+  final PageController controller;
+  final int pageCount;
+  final bool hasTasks;
+
+  @override
+  Widget build(BuildContext context) => Row(
+        mainAxisAlignment: MainAxisAlignment.center,
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          SmoothPageIndicator(
+            controller: controller,
+            count: pageCount,
+            effect: WormEffect(
+              activeDotColor: Theme.of(context).colorScheme.primary,
+            ),
+          ),
+          if (hasTasks) ...[
+            const SizedBox(width: 6),
+            const Icon(
+              Icons.task_outlined,
+              size: 20,
+            ),
+          ],
+        ],
+      );
 }
