@@ -119,7 +119,7 @@ void main() {
       expect(find.byIcon(Icons.task_outlined), findsNothing);
     });
 
-    testWidgets('back button is disabled on first page',
+    testWidgets('back button is hidden on first page',
         (WidgetTester tester) async {
       await pumpTestWidget(
         tester,
@@ -132,7 +132,7 @@ void main() {
       expect(find.byKey(LessonPagesView.forwardButtonKey), findsOneWidget);
     });
 
-    testWidgets('forward button is disabled on last page when no tasks',
+    testWidgets('forward button is hidden on last page when no tasks',
         (WidgetTester tester) async {
       await pumpTestWidget(
         tester,
@@ -148,7 +148,7 @@ void main() {
     });
 
     testWidgets(
-        'back and forward buttons are disabled when only one page and no tasks',
+        'back and forward buttons are hidden when only one page and no tasks',
         (WidgetTester tester) async {
       await pumpTestWidget(tester, pages: [const Page(content: [])]);
       expect(find.byKey(LessonPagesView.backButtonKey), findsNothing);
@@ -189,7 +189,7 @@ void main() {
       expect(find.byKey(LessonPagesView.forwardButtonKey), findsOneWidget);
     });
 
-    group('navigates to tasks', () {
+    group('navigates to tasks when', () {
       late MockGoRouter router;
       setUp(() {
         router = MockGoRouter();
@@ -217,7 +217,7 @@ void main() {
       }
 
       testWidgets(
-          'when forward button is pressed on last page when hasTasks is true',
+          'forward button is pressed on last page when hasTasks is true',
           (WidgetTester tester) async {
         await pumpWithGoRouter(
           tester,
