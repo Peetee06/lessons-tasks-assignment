@@ -29,6 +29,8 @@ Future<void> bootstrap(FutureOr<Widget> Function() builder) async {
 
   Bloc.observer = const AppBlocObserver();
 
+  WidgetsFlutterBinding.ensureInitialized();
+
   GetIt.I.registerSingleton<BaseCacheManager>(
     DefaultCacheManager(),
   );
