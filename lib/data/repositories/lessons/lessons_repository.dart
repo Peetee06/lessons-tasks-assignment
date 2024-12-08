@@ -1,5 +1,5 @@
+import 'package:lessons_tasks_assignment/data/services/rest_client.dart';
 import 'package:lessons_tasks_assignment/domain/lesson.dart';
-import 'package:lessons_tasks_assignment/repositories/lessons/rest_client.dart';
 
 class LessonsRepository {
   LessonsRepository({

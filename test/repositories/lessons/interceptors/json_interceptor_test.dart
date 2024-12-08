@@ -1,6 +1,6 @@
 import 'package:dio/dio.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:lessons_tasks_assignment/repositories/lessons/interceptors/json_interceptor.dart';
+import 'package:lessons_tasks_assignment/data/repositories/lessons/interceptors/json_interceptor.dart';
 import 'package:mockito/mockito.dart';
 
 import '../../../mocks.mocks.dart';

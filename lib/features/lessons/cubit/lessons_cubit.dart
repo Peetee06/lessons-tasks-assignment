@@ -1,6 +1,6 @@
 import 'package:bloc/bloc.dart';
+import 'package:lessons_tasks_assignment/data/repositories/lessons/lessons_repository.dart';
 import 'package:lessons_tasks_assignment/features/lessons/cubit/lessons_state.dart';
-import 'package:lessons_tasks_assignment/repositories/lessons/lessons_repository.dart';
 
 class LessonsCubit extends Cubit<LessonsState> {
   LessonsCubit(this.lessonsRepository) : super(const LessonsState.initial());
