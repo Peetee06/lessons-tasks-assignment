@@ -39,5 +39,13 @@
     "lessonPageBackButtonLabel": "Zurück",
     "@lessonPageBackButtonLabel": {
         "description": "Text des Buttons zum Zurückgehen"
+    },
+    "tasksEmpty": "Keine Aufgaben verfügbar",
+    "@tasksEmpty": {
+        "description": "Text, der angezeigt wird, wenn keine Aufgaben verfügbar sind"
+    },
+    "tasksDoneButtonLabel": "Fertig",
+    "@tasksDoneButtonLabel": {
+        "description": "Text des Buttons zum Beenden der Lektion"
     }
 }
