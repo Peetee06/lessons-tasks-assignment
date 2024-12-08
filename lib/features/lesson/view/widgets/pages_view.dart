@@ -62,7 +62,8 @@ class _LessonPagesViewState extends State<LessonPagesView> {
   }
 
   void _navigateForward() {
-    if (_pageController.page == widget.pages.length - 1) {
+    final hasNoPages = widget.pages.isEmpty;
+    if (hasNoPages || _pageController.page == widget.pages.length - 1) {
       TasksRoute(id: widget.id).go(context);
     } else {
       _pageController.nextPage(

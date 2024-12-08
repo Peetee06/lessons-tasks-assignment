@@ -252,6 +252,20 @@ void main() {
 
         verify(router.go(const TasksRoute(id: 'id').location)).called(1);
       });
+
+      testWidgets(
+          'forward button is pressed with no pages when hasTasks is true',
+          (WidgetTester tester) async {
+        await pumpWithGoRouter(
+          tester,
+          pages: [],
+        );
+
+        await tester.tap(find.byKey(LessonPagesView.forwardButtonKey));
+        await tester.pumpAndSettle();
+
+        verify(router.go(const TasksRoute(id: 'id').location)).called(1);
+      });
     });
   });
 }
