@@ -34,7 +34,7 @@ class _LessonPagesViewState extends State<LessonPagesView> {
   @override
   void initState() {
     super.initState();
-    _canNavigateForward = widget.pages.isNotEmpty || widget.hasTasks;
+    _canNavigateForward = widget.pages.length > 1 || widget.hasTasks;
     _pageController = PageController()..addListener(_updateNavigationButtons);
   }
 
