@@ -25,12 +25,12 @@ class _RestClient implements RestClient {
   final ParseErrorLogger? errorLogger;
 
   @override
-  Future<List<RawLesson>> getLessons() async {
+  Future<List<Lesson>> getLessons() async {
     final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
     const Map<String, dynamic>? _data = null;
-    final _options = _setStreamType<List<RawLesson>>(Options(
+    final _options = _setStreamType<List<Lesson>>(Options(
       method: 'GET',
       headers: _headers,
       extra: _extra,
@@ -47,10 +47,10 @@ class _RestClient implements RestClient {
           baseUrl,
         )));
     final _result = await _dio.fetch<List<dynamic>>(_options);
-    late List<RawLesson> _value;
+    late List<Lesson> _value;
     try {
       _value = _result.data!
-          .map((dynamic i) => RawLesson.fromJson(i as Map<String, dynamic>))
+          .map((dynamic i) => Lesson.fromJson(i as Map<String, dynamic>))
           .toList();
     } on Object catch (e, s) {
       errorLogger?.logError(e, s, _options);

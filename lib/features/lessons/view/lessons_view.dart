@@ -50,7 +50,7 @@ class LessonsView extends StatelessWidget {
                             trailing: Chip(
                               label: Text(
                                 context.l10n.lessonsTasks(
-                                  lesson.tasks.length,
+                                  lesson.taskIds.length,
                                 ),
                               ),
                             ),

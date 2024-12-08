@@ -20,12 +20,10 @@ import 'package:flutter_cache_manager/src/cache_store.dart' as _i3;
 import 'package:flutter_cache_manager/src/web/web_helper.dart' as _i4;
 import 'package:lessons_tasks_assignment/data/repositories/lessons/lessons_repository.dart'
     as _i11;
-import 'package:lessons_tasks_assignment/data/repositories/lessons/models/raw_lesson.dart'
-    as _i24;
 import 'package:lessons_tasks_assignment/data/services/rest_client.dart'
     as _i12;
 import 'package:lessons_tasks_assignment/domain/lesson.dart' as _i23;
-import 'package:lessons_tasks_assignment/domain/task.dart' as _i25;
+import 'package:lessons_tasks_assignment/domain/task.dart' as _i24;
 import 'package:lessons_tasks_assignment/features/lesson/cubit/lesson_cubit.dart'
     as _i17;
 import 'package:lessons_tasks_assignment/features/lesson/cubit/lesson_state.dart'
@@ -1459,21 +1457,20 @@ class MockRestClient extends _i1.Mock implements _i12.RestClient {
   }
 
   @override
-  _i13.Future<List<_i24.RawLesson>> getLessons() => (super.noSuchMethod(
+  _i13.Future<List<_i23.Lesson>> getLessons() => (super.noSuchMethod(
         Invocation.method(
           #getLessons,
           [],
         ),
-        returnValue:
-            _i13.Future<List<_i24.RawLesson>>.value(<_i24.RawLesson>[]),
-      ) as _i13.Future<List<_i24.RawLesson>>);
+        returnValue: _i13.Future<List<_i23.Lesson>>.value(<_i23.Lesson>[]),
+      ) as _i13.Future<List<_i23.Lesson>>);
 
   @override
-  _i13.Future<List<_i25.Task>> getTasks() => (super.noSuchMethod(
+  _i13.Future<List<_i24.Task>> getTasks() => (super.noSuchMethod(
         Invocation.method(
           #getTasks,
           [],
         ),
-        returnValue: _i13.Future<List<_i25.Task>>.value(<_i25.Task>[]),
-      ) as _i13.Future<List<_i25.Task>>);
+        returnValue: _i13.Future<List<_i24.Task>>.value(<_i24.Task>[]),
+      ) as _i13.Future<List<_i24.Task>>);
 }

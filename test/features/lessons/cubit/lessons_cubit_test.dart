@@ -1,10 +1,8 @@
 import 'package:bloc_test/bloc_test.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:lessons_tasks_assignment/domain/answer.dart';
 import 'package:lessons_tasks_assignment/domain/content_component.dart';
 import 'package:lessons_tasks_assignment/domain/lesson.dart';
 import 'package:lessons_tasks_assignment/domain/page.dart';
-import 'package:lessons_tasks_assignment/domain/task.dart';
 import 'package:lessons_tasks_assignment/features/lessons/cubit/lessons_cubit.dart';
 import 'package:lessons_tasks_assignment/features/lessons/cubit/lessons_state.dart';
 import 'package:mockito/mockito.dart';
@@ -40,25 +38,7 @@ void main() {
           ],
         ),
       ],
-      tasks: [
-        const Task(
-          id: '1',
-          question: {
-            'en': 'Test Task',
-            'de': 'Test Aufgabe',
-          },
-          options: [
-            Answer(
-              id: 'a1',
-              text: {
-                'en': 'Option 1',
-                'de': 'Option 1',
-              },
-            ),
-          ],
-          correctAnswerIds: ['a1'],
-        ),
-      ],
+      taskIds: ['1'],
     ),
   ];
 

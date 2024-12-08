@@ -1,13 +1,12 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'raw_lesson.dart';
+part of 'lesson.dart';
 
 // **************************************************************************
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$RawLessonImpl _$$RawLessonImplFromJson(Map<String, dynamic> json) =>
-    _$RawLessonImpl(
+_$LessonImpl _$$LessonImplFromJson(Map<String, dynamic> json) => _$LessonImpl(
       id: json['id'] as String,
       title: Map<String, String>.from(json['title'] as Map),
       pages: (json['pages'] as List<dynamic>)
@@ -17,7 +16,7 @@ _$RawLessonImpl _$$RawLessonImplFromJson(Map<String, dynamic> json) =>
           (json['taskIds'] as List<dynamic>).map((e) => e as String).toList(),
     );
 
-Map<String, dynamic> _$$RawLessonImplToJson(_$RawLessonImpl instance) =>
+Map<String, dynamic> _$$LessonImplToJson(_$LessonImpl instance) =>
     <String, dynamic>{
       'id': instance.id,
       'title': instance.title,
