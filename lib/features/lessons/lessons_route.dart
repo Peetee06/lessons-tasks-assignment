@@ -8,6 +8,7 @@ import 'package:lessons_tasks_assignment/data/services/rest_client.dart';
 import 'package:lessons_tasks_assignment/features/lesson/lesson_route.dart';
 import 'package:lessons_tasks_assignment/features/lessons/cubit/lessons_cubit.dart';
 import 'package:lessons_tasks_assignment/features/lessons/view/lessons_view.dart';
+import 'package:lessons_tasks_assignment/features/tasks/tasks_route.dart';
 
 part 'lessons_route.g.dart';
 
@@ -18,6 +19,12 @@ part 'lessons_route.g.dart';
     TypedGoRoute<LessonRoute>(
       path: ':id',
       name: 'lesson',
+      routes: [
+        TypedGoRoute<TasksRoute>(
+          path: 'tasks',
+          name: 'tasks',
+        ),
+      ],
     ),
   ],
 )
