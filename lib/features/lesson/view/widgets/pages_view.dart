@@ -88,15 +88,19 @@ class _LessonPagesViewState extends State<LessonPagesView> {
                 hasTasks: widget.hasTasks,
               ),
               Expanded(
-                child: PageView.builder(
-                  controller: _pageController,
-                  physics: const NeverScrollableScrollPhysics(),
-                  itemCount: widget.pages.length,
-                  itemBuilder: (context, index) {
-                    final page = widget.pages[index];
-                    return LessonPageView(page: page);
-                  },
-                ),
+                child: widget.pages.isEmpty
+                    ? Center(
+                        child: Text(context.l10n.lessonPageEmpty),
+                      )
+                    : PageView.builder(
+                        controller: _pageController,
+                        physics: const NeverScrollableScrollPhysics(),
+                        itemCount: widget.pages.length,
+                        itemBuilder: (context, index) {
+                          final page = widget.pages[index];
+                          return LessonPageView(page: page);
+                        },
+                      ),
               ),
             ],
           ),
@@ -175,20 +179,20 @@ class _PageAndTasksIndicator extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.center,
         mainAxisSize: MainAxisSize.min,
         children: [
-          SmoothPageIndicator(
-            controller: controller,
-            count: pageCount,
-            effect: WormEffect(
-              activeDotColor: Theme.of(context).colorScheme.primary,
+          if (pageCount > 0)
+            SmoothPageIndicator(
+              controller: controller,
+              count: pageCount,
+              effect: WormEffect(
+                activeDotColor: Theme.of(context).colorScheme.primary,
+              ),
             ),
-          ),
-          if (hasTasks) ...[
-            const SizedBox(width: 6),
+          if (pageCount > 0 && hasTasks) const SizedBox(width: 6),
+          if (hasTasks)
             const Icon(
               Icons.task_outlined,
               size: 20,
             ),
-          ],
         ],
       );
 }

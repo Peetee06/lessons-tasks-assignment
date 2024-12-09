@@ -32,6 +32,10 @@
     "@lessonsEmpty": {
           "description": "Text, der angezeigt wird, wenn keine Lektionen gefunden werden"
     },
+    "lessonPageEmpty": "Keine Seiten verfügbar",
+    "@lessonPageEmpty": {
+        "description": "Text, der angezeigt wird, wenn keine Seiten verfügbar sind"
+    },
     "lessonPageForwardButtonLabel": "Weiter",
     "@lessonPageForwardButtonLabel": {
         "description": "Text des Buttons zum Weitergehen"
