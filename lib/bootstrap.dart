@@ -2,9 +2,14 @@ import 'dart:async';
 import 'dart:developer';
 
 import 'package:bloc/bloc.dart';
+import 'package:dio/dio.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_cache_manager/flutter_cache_manager.dart';
 import 'package:get_it/get_it.dart';
+import 'package:lessons_tasks_assignment/data/repositories/lessons/lessons_repository.dart';
+import 'package:lessons_tasks_assignment/data/repositories/tasks/tasks_repository.dart';
+import 'package:lessons_tasks_assignment/data/services/interceptors/json_interceptor.dart';
+import 'package:lessons_tasks_assignment/data/services/rest_client.dart';
 
 class AppBlocObserver extends BlocObserver {
   const AppBlocObserver();
@@ -31,9 +36,21 @@ Future<void> bootstrap(FutureOr<Widget> Function() builder) async {
 
   WidgetsFlutterBinding.ensureInitialized();
 
+  _registerDependencies();
+
+  runApp(await builder());
+}
+
+void _registerDependencies() {
+  final dio = Dio()..interceptors.add(JsonInterceptor());
+  final restClient = RestClient(dio);
+  GetIt.I.registerSingleton<LessonsRepository>(
+    LessonsRepository(restClient: restClient),
+  );
+  GetIt.I.registerSingleton<TasksRepository>(
+    TasksRepository(restClient: restClient),
+  );
   GetIt.I.registerSingleton<BaseCacheManager>(
     DefaultCacheManager(),
   );
-
-  runApp(await builder());
 }
