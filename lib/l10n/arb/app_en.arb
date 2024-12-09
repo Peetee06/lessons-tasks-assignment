@@ -32,6 +32,10 @@
     "@lessonsEmpty": {
         "description": "Text shown when there are no lessons"
     },
+    "lessonPageEmpty": "No pages available",
+    "@lessonPageEmpty": {
+        "description": "Text shown when there are no pages"
+    },
     "lessonPageForwardButtonLabel": "Forward",
     "@lessonPageForwardButtonLabel": {
         "description": "Text of the button to go forward"

@@ -32,6 +32,13 @@ void main() {
       );
     }
 
+    testWidgets('renders no pages text when pages is empty',
+        (WidgetTester tester) async {
+      await pumpTestWidget(tester, pages: []);
+      final context = tester.element(find.byType(LessonPagesView));
+      expect(find.text(context.l10n.lessonPageEmpty), findsOneWidget);
+    });
+
     testWidgets('renders LessonPageView and passes current page',
         (WidgetTester tester) async {
       const pages = [
@@ -101,6 +108,12 @@ void main() {
       expect(updatedSmoothIndicator.offset, 1);
     });
 
+    testWidgets('hides smooth page indicator when pages is empty',
+        (WidgetTester tester) async {
+      await pumpTestWidget(tester, pages: []);
+      expect(find.byType(SmoothIndicator), findsNothing);
+    });
+
     testWidgets('renders task icon when hasTasks is true',
         (WidgetTester tester) async {
       await pumpTestWidget(tester, pages: [], hasTasks: true);
@@ -117,6 +130,50 @@ void main() {
       // ignore: avoid_redundant_argument_values
       await pumpTestWidget(tester, pages: [], hasTasks: false);
       expect(find.byIcon(Icons.task_outlined), findsNothing);
+    });
+
+    testWidgets('has separator when hasTasks is true and pages is not empty',
+        (WidgetTester tester) async {
+      await pumpTestWidget(
+        tester,
+        pages: [const Page(content: [])],
+        hasTasks: true,
+      );
+      final row = tester.widget<Row>(find.byType(Row).first);
+      expect(
+        row.children.any((child) => child is SizedBox),
+        true,
+      );
+    });
+
+    testWidgets('hides separator when hasTasks is false and pages is not empty',
+        (WidgetTester tester) async {
+      await pumpTestWidget(tester, pages: [const Page(content: [])]);
+      final row = tester.widget<Row>(find.byType(Row).first);
+      expect(
+        row.children.any((child) => child is SizedBox),
+        false,
+      );
+    });
+
+    testWidgets('hides separator when hasTasks is true and pages is empty',
+        (WidgetTester tester) async {
+      await pumpTestWidget(tester, pages: [], hasTasks: true);
+      final row = tester.widget<Row>(find.byType(Row).first);
+      expect(
+        row.children.any((child) => child is SizedBox),
+        false,
+      );
+    });
+
+    testWidgets('hides separator when hasTasks is false and pages is empty',
+        (WidgetTester tester) async {
+      await pumpTestWidget(tester, pages: []);
+      final row = tester.widget<Row>(find.byType(Row).first);
+      expect(
+        row.children.any((child) => child is SizedBox),
+        false,
+      );
     });
 
     testWidgets('back button is hidden on first page',
