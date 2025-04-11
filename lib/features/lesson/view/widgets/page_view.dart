@@ -8,11 +8,11 @@ import 'package:lessons_tasks_assignment/domain/page.dart';
 
 class ConceptSectionView extends StatelessWidget {
   const ConceptSectionView({
-    required this.page,
+    required this.section,
     super.key,
   });
 
-  final Section page;
+  final Section section;
 
   static const _verticalSpacing = 20.0;
   static const _imageSize = 200.0;
@@ -22,9 +22,9 @@ class ConceptSectionView extends StatelessWidget {
     return ListView.separated(
       separatorBuilder: (context, index) =>
           const SizedBox(height: _verticalSpacing),
-      itemCount: page.content.length,
+      itemCount: section.content.length,
       itemBuilder: (context, index) {
-        final component = page.content[index];
+        final component = section.content[index];
         return switch (component) {
           TextComponent(:final text) => Text(
               text.localizedTo(Localizations.localeOf(context)),

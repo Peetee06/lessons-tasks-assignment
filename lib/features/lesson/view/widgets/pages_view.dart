@@ -98,7 +98,7 @@ class _ConceptSectionsViewState extends State<ConceptSectionsView> {
                         itemCount: widget.sections.length,
                         itemBuilder: (context, index) {
                           final section = widget.sections[index];
-                          return ConceptSectionView(page: section);
+                          return ConceptSectionView(section: section);
                         },
                       ),
               ),
