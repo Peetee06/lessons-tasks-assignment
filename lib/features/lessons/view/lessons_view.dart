@@ -7,61 +7,61 @@ import 'package:lessons_tasks_assignment/features/lessons/cubit/lessons_state.da
 import 'package:lessons_tasks_assignment/features/lessons/lessons_route.dart';
 import 'package:lessons_tasks_assignment/l10n/l10n.dart';
 
-class LessonsView extends StatelessWidget {
-  const LessonsView({super.key});
+class ConceptsView extends StatelessWidget {
+  const ConceptsView({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(context.l10n.lessonsViewTitle),
+        title: Text(context.l10n.conceptsViewTitle),
       ),
-      body: BlocBuilder<LessonsCubit, LessonsState>(
+      body: BlocBuilder<ConceptsCubit, ConceptsState>(
         builder: (context, state) {
           return switch (state) {
-            LessonsInitial() => const SizedBox.shrink(),
-            LessonsLoading() => const Center(
+            ConceptsInitial() => const SizedBox.shrink(),
+            ConceptsLoading() => const Center(
                 child: CircularProgressIndicator(),
               ),
-            LessonsLoaded(:final lessons) => RefreshIndicator(
-                onRefresh: () => context.read<LessonsCubit>().fetchLessons(),
-                child: lessons.isEmpty
+            ConceptsLoaded(:final concepts) => RefreshIndicator(
+                onRefresh: () => context.read<ConceptsCubit>().fetchConcepts(),
+                child: concepts.isEmpty
                     ? Center(
-                        child: Text(context.l10n.lessonsEmpty),
+                        child: Text(context.l10n.conceptsEmpty),
                       )
                     : ListView.separated(
                         physics: const AlwaysScrollableScrollPhysics(),
-                        itemCount: lessons.length,
+                        itemCount: concepts.length,
                         separatorBuilder: (context, index) =>
                             const SizedBox(height: 8),
                         itemBuilder: (context, index) {
-                          final lesson = lessons[index];
+                          final concept = concepts[index];
                           return ListTile(
                             title: Text(
-                              lesson.title.localizedTo(
+                              concept.title.localizedTo(
                                 Localizations.localeOf(context),
                               ),
                             ),
                             subtitle: Text(
-                              context.l10n.lessonsPages(
-                                lesson.pages.length,
+                              context.l10n.conceptsSections(
+                                concept.pages.length,
                               ),
                             ),
                             trailing: Chip(
                               label: Text(
-                                context.l10n.lessonsTasks(
-                                  lesson.taskIds.length,
+                                context.l10n.conceptsChallenges(
+                                  concept.taskIds.length,
                                 ),
                               ),
                             ),
-                            onTap: () => LessonRoute(
-                              id: lesson.id,
+                            onTap: () => ConceptRoute(
+                              id: concept.id,
                             ).go(context),
                           );
                         },
                       ),
               ),
-            LessonsError(:final message) => Center(
+            ConceptsError(:final message) => Center(
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
@@ -69,8 +69,8 @@ class LessonsView extends StatelessWidget {
                     const SizedBox(height: 16),
                     ElevatedButton(
                       onPressed: () =>
-                          context.read<LessonsCubit>().fetchLessons(),
-                      child: Text(context.l10n.lessonsTryAgain),
+                          context.read<ConceptsCubit>().fetchConcepts(),
+                      child: Text(context.l10n.conceptsTryAgain),
                     ),
                   ],
                 ),

@@ -7,34 +7,34 @@ part of 'lessons_route.dart';
 // **************************************************************************
 
 List<RouteBase> get $appRoutes => [
-      $lessonsRoute,
+      $conceptsRoute,
     ];
 
-RouteBase get $lessonsRoute => GoRouteData.$route(
-      path: '/lessons',
-      name: 'lessons',
-      factory: $LessonsRouteExtension._fromState,
+RouteBase get $conceptsRoute => GoRouteData.$route(
+      path: '/concepts',
+      name: 'concepts',
+      factory: $ConceptsRouteExtension._fromState,
       routes: [
         GoRouteData.$route(
           path: ':id',
-          name: 'lesson',
-          factory: $LessonRouteExtension._fromState,
+          name: 'concept',
+          factory: $ConceptRouteExtension._fromState,
           routes: [
             GoRouteData.$route(
-              path: 'tasks',
-              name: 'tasks',
-              factory: $TasksRouteExtension._fromState,
+              path: 'challenges',
+              name: 'challenges',
+              factory: $ChallengesRouteExtension._fromState,
             ),
           ],
         ),
       ],
     );
 
-extension $LessonsRouteExtension on LessonsRoute {
-  static LessonsRoute _fromState(GoRouterState state) => LessonsRoute();
+extension $ConceptsRouteExtension on ConceptsRoute {
+  static ConceptsRoute _fromState(GoRouterState state) => ConceptsRoute();
 
   String get location => GoRouteData.$location(
-        '/lessons',
+        '/concepts',
       );
 
   void go(BuildContext context) => context.go(location);
@@ -47,13 +47,13 @@ extension $LessonsRouteExtension on LessonsRoute {
   void replace(BuildContext context) => context.replace(location);
 }
 
-extension $LessonRouteExtension on LessonRoute {
-  static LessonRoute _fromState(GoRouterState state) => LessonRoute(
+extension $ConceptRouteExtension on ConceptRoute {
+  static ConceptRoute _fromState(GoRouterState state) => ConceptRoute(
         id: state.pathParameters['id']!,
       );
 
   String get location => GoRouteData.$location(
-        '/lessons/${Uri.encodeComponent(id)}',
+        '/concepts/${Uri.encodeComponent(id)}',
       );
 
   void go(BuildContext context) => context.go(location);
@@ -66,13 +66,13 @@ extension $LessonRouteExtension on LessonRoute {
   void replace(BuildContext context) => context.replace(location);
 }
 
-extension $TasksRouteExtension on TasksRoute {
-  static TasksRoute _fromState(GoRouterState state) => TasksRoute(
+extension $ChallengesRouteExtension on ChallengesRoute {
+  static ChallengesRoute _fromState(GoRouterState state) => ChallengesRoute(
         id: state.pathParameters['id']!,
       );
 
   String get location => GoRouteData.$location(
-        '/lessons/${Uri.encodeComponent(id)}/tasks',
+        '/concepts/${Uri.encodeComponent(id)}/challenges',
       );
 
   void go(BuildContext context) => context.go(location);

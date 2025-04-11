@@ -15,12 +15,12 @@ final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 /// @nodoc
-mixin _$LessonsState {
+mixin _$ConceptsState {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(List<Lesson> lessons) loaded,
+    required TResult Function(List<Concept> concepts) loaded,
     required TResult Function(String message) error,
   }) =>
       throw _privateConstructorUsedError;
@@ -28,7 +28,7 @@ mixin _$LessonsState {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function(List<Lesson> lessons)? loaded,
+    TResult? Function(List<Concept> concepts)? loaded,
     TResult? Function(String message)? error,
   }) =>
       throw _privateConstructorUsedError;
@@ -36,92 +36,92 @@ mixin _$LessonsState {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(List<Lesson> lessons)? loaded,
+    TResult Function(List<Concept> concepts)? loaded,
     TResult Function(String message)? error,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(LessonsInitial value) initial,
-    required TResult Function(LessonsLoading value) loading,
-    required TResult Function(LessonsLoaded value) loaded,
-    required TResult Function(LessonsError value) error,
+    required TResult Function(ConceptsInitial value) initial,
+    required TResult Function(ConceptsLoading value) loading,
+    required TResult Function(ConceptsLoaded value) loaded,
+    required TResult Function(ConceptsError value) error,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(LessonsInitial value)? initial,
-    TResult? Function(LessonsLoading value)? loading,
-    TResult? Function(LessonsLoaded value)? loaded,
-    TResult? Function(LessonsError value)? error,
+    TResult? Function(ConceptsInitial value)? initial,
+    TResult? Function(ConceptsLoading value)? loading,
+    TResult? Function(ConceptsLoaded value)? loaded,
+    TResult? Function(ConceptsError value)? error,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(LessonsInitial value)? initial,
-    TResult Function(LessonsLoading value)? loading,
-    TResult Function(LessonsLoaded value)? loaded,
-    TResult Function(LessonsError value)? error,
+    TResult Function(ConceptsInitial value)? initial,
+    TResult Function(ConceptsLoading value)? loading,
+    TResult Function(ConceptsLoaded value)? loaded,
+    TResult Function(ConceptsError value)? error,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $LessonsStateCopyWith<$Res> {
-  factory $LessonsStateCopyWith(
-          LessonsState value, $Res Function(LessonsState) then) =
-      _$LessonsStateCopyWithImpl<$Res, LessonsState>;
+abstract class $ConceptsStateCopyWith<$Res> {
+  factory $ConceptsStateCopyWith(
+          ConceptsState value, $Res Function(ConceptsState) then) =
+      _$ConceptsStateCopyWithImpl<$Res, ConceptsState>;
 }
 
 /// @nodoc
-class _$LessonsStateCopyWithImpl<$Res, $Val extends LessonsState>
-    implements $LessonsStateCopyWith<$Res> {
-  _$LessonsStateCopyWithImpl(this._value, this._then);
+class _$ConceptsStateCopyWithImpl<$Res, $Val extends ConceptsState>
+    implements $ConceptsStateCopyWith<$Res> {
+  _$ConceptsStateCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
   final $Val _value;
   // ignore: unused_field
   final $Res Function($Val) _then;
 
-  /// Create a copy of LessonsState
+  /// Create a copy of ConceptsState
   /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
-abstract class _$$LessonsInitialImplCopyWith<$Res> {
-  factory _$$LessonsInitialImplCopyWith(_$LessonsInitialImpl value,
-          $Res Function(_$LessonsInitialImpl) then) =
-      __$$LessonsInitialImplCopyWithImpl<$Res>;
+abstract class _$$ConceptsInitialImplCopyWith<$Res> {
+  factory _$$ConceptsInitialImplCopyWith(_$ConceptsInitialImpl value,
+          $Res Function(_$ConceptsInitialImpl) then) =
+      __$$ConceptsInitialImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$LessonsInitialImplCopyWithImpl<$Res>
-    extends _$LessonsStateCopyWithImpl<$Res, _$LessonsInitialImpl>
-    implements _$$LessonsInitialImplCopyWith<$Res> {
-  __$$LessonsInitialImplCopyWithImpl(
-      _$LessonsInitialImpl _value, $Res Function(_$LessonsInitialImpl) _then)
+class __$$ConceptsInitialImplCopyWithImpl<$Res>
+    extends _$ConceptsStateCopyWithImpl<$Res, _$ConceptsInitialImpl>
+    implements _$$ConceptsInitialImplCopyWith<$Res> {
+  __$$ConceptsInitialImplCopyWithImpl(
+      _$ConceptsInitialImpl _value, $Res Function(_$ConceptsInitialImpl) _then)
       : super(_value, _then);
 
-  /// Create a copy of LessonsState
+  /// Create a copy of ConceptsState
   /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
 
-class _$LessonsInitialImpl implements LessonsInitial {
-  const _$LessonsInitialImpl();
+class _$ConceptsInitialImpl implements ConceptsInitial {
+  const _$ConceptsInitialImpl();
 
   @override
   String toString() {
-    return 'LessonsState.initial()';
+    return 'ConceptsState.initial()';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$LessonsInitialImpl);
+        (other.runtimeType == runtimeType && other is _$ConceptsInitialImpl);
   }
 
   @override
@@ -132,7 +132,7 @@ class _$LessonsInitialImpl implements LessonsInitial {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(List<Lesson> lessons) loaded,
+    required TResult Function(List<Concept> concepts) loaded,
     required TResult Function(String message) error,
   }) {
     return initial();
@@ -143,7 +143,7 @@ class _$LessonsInitialImpl implements LessonsInitial {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function(List<Lesson> lessons)? loaded,
+    TResult? Function(List<Concept> concepts)? loaded,
     TResult? Function(String message)? error,
   }) {
     return initial?.call();
@@ -154,7 +154,7 @@ class _$LessonsInitialImpl implements LessonsInitial {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(List<Lesson> lessons)? loaded,
+    TResult Function(List<Concept> concepts)? loaded,
     TResult Function(String message)? error,
     required TResult orElse(),
   }) {
@@ -167,10 +167,10 @@ class _$LessonsInitialImpl implements LessonsInitial {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(LessonsInitial value) initial,
-    required TResult Function(LessonsLoading value) loading,
-    required TResult Function(LessonsLoaded value) loaded,
-    required TResult Function(LessonsError value) error,
+    required TResult Function(ConceptsInitial value) initial,
+    required TResult Function(ConceptsLoading value) loading,
+    required TResult Function(ConceptsLoaded value) loaded,
+    required TResult Function(ConceptsError value) error,
   }) {
     return initial(this);
   }
@@ -178,10 +178,10 @@ class _$LessonsInitialImpl implements LessonsInitial {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(LessonsInitial value)? initial,
-    TResult? Function(LessonsLoading value)? loading,
-    TResult? Function(LessonsLoaded value)? loaded,
-    TResult? Function(LessonsError value)? error,
+    TResult? Function(ConceptsInitial value)? initial,
+    TResult? Function(ConceptsLoading value)? loading,
+    TResult? Function(ConceptsLoaded value)? loaded,
+    TResult? Function(ConceptsError value)? error,
   }) {
     return initial?.call(this);
   }
@@ -189,10 +189,10 @@ class _$LessonsInitialImpl implements LessonsInitial {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(LessonsInitial value)? initial,
-    TResult Function(LessonsLoading value)? loading,
-    TResult Function(LessonsLoaded value)? loaded,
-    TResult Function(LessonsError value)? error,
+    TResult Function(ConceptsInitial value)? initial,
+    TResult Function(ConceptsLoading value)? loading,
+    TResult Function(ConceptsLoaded value)? loaded,
+    TResult Function(ConceptsError value)? error,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -202,43 +202,43 @@ class _$LessonsInitialImpl implements LessonsInitial {
   }
 }
 
-abstract class LessonsInitial implements LessonsState {
-  const factory LessonsInitial() = _$LessonsInitialImpl;
+abstract class ConceptsInitial implements ConceptsState {
+  const factory ConceptsInitial() = _$ConceptsInitialImpl;
 }
 
 /// @nodoc
-abstract class _$$LessonsLoadingImplCopyWith<$Res> {
-  factory _$$LessonsLoadingImplCopyWith(_$LessonsLoadingImpl value,
-          $Res Function(_$LessonsLoadingImpl) then) =
-      __$$LessonsLoadingImplCopyWithImpl<$Res>;
+abstract class _$$ConceptsLoadingImplCopyWith<$Res> {
+  factory _$$ConceptsLoadingImplCopyWith(_$ConceptsLoadingImpl value,
+          $Res Function(_$ConceptsLoadingImpl) then) =
+      __$$ConceptsLoadingImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$LessonsLoadingImplCopyWithImpl<$Res>
-    extends _$LessonsStateCopyWithImpl<$Res, _$LessonsLoadingImpl>
-    implements _$$LessonsLoadingImplCopyWith<$Res> {
-  __$$LessonsLoadingImplCopyWithImpl(
-      _$LessonsLoadingImpl _value, $Res Function(_$LessonsLoadingImpl) _then)
+class __$$ConceptsLoadingImplCopyWithImpl<$Res>
+    extends _$ConceptsStateCopyWithImpl<$Res, _$ConceptsLoadingImpl>
+    implements _$$ConceptsLoadingImplCopyWith<$Res> {
+  __$$ConceptsLoadingImplCopyWithImpl(
+      _$ConceptsLoadingImpl _value, $Res Function(_$ConceptsLoadingImpl) _then)
       : super(_value, _then);
 
-  /// Create a copy of LessonsState
+  /// Create a copy of ConceptsState
   /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
 
-class _$LessonsLoadingImpl implements LessonsLoading {
-  const _$LessonsLoadingImpl();
+class _$ConceptsLoadingImpl implements ConceptsLoading {
+  const _$ConceptsLoadingImpl();
 
   @override
   String toString() {
-    return 'LessonsState.loading()';
+    return 'ConceptsState.loading()';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$LessonsLoadingImpl);
+        (other.runtimeType == runtimeType && other is _$ConceptsLoadingImpl);
   }
 
   @override
@@ -249,7 +249,7 @@ class _$LessonsLoadingImpl implements LessonsLoading {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(List<Lesson> lessons) loaded,
+    required TResult Function(List<Concept> concepts) loaded,
     required TResult Function(String message) error,
   }) {
     return loading();
@@ -260,7 +260,7 @@ class _$LessonsLoadingImpl implements LessonsLoading {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function(List<Lesson> lessons)? loaded,
+    TResult? Function(List<Concept> concepts)? loaded,
     TResult? Function(String message)? error,
   }) {
     return loading?.call();
@@ -271,7 +271,7 @@ class _$LessonsLoadingImpl implements LessonsLoading {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(List<Lesson> lessons)? loaded,
+    TResult Function(List<Concept> concepts)? loaded,
     TResult Function(String message)? error,
     required TResult orElse(),
   }) {
@@ -284,10 +284,10 @@ class _$LessonsLoadingImpl implements LessonsLoading {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(LessonsInitial value) initial,
-    required TResult Function(LessonsLoading value) loading,
-    required TResult Function(LessonsLoaded value) loaded,
-    required TResult Function(LessonsError value) error,
+    required TResult Function(ConceptsInitial value) initial,
+    required TResult Function(ConceptsLoading value) loading,
+    required TResult Function(ConceptsLoaded value) loaded,
+    required TResult Function(ConceptsError value) error,
   }) {
     return loading(this);
   }
@@ -295,10 +295,10 @@ class _$LessonsLoadingImpl implements LessonsLoading {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(LessonsInitial value)? initial,
-    TResult? Function(LessonsLoading value)? loading,
-    TResult? Function(LessonsLoaded value)? loaded,
-    TResult? Function(LessonsError value)? error,
+    TResult? Function(ConceptsInitial value)? initial,
+    TResult? Function(ConceptsLoading value)? loading,
+    TResult? Function(ConceptsLoaded value)? loaded,
+    TResult? Function(ConceptsError value)? error,
   }) {
     return loading?.call(this);
   }
@@ -306,10 +306,10 @@ class _$LessonsLoadingImpl implements LessonsLoading {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(LessonsInitial value)? initial,
-    TResult Function(LessonsLoading value)? loading,
-    TResult Function(LessonsLoaded value)? loaded,
-    TResult Function(LessonsError value)? error,
+    TResult Function(ConceptsInitial value)? initial,
+    TResult Function(ConceptsLoading value)? loading,
+    TResult Function(ConceptsLoaded value)? loaded,
+    TResult Function(ConceptsError value)? error,
     required TResult orElse(),
   }) {
     if (loading != null) {
@@ -319,90 +319,92 @@ class _$LessonsLoadingImpl implements LessonsLoading {
   }
 }
 
-abstract class LessonsLoading implements LessonsState {
-  const factory LessonsLoading() = _$LessonsLoadingImpl;
+abstract class ConceptsLoading implements ConceptsState {
+  const factory ConceptsLoading() = _$ConceptsLoadingImpl;
 }
 
 /// @nodoc
-abstract class _$$LessonsLoadedImplCopyWith<$Res> {
-  factory _$$LessonsLoadedImplCopyWith(
-          _$LessonsLoadedImpl value, $Res Function(_$LessonsLoadedImpl) then) =
-      __$$LessonsLoadedImplCopyWithImpl<$Res>;
+abstract class _$$ConceptsLoadedImplCopyWith<$Res> {
+  factory _$$ConceptsLoadedImplCopyWith(_$ConceptsLoadedImpl value,
+          $Res Function(_$ConceptsLoadedImpl) then) =
+      __$$ConceptsLoadedImplCopyWithImpl<$Res>;
   @useResult
-  $Res call({List<Lesson> lessons});
+  $Res call({List<Concept> concepts});
 }
 
 /// @nodoc
-class __$$LessonsLoadedImplCopyWithImpl<$Res>
-    extends _$LessonsStateCopyWithImpl<$Res, _$LessonsLoadedImpl>
-    implements _$$LessonsLoadedImplCopyWith<$Res> {
-  __$$LessonsLoadedImplCopyWithImpl(
-      _$LessonsLoadedImpl _value, $Res Function(_$LessonsLoadedImpl) _then)
+class __$$ConceptsLoadedImplCopyWithImpl<$Res>
+    extends _$ConceptsStateCopyWithImpl<$Res, _$ConceptsLoadedImpl>
+    implements _$$ConceptsLoadedImplCopyWith<$Res> {
+  __$$ConceptsLoadedImplCopyWithImpl(
+      _$ConceptsLoadedImpl _value, $Res Function(_$ConceptsLoadedImpl) _then)
       : super(_value, _then);
 
-  /// Create a copy of LessonsState
+  /// Create a copy of ConceptsState
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? lessons = null,
+    Object? concepts = null,
   }) {
-    return _then(_$LessonsLoadedImpl(
-      null == lessons
-          ? _value._lessons
-          : lessons // ignore: cast_nullable_to_non_nullable
-              as List<Lesson>,
+    return _then(_$ConceptsLoadedImpl(
+      null == concepts
+          ? _value._concepts
+          : concepts // ignore: cast_nullable_to_non_nullable
+              as List<Concept>,
     ));
   }
 }
 
 /// @nodoc
 
-class _$LessonsLoadedImpl implements LessonsLoaded {
-  const _$LessonsLoadedImpl(final List<Lesson> lessons) : _lessons = lessons;
+class _$ConceptsLoadedImpl implements ConceptsLoaded {
+  const _$ConceptsLoadedImpl(final List<Concept> concepts)
+      : _concepts = concepts;
 
-  final List<Lesson> _lessons;
+  final List<Concept> _concepts;
   @override
-  List<Lesson> get lessons {
-    if (_lessons is EqualUnmodifiableListView) return _lessons;
+  List<Concept> get concepts {
+    if (_concepts is EqualUnmodifiableListView) return _concepts;
     // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(_lessons);
+    return EqualUnmodifiableListView(_concepts);
   }
 
   @override
   String toString() {
-    return 'LessonsState.loaded(lessons: $lessons)';
+    return 'ConceptsState.loaded(concepts: $concepts)';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$LessonsLoadedImpl &&
-            const DeepCollectionEquality().equals(other._lessons, _lessons));
+            other is _$ConceptsLoadedImpl &&
+            const DeepCollectionEquality().equals(other._concepts, _concepts));
   }
 
   @override
   int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(_lessons));
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(_concepts));
 
-  /// Create a copy of LessonsState
+  /// Create a copy of ConceptsState
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
-  _$$LessonsLoadedImplCopyWith<_$LessonsLoadedImpl> get copyWith =>
-      __$$LessonsLoadedImplCopyWithImpl<_$LessonsLoadedImpl>(this, _$identity);
+  _$$ConceptsLoadedImplCopyWith<_$ConceptsLoadedImpl> get copyWith =>
+      __$$ConceptsLoadedImplCopyWithImpl<_$ConceptsLoadedImpl>(
+          this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(List<Lesson> lessons) loaded,
+    required TResult Function(List<Concept> concepts) loaded,
     required TResult Function(String message) error,
   }) {
-    return loaded(lessons);
+    return loaded(concepts);
   }
 
   @override
@@ -410,10 +412,10 @@ class _$LessonsLoadedImpl implements LessonsLoaded {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function(List<Lesson> lessons)? loaded,
+    TResult? Function(List<Concept> concepts)? loaded,
     TResult? Function(String message)? error,
   }) {
-    return loaded?.call(lessons);
+    return loaded?.call(concepts);
   }
 
   @override
@@ -421,12 +423,12 @@ class _$LessonsLoadedImpl implements LessonsLoaded {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(List<Lesson> lessons)? loaded,
+    TResult Function(List<Concept> concepts)? loaded,
     TResult Function(String message)? error,
     required TResult orElse(),
   }) {
     if (loaded != null) {
-      return loaded(lessons);
+      return loaded(concepts);
     }
     return orElse();
   }
@@ -434,10 +436,10 @@ class _$LessonsLoadedImpl implements LessonsLoaded {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(LessonsInitial value) initial,
-    required TResult Function(LessonsLoading value) loading,
-    required TResult Function(LessonsLoaded value) loaded,
-    required TResult Function(LessonsError value) error,
+    required TResult Function(ConceptsInitial value) initial,
+    required TResult Function(ConceptsLoading value) loading,
+    required TResult Function(ConceptsLoaded value) loaded,
+    required TResult Function(ConceptsError value) error,
   }) {
     return loaded(this);
   }
@@ -445,10 +447,10 @@ class _$LessonsLoadedImpl implements LessonsLoaded {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(LessonsInitial value)? initial,
-    TResult? Function(LessonsLoading value)? loading,
-    TResult? Function(LessonsLoaded value)? loaded,
-    TResult? Function(LessonsError value)? error,
+    TResult? Function(ConceptsInitial value)? initial,
+    TResult? Function(ConceptsLoading value)? loading,
+    TResult? Function(ConceptsLoaded value)? loaded,
+    TResult? Function(ConceptsError value)? error,
   }) {
     return loaded?.call(this);
   }
@@ -456,10 +458,10 @@ class _$LessonsLoadedImpl implements LessonsLoaded {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(LessonsInitial value)? initial,
-    TResult Function(LessonsLoading value)? loading,
-    TResult Function(LessonsLoaded value)? loaded,
-    TResult Function(LessonsError value)? error,
+    TResult Function(ConceptsInitial value)? initial,
+    TResult Function(ConceptsLoading value)? loading,
+    TResult Function(ConceptsLoaded value)? loaded,
+    TResult Function(ConceptsError value)? error,
     required TResult orElse(),
   }) {
     if (loaded != null) {
@@ -469,43 +471,44 @@ class _$LessonsLoadedImpl implements LessonsLoaded {
   }
 }
 
-abstract class LessonsLoaded implements LessonsState {
-  const factory LessonsLoaded(final List<Lesson> lessons) = _$LessonsLoadedImpl;
+abstract class ConceptsLoaded implements ConceptsState {
+  const factory ConceptsLoaded(final List<Concept> concepts) =
+      _$ConceptsLoadedImpl;
 
-  List<Lesson> get lessons;
+  List<Concept> get concepts;
 
-  /// Create a copy of LessonsState
+  /// Create a copy of ConceptsState
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$LessonsLoadedImplCopyWith<_$LessonsLoadedImpl> get copyWith =>
+  _$$ConceptsLoadedImplCopyWith<_$ConceptsLoadedImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$LessonsErrorImplCopyWith<$Res> {
-  factory _$$LessonsErrorImplCopyWith(
-          _$LessonsErrorImpl value, $Res Function(_$LessonsErrorImpl) then) =
-      __$$LessonsErrorImplCopyWithImpl<$Res>;
+abstract class _$$ConceptsErrorImplCopyWith<$Res> {
+  factory _$$ConceptsErrorImplCopyWith(
+          _$ConceptsErrorImpl value, $Res Function(_$ConceptsErrorImpl) then) =
+      __$$ConceptsErrorImplCopyWithImpl<$Res>;
   @useResult
   $Res call({String message});
 }
 
 /// @nodoc
-class __$$LessonsErrorImplCopyWithImpl<$Res>
-    extends _$LessonsStateCopyWithImpl<$Res, _$LessonsErrorImpl>
-    implements _$$LessonsErrorImplCopyWith<$Res> {
-  __$$LessonsErrorImplCopyWithImpl(
-      _$LessonsErrorImpl _value, $Res Function(_$LessonsErrorImpl) _then)
+class __$$ConceptsErrorImplCopyWithImpl<$Res>
+    extends _$ConceptsStateCopyWithImpl<$Res, _$ConceptsErrorImpl>
+    implements _$$ConceptsErrorImplCopyWith<$Res> {
+  __$$ConceptsErrorImplCopyWithImpl(
+      _$ConceptsErrorImpl _value, $Res Function(_$ConceptsErrorImpl) _then)
       : super(_value, _then);
 
-  /// Create a copy of LessonsState
+  /// Create a copy of ConceptsState
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? message = null,
   }) {
-    return _then(_$LessonsErrorImpl(
+    return _then(_$ConceptsErrorImpl(
       null == message
           ? _value.message
           : message // ignore: cast_nullable_to_non_nullable
@@ -516,42 +519,42 @@ class __$$LessonsErrorImplCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$LessonsErrorImpl implements LessonsError {
-  const _$LessonsErrorImpl(this.message);
+class _$ConceptsErrorImpl implements ConceptsError {
+  const _$ConceptsErrorImpl(this.message);
 
   @override
   final String message;
 
   @override
   String toString() {
-    return 'LessonsState.error(message: $message)';
+    return 'ConceptsState.error(message: $message)';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$LessonsErrorImpl &&
+            other is _$ConceptsErrorImpl &&
             (identical(other.message, message) || other.message == message));
   }
 
   @override
   int get hashCode => Object.hash(runtimeType, message);
 
-  /// Create a copy of LessonsState
+  /// Create a copy of ConceptsState
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
-  _$$LessonsErrorImplCopyWith<_$LessonsErrorImpl> get copyWith =>
-      __$$LessonsErrorImplCopyWithImpl<_$LessonsErrorImpl>(this, _$identity);
+  _$$ConceptsErrorImplCopyWith<_$ConceptsErrorImpl> get copyWith =>
+      __$$ConceptsErrorImplCopyWithImpl<_$ConceptsErrorImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(List<Lesson> lessons) loaded,
+    required TResult Function(List<Concept> concepts) loaded,
     required TResult Function(String message) error,
   }) {
     return error(message);
@@ -562,7 +565,7 @@ class _$LessonsErrorImpl implements LessonsError {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function(List<Lesson> lessons)? loaded,
+    TResult? Function(List<Concept> concepts)? loaded,
     TResult? Function(String message)? error,
   }) {
     return error?.call(message);
@@ -573,7 +576,7 @@ class _$LessonsErrorImpl implements LessonsError {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(List<Lesson> lessons)? loaded,
+    TResult Function(List<Concept> concepts)? loaded,
     TResult Function(String message)? error,
     required TResult orElse(),
   }) {
@@ -586,10 +589,10 @@ class _$LessonsErrorImpl implements LessonsError {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(LessonsInitial value) initial,
-    required TResult Function(LessonsLoading value) loading,
-    required TResult Function(LessonsLoaded value) loaded,
-    required TResult Function(LessonsError value) error,
+    required TResult Function(ConceptsInitial value) initial,
+    required TResult Function(ConceptsLoading value) loading,
+    required TResult Function(ConceptsLoaded value) loaded,
+    required TResult Function(ConceptsError value) error,
   }) {
     return error(this);
   }
@@ -597,10 +600,10 @@ class _$LessonsErrorImpl implements LessonsError {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(LessonsInitial value)? initial,
-    TResult? Function(LessonsLoading value)? loading,
-    TResult? Function(LessonsLoaded value)? loaded,
-    TResult? Function(LessonsError value)? error,
+    TResult? Function(ConceptsInitial value)? initial,
+    TResult? Function(ConceptsLoading value)? loading,
+    TResult? Function(ConceptsLoaded value)? loaded,
+    TResult? Function(ConceptsError value)? error,
   }) {
     return error?.call(this);
   }
@@ -608,10 +611,10 @@ class _$LessonsErrorImpl implements LessonsError {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(LessonsInitial value)? initial,
-    TResult Function(LessonsLoading value)? loading,
-    TResult Function(LessonsLoaded value)? loaded,
-    TResult Function(LessonsError value)? error,
+    TResult Function(ConceptsInitial value)? initial,
+    TResult Function(ConceptsLoading value)? loading,
+    TResult Function(ConceptsLoaded value)? loaded,
+    TResult Function(ConceptsError value)? error,
     required TResult orElse(),
   }) {
     if (error != null) {
@@ -621,14 +624,14 @@ class _$LessonsErrorImpl implements LessonsError {
   }
 }
 
-abstract class LessonsError implements LessonsState {
-  const factory LessonsError(final String message) = _$LessonsErrorImpl;
+abstract class ConceptsError implements ConceptsState {
+  const factory ConceptsError(final String message) = _$ConceptsErrorImpl;
 
   String get message;
 
-  /// Create a copy of LessonsState
+  /// Create a copy of ConceptsState
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$LessonsErrorImplCopyWith<_$LessonsErrorImpl> get copyWith =>
+  _$$ConceptsErrorImplCopyWith<_$ConceptsErrorImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

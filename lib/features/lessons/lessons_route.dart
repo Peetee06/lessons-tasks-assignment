@@ -10,31 +10,31 @@ import 'package:lessons_tasks_assignment/features/tasks/tasks_route.dart';
 
 part 'lessons_route.g.dart';
 
-@TypedGoRoute<LessonsRoute>(
-  path: '/lessons',
-  name: 'lessons',
+@TypedGoRoute<ConceptsRoute>(
+  path: '/concepts',
+  name: 'concepts',
   routes: [
-    TypedGoRoute<LessonRoute>(
+    TypedGoRoute<ConceptRoute>(
       path: ':id',
-      name: 'lesson',
+      name: 'concept',
       routes: [
-        TypedGoRoute<TasksRoute>(
-          path: 'tasks',
-          name: 'tasks',
+        TypedGoRoute<ChallengesRoute>(
+          path: 'challenges',
+          name: 'challenges',
         ),
       ],
     ),
   ],
 )
 @immutable
-class LessonsRoute extends GoRouteData {
+class ConceptsRoute extends GoRouteData {
   @override
   Widget build(BuildContext context, GoRouterState state) {
     return BlocProvider(
-      create: (context) => LessonsCubit(
-        GetIt.I<LessonsRepository>(),
-      )..fetchLessons(),
-      child: const LessonsView(),
+      create: (context) => ConceptsCubit(
+        GetIt.I<ConceptsRepository>(),
+      )..fetchConcepts(),
+      child: const ConceptsView(),
     );
   }
 }
