@@ -7,18 +7,18 @@ import 'package:lessons_tasks_assignment/features/lesson/cubit/lesson_cubit.dart
 import 'package:lessons_tasks_assignment/features/lesson/view/lesson_view.dart';
 
 @immutable
-class LessonRoute extends GoRouteData {
-  const LessonRoute({required this.id});
+class ConceptRoute extends GoRouteData {
+  const ConceptRoute({required this.id});
 
   final String id;
 
   @override
   Widget build(BuildContext context, GoRouterState state) {
     return BlocProvider(
-      create: (context) => LessonCubit(
-        GetIt.I<LessonsRepository>(),
-      )..fetchLesson(id),
-      child: const LessonView(),
+      create: (context) => ConceptCubit(
+        GetIt.I<ConceptsRepository>(),
+      )..fetchConcept(id),
+      child: const ConceptView(),
     );
   }
 }
