@@ -25,13 +25,13 @@ void main() {
       restClient = RestClient(mockDio);
     });
 
-    group('getLessons', () {
-      test('returns list of Lesson on successful request', () async {
+    group('getConcepts', () {
+      test('returns list of Concept on successful request', () async {
         final responseData = [
           {
             'id': '1',
-            'title': {'en': 'Lesson 1', 'de': 'Lektion 1'},
-            'pages': [
+            'title': {'en': 'Concept 1', 'de': 'Konzept 1'},
+            'sections': [
               {
                 'content': [
                   {
@@ -45,7 +45,7 @@ void main() {
                 ],
               },
             ],
-            'taskIds': ['task1', 'task2'],
+            'challengeIds': ['challenge1', 'challenge2'],
           },
         ];
 
@@ -59,16 +59,16 @@ void main() {
           ),
         );
 
-        final result = await restClient.getLessons();
+        final result = await restClient.getConcepts();
 
         expect(
           result,
           [
-            Lesson(
+            Concept(
               id: '1',
-              title: {'en': 'Lesson 1', 'de': 'Lektion 1'},
-              pages: [
-                Page(
+              title: {'en': 'Concept 1', 'de': 'Konzept 1'},
+              sections: [
+                Section(
                   content: [
                     const ContentComponent.text(
                       text: {'en': 'Hello', 'de': 'Hallo'},
@@ -79,7 +79,7 @@ void main() {
                   ],
                 ),
               ],
-              taskIds: ['task1', 'task2'],
+              challengeIds: ['challenge1', 'challenge2'],
             ),
           ],
         );
@@ -99,18 +99,18 @@ void main() {
         );
 
         expect(
-          () => restClient.getLessons(),
+          () => restClient.getConcepts(),
           throwsA(isA<DioException>()),
         );
       });
     });
 
-    group('getTasks', () {
-      test('returns list of Task on successful request', () async {
+    group('getChallenges', () {
+      test('returns list of Challenge on successful request', () async {
         final responseData = [
           {
             'id': '1',
-            'question': {'en': 'Task 1', 'de': 'Aufgabe 1'},
+            'question': {'en': 'Challenge 1', 'de': 'Herausforderung 1'},
             'options': [
               {
                 'id': 'a1',
@@ -135,14 +135,14 @@ void main() {
           ),
         );
 
-        final result = await restClient.getTasks();
+        final result = await restClient.getChallenges();
 
         expect(
           result,
           [
-            const Task(
+            const Challenge(
               id: '1',
-              question: {'en': 'Task 1', 'de': 'Aufgabe 1'},
+              question: {'en': 'Challenge 1', 'de': 'Herausforderung 1'},
               options: [
                 Answer(
                   id: 'a1',
@@ -173,7 +173,7 @@ void main() {
         );
 
         expect(
-          () => restClient.getTasks(),
+          () => restClient.getChallenges(),
           throwsA(isA<DioException>()),
         );
       });

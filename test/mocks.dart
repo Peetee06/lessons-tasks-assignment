@@ -14,11 +14,11 @@ import 'package:mockito/annotations.dart';
   Dio,
   GoRouter,
   HttpClientAdapter,
-  LessonCubit,
-  LessonsCubit,
-  LessonsRepository,
+  ConceptCubit,
+  ConceptsCubit,
+  ConceptsRepository,
   RestClient,
-  TasksCubit,
-  TasksRepository,
+  ChallengesCubit,
+  ChallengesRepository,
 ])
 class GeneratedMocks {}

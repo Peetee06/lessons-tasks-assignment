@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart' hide Page;
+import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:lessons_tasks_assignment/domain/content_component.dart';
@@ -14,53 +14,53 @@ import '../../../helpers/helpers.dart';
 import '../../../mocks.mocks.dart';
 
 void main() {
-  provideDummy(const LessonsState.initial());
-  late MockLessonsCubit cubit;
+  provideDummy(const ConceptsState.initial());
+  late MockConceptsCubit cubit;
 
   setUp(() {
-    cubit = MockLessonsCubit();
+    cubit = MockConceptsCubit();
     when(cubit.stream).thenAnswer((_) => const Stream.empty());
   });
 
   Future<void> pumpTestWidget(WidgetTester tester) {
     return tester.pumpApp(
-      widget: BlocProvider<LessonsCubit>.value(
+      widget: BlocProvider<ConceptsCubit>.value(
         value: cubit,
-        child: const LessonsView(),
+        child: const ConceptsView(),
       ),
     );
   }
 
-  group('LessonsView', () {
+  group(ConceptsView, () {
     testWidgets('has correct title', (WidgetTester tester) async {
-      when(cubit.state).thenReturn(const LessonsState.initial());
+      when(cubit.state).thenReturn(const ConceptsState.initial());
       await pumpTestWidget(tester);
-      final BuildContext context = tester.element(find.byType(LessonsView));
-      expect(find.text(context.l10n.lessonsViewTitle), findsOneWidget);
+      final BuildContext context = tester.element(find.byType(ConceptsView));
+      expect(find.text(context.l10n.conceptsViewTitle), findsOneWidget);
     });
 
     testWidgets('renders initial state', (WidgetTester tester) async {
-      when(cubit.state).thenReturn(const LessonsState.initial());
+      when(cubit.state).thenReturn(const ConceptsState.initial());
       await pumpTestWidget(tester);
       expect(find.byType(SizedBox), findsOneWidget);
     });
 
     testWidgets('renders loading state', (WidgetTester tester) async {
-      when(cubit.state).thenReturn(const LessonsState.loading());
+      when(cubit.state).thenReturn(const ConceptsState.loading());
       await pumpTestWidget(tester);
       expect(find.byType(CircularProgressIndicator), findsOneWidget);
     });
 
-    testWidgets('renders lessons', (WidgetTester tester) async {
-      final lessons = [
-        Lesson(
+    testWidgets('renders concepts', (WidgetTester tester) async {
+      final concepts = [
+        Concept(
           id: '1',
           title: {
-            'en': 'Test Lesson',
-            'de': 'Test Lektion',
+            'en': 'Test Concept',
+            'de': 'Test Konzept',
           },
-          pages: [
-            Page(
+          sections: [
+            Section(
               content: [
                 const ContentComponent.text(
                   text: {
@@ -74,62 +74,62 @@ void main() {
               ],
             ),
           ],
-          taskIds: ['1'],
+          challengeIds: ['1'],
         ),
-        const Lesson(
+        const Concept(
           id: '2',
-          title: {'en': 'Test Lesson 2', 'de': 'Test Lektion 2'},
-          pages: [],
-          taskIds: [],
+          title: {'en': 'Test Concept 2', 'de': 'Test Konzept 2'},
+          sections: [],
+          challengeIds: [],
         ),
       ];
-      when(cubit.state).thenReturn(LessonsState.loaded(lessons));
+      when(cubit.state).thenReturn(ConceptsState.loaded(concepts));
       await pumpTestWidget(tester);
-      final BuildContext context = tester.element(find.byType(LessonsView));
+      final BuildContext context = tester.element(find.byType(ConceptsView));
       expect(find.byType(ListView), findsOneWidget);
-      expect(find.text('Test Lektion'), findsOneWidget);
-      expect(find.text(context.l10n.lessonsPages(1)), findsOneWidget);
-      expect(find.text(context.l10n.lessonsTasks(1)), findsOneWidget);
-      expect(find.text('Test Lektion 2'), findsOneWidget);
-      expect(find.text(context.l10n.lessonsPages(0)), findsOneWidget);
-      expect(find.text(context.l10n.lessonsTasks(0)), findsOneWidget);
+      expect(find.text('Test Konzept'), findsOneWidget);
+      expect(find.text(context.l10n.conceptsSections(1)), findsOneWidget);
+      expect(find.text(context.l10n.conceptsChallenges(1)), findsOneWidget);
+      expect(find.text('Test Konzept 2'), findsOneWidget);
+      expect(find.text(context.l10n.conceptsSections(0)), findsOneWidget);
+      expect(find.text(context.l10n.conceptsChallenges(0)), findsOneWidget);
     });
 
-    testWidgets('renders error state and fetches lessons on try again tap',
+    testWidgets('renders error state and fetches concepts on try again tap',
         (WidgetTester tester) async {
-      when(cubit.state).thenReturn(const LessonsState.error('Error'));
+      when(cubit.state).thenReturn(const ConceptsState.error('Error'));
       await pumpTestWidget(tester);
-      final BuildContext context = tester.element(find.byType(LessonsView));
+      final BuildContext context = tester.element(find.byType(ConceptsView));
 
       expect(find.text('Error'), findsOneWidget);
-      expect(find.text(context.l10n.lessonsTryAgain), findsOneWidget);
+      expect(find.text(context.l10n.conceptsTryAgain), findsOneWidget);
 
-      await tester.tap(find.text(context.l10n.lessonsTryAgain));
-      verify(cubit.fetchLessons()).called(1);
+      await tester.tap(find.text(context.l10n.conceptsTryAgain));
+      verify(cubit.fetchConcepts()).called(1);
     });
   });
 
-  testWidgets('Pulling down fetches lessons', (WidgetTester tester) async {
+  testWidgets('Pulling down fetches concepts', (WidgetTester tester) async {
     when(cubit.state).thenReturn(
-      const LessonsState.loaded([
-        Lesson(
+      const ConceptsState.loaded([
+        Concept(
           id: '1',
-          title: {'en': 'Test Lesson', 'de': 'Test Lektion'},
-          pages: [],
-          taskIds: [],
+          title: {'en': 'Test Concept', 'de': 'Test Konzept'},
+          sections: [],
+          challengeIds: [],
         ),
       ]),
     );
     await pumpTestWidget(tester);
     await tester.drag(find.byType(ListView), const Offset(0, 500));
     await tester.pumpAndSettle();
-    verify(cubit.fetchLessons()).called(1);
+    verify(cubit.fetchConcepts()).called(1);
   });
 
   testWidgets('shows empty state', (WidgetTester tester) async {
-    when(cubit.state).thenReturn(const LessonsState.loaded([]));
+    when(cubit.state).thenReturn(const ConceptsState.loaded([]));
     await pumpTestWidget(tester);
-    final BuildContext context = tester.element(find.byType(LessonsView));
-    expect(find.text(context.l10n.lessonsEmpty), findsOneWidget);
+    final BuildContext context = tester.element(find.byType(ConceptsView));
+    expect(find.text(context.l10n.conceptsEmpty), findsOneWidget);
   });
 }

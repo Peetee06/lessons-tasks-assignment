@@ -10,16 +10,16 @@ import 'package:mockito/mockito.dart';
 import '../../../mocks.mocks.dart';
 
 void main() {
-  late MockTasksRepository mockTasksRepository;
-  late MockLessonsRepository mockLessonsRepository;
+  late MockChallengesRepository mockChallengesRepository;
+  late MockConceptsRepository mockConceptsRepository;
 
   setUp(() {
-    mockTasksRepository = MockTasksRepository();
-    mockLessonsRepository = MockLessonsRepository();
+    mockChallengesRepository = MockChallengesRepository();
+    mockConceptsRepository = MockConceptsRepository();
   });
 
-  final tasks = [
-    const Task(
+  final challenges = [
+    const Challenge(
       id: '1',
       question: {
         'en': 'What is 2+2?',
@@ -31,7 +31,7 @@ void main() {
       ],
       correctAnswerIds: ['a1'],
     ),
-    const Task(
+    const Challenge(
       id: '2',
       question: {
         'en': 'What is the capital of France?',
@@ -45,126 +45,129 @@ void main() {
     ),
   ];
 
-  final lessons = [
-    Lesson(
+  final concepts = [
+    Concept(
       id: '1',
-      title: {'en': 'Lesson 1', 'de': 'Lektion 1'},
-      pages: [],
-      taskIds: [tasks.first.id],
+      title: {'en': 'Concept 1', 'de': 'Konzept 1'},
+      sections: [],
+      challengeIds: [challenges.first.id],
     ),
-    const Lesson(
-      id: 'lessonWithMissingTask',
-      title: {'en': 'Lesson 2', 'de': 'Lektion 2'},
-      pages: [],
-      taskIds: ['3'],
+    const Concept(
+      id: 'conceptWithMissingChallenge',
+      title: {'en': 'Concept 2', 'de': 'Konzept 2'},
+      sections: [],
+      challengeIds: ['3'],
     ),
   ];
 
-  group('TasksCubit', () {
-    test('initial state is TasksInitial', () {
+  group('ChallengesCubit', () {
+    test('initial state is ChallengesInitial', () {
       expect(
-        TasksCubit(
-          tasksRepository: mockTasksRepository,
-          lessonsRepository: mockLessonsRepository,
-          lessonId: '1',
+        ChallengesCubit(
+          challengesRepository: mockChallengesRepository,
+          conceptsRepository: mockConceptsRepository,
+          conceptId: '1',
         ).state,
-        const TasksState.initial(),
+        const ChallengesState.initial(),
       );
     });
 
-    blocTest<TasksCubit, TasksState>(
-      'emits [loading, loaded] when fetchTasks succeeds',
+    blocTest<ChallengesCubit, ChallengesState>(
+      'emits [loading, loaded] when fetchChallenges succeeds',
       setUp: () {
-        when(mockTasksRepository.getTasks()).thenAnswer((_) async => tasks);
-        when(mockLessonsRepository.getLessons()).thenAnswer(
-          (_) async => lessons,
+        when(mockChallengesRepository.getChallenges())
+            .thenAnswer((_) async => challenges);
+        when(mockConceptsRepository.getConcepts()).thenAnswer(
+          (_) async => concepts,
         );
       },
-      build: () => TasksCubit(
-        tasksRepository: mockTasksRepository,
-        lessonsRepository: mockLessonsRepository,
-        lessonId: '1',
+      build: () => ChallengesCubit(
+        challengesRepository: mockChallengesRepository,
+        conceptsRepository: mockConceptsRepository,
+        conceptId: '1',
       ),
-      act: (cubit) => cubit.fetchTasks(),
+      act: (cubit) => cubit.fetchChallenges(),
       expect: () => [
-        const TasksState.loading(),
-        TasksState.loaded([tasks.first]),
+        const ChallengesState.loading(),
+        ChallengesState.loaded([challenges.first]),
       ],
     );
 
-    blocTest<TasksCubit, TasksState>(
-      'emits [loading, error] when requested task is not found',
+    blocTest<ChallengesCubit, ChallengesState>(
+      'emits [loading, error] when requested challenge is not found',
       setUp: () {
-        when(mockTasksRepository.getTasks()).thenAnswer((_) async => tasks);
-        when(mockLessonsRepository.getLessons()).thenAnswer(
-          (_) async => lessons,
+        when(mockChallengesRepository.getChallenges())
+            .thenAnswer((_) async => challenges);
+        when(mockConceptsRepository.getConcepts()).thenAnswer(
+          (_) async => concepts,
         );
       },
-      build: () => TasksCubit(
-        tasksRepository: mockTasksRepository,
-        lessonsRepository: mockLessonsRepository,
-        lessonId: 'lessonWithMissingTask',
+      build: () => ChallengesCubit(
+        challengesRepository: mockChallengesRepository,
+        conceptsRepository: mockConceptsRepository,
+        conceptId: 'conceptWithMissingChallenge',
       ),
-      act: (cubit) => cubit.fetchTasks(),
+      act: (cubit) => cubit.fetchChallenges(),
       expect: () => const [
-        TasksState.loading(),
-        TasksState.error('Task with id 3 not found'),
+        ChallengesState.loading(),
+        ChallengesState.error('Challenge with id 3 not found'),
       ],
       errors: () => [
         isA<Exception>().having(
           (e) => e.toString(),
           'error',
-          'Exception: Task with id 3 not found',
+          'Exception: Challenge with id 3 not found',
         ),
       ],
     );
 
-    blocTest<TasksCubit, TasksState>(
-      'emits [loading, error] when lesson is not found',
+    blocTest<ChallengesCubit, ChallengesState>(
+      'emits [loading, error] when concept is not found',
       setUp: () {
-        when(mockLessonsRepository.getLessons()).thenAnswer(
+        when(mockConceptsRepository.getConcepts()).thenAnswer(
           (_) async => [],
         );
       },
-      build: () => TasksCubit(
-        tasksRepository: mockTasksRepository,
-        lessonsRepository: mockLessonsRepository,
-        lessonId: 'missingLesson',
+      build: () => ChallengesCubit(
+        challengesRepository: mockChallengesRepository,
+        conceptsRepository: mockConceptsRepository,
+        conceptId: 'missingConcept',
       ),
-      act: (cubit) => cubit.fetchTasks(),
+      act: (cubit) => cubit.fetchChallenges(),
       expect: () => const [
-        TasksState.loading(),
-        TasksState.error('Lesson with id missingLesson not found'),
+        ChallengesState.loading(),
+        ChallengesState.error('Concept with id missingConcept not found'),
       ],
       errors: () => [
         isA<Exception>().having(
           (e) => e.toString(),
           'error',
-          'Exception: Lesson with id missingLesson not found',
+          'Exception: Concept with id missingConcept not found',
         ),
       ],
     );
 
-    blocTest<TasksCubit, TasksState>(
-      'emits [loading, error] when fetchTasks fails',
+    blocTest<ChallengesCubit, ChallengesState>(
+      'emits [loading, error] when fetchChallenges fails',
       setUp: () {
-        when(mockLessonsRepository.getLessons()).thenAnswer(
-          (_) async => lessons,
+        when(mockConceptsRepository.getConcepts()).thenAnswer(
+          (_) async => concepts,
         );
-        when(mockTasksRepository.getTasks()).thenThrow(Exception('Test error'));
+        when(mockChallengesRepository.getChallenges())
+            .thenThrow(Exception('Test error'));
       },
-      build: () => TasksCubit(
-        tasksRepository: mockTasksRepository,
-        lessonsRepository: mockLessonsRepository,
-        lessonId: '1',
+      build: () => ChallengesCubit(
+        challengesRepository: mockChallengesRepository,
+        conceptsRepository: mockConceptsRepository,
+        conceptId: '1',
       ),
-      act: (cubit) => cubit.fetchTasks(),
+      act: (cubit) => cubit.fetchChallenges(),
       expect: () => const [
-        TasksState.loading(),
-        TasksState.error('Failed to fetch tasks'),
+        ChallengesState.loading(),
+        ChallengesState.error('Failed to fetch challenges'),
       ],
       verify: (_) {
-        verify(mockTasksRepository.getTasks()).called(1);
+        verify(mockChallengesRepository.getChallenges()).called(1);
       },
       errors: () => [
         isA<Exception>().having(
@@ -175,25 +178,25 @@ void main() {
       ],
     );
 
-    blocTest<TasksCubit, TasksState>(
-      'emits [loading, error] when fetchLessons fails',
+    blocTest<ChallengesCubit, ChallengesState>(
+      'emits [loading, error] when fetchConcepts fails',
       setUp: () {
-        when(mockLessonsRepository.getLessons()).thenThrow(
+        when(mockConceptsRepository.getConcepts()).thenThrow(
           Exception('Test error'),
         );
       },
-      build: () => TasksCubit(
-        tasksRepository: mockTasksRepository,
-        lessonsRepository: mockLessonsRepository,
-        lessonId: '1',
+      build: () => ChallengesCubit(
+        challengesRepository: mockChallengesRepository,
+        conceptsRepository: mockConceptsRepository,
+        conceptId: '1',
       ),
-      act: (cubit) => cubit.fetchTasks(),
+      act: (cubit) => cubit.fetchChallenges(),
       expect: () => const [
-        TasksState.loading(),
-        TasksState.error('Failed to fetch tasks'),
+        ChallengesState.loading(),
+        ChallengesState.error('Failed to fetch challenges'),
       ],
       verify: (_) {
-        verify(mockLessonsRepository.getLessons()).called(1);
+        verify(mockConceptsRepository.getConcepts()).called(1);
       },
       errors: () => [
         isA<Exception>().having(

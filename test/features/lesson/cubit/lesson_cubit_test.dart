@@ -10,20 +10,20 @@ import 'package:mockito/mockito.dart';
 import '../../../mocks.mocks.dart';
 
 void main() {
-  late MockLessonsRepository mockRepository;
+  late MockConceptsRepository mockRepository;
 
   setUp(() {
-    mockRepository = MockLessonsRepository();
+    mockRepository = MockConceptsRepository();
   });
 
-  final lesson = Lesson(
+  final concept = Concept(
     id: '1',
     title: {
-      'en': 'Test Lesson',
-      'de': 'Test Lektion',
+      'en': 'Test Concept',
+      'de': 'Test Konzept',
     },
-    pages: [
-      Page(
+    sections: [
+      Section(
         content: [
           const ContentComponent.text(
             text: {
@@ -37,43 +37,43 @@ void main() {
         ],
       ),
     ],
-    taskIds: ['1', '2'],
+    challengeIds: ['1', '2'],
   );
 
-  group('LessonCubit', () {
-    test('initial state is LessonInitial', () {
+  group(ConceptCubit, () {
+    test('initial state is ConceptInitial', () {
       expect(
-        LessonCubit(mockRepository).state,
-        const LessonState.initial(),
+        ConceptCubit(mockRepository).state,
+        const ConceptState.initial(),
       );
     });
 
-    blocTest<LessonCubit, LessonState>(
-      'emits [loading, loaded] when fetchLesson succeeds',
+    blocTest<ConceptCubit, ConceptState>(
+      'emits [loading, loaded] when fetchConcept succeeds',
       setUp: () {
-        when(mockRepository.getLessons()).thenAnswer((_) async => [lesson]);
+        when(mockRepository.getConcepts()).thenAnswer((_) async => [concept]);
       },
-      build: () => LessonCubit(mockRepository),
-      act: (cubit) => cubit.fetchLesson('1'),
+      build: () => ConceptCubit(mockRepository),
+      act: (cubit) => cubit.fetchConcept('1'),
       expect: () => [
-        const LessonState.loading(),
-        LessonState.loaded(lesson),
+        const ConceptState.loading(),
+        ConceptState.loaded(concept),
       ],
     );
 
-    blocTest<LessonCubit, LessonState>(
-      'emits [loading, error] when fetchLesson fails',
+    blocTest<ConceptCubit, ConceptState>(
+      'emits [loading, error] when fetchConcept fails',
       setUp: () {
-        when(mockRepository.getLessons()).thenThrow(Exception('Test error'));
+        when(mockRepository.getConcepts()).thenThrow(Exception('Test error'));
       },
-      build: () => LessonCubit(mockRepository),
-      act: (cubit) => cubit.fetchLesson('1'),
+      build: () => ConceptCubit(mockRepository),
+      act: (cubit) => cubit.fetchConcept('1'),
       expect: () => const [
-        LessonState.loading(),
-        LessonState.error('Failed to fetch lesson'),
+        ConceptState.loading(),
+        ConceptState.error('Failed to fetch concept'),
       ],
       verify: (_) {
-        verify(mockRepository.getLessons()).called(1);
+        verify(mockRepository.getConcepts()).called(1);
       },
       errors: () => [
         isA<Exception>().having(
@@ -84,19 +84,19 @@ void main() {
       ],
     );
 
-    blocTest<LessonCubit, LessonState>(
-      'emits [loading, error] when lesson does not exist',
+    blocTest<ConceptCubit, ConceptState>(
+      'emits [loading, error] when concept does not exist',
       setUp: () {
-        when(mockRepository.getLessons()).thenAnswer((_) async => []);
+        when(mockRepository.getConcepts()).thenAnswer((_) async => []);
       },
-      build: () => LessonCubit(mockRepository),
-      act: (cubit) => cubit.fetchLesson('nonexistent'),
+      build: () => ConceptCubit(mockRepository),
+      act: (cubit) => cubit.fetchConcept('nonexistent'),
       expect: () => const [
-        LessonState.loading(),
-        LessonState.error('Lesson not found'),
+        ConceptState.loading(),
+        ConceptState.error('Concept not found'),
       ],
       verify: (_) {
-        verify(mockRepository.getLessons()).called(1);
+        verify(mockRepository.getConcepts()).called(1);
       },
     );
   });

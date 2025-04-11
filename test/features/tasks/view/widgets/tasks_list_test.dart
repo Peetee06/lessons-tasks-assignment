@@ -9,8 +9,8 @@ import 'package:lessons_tasks_assignment/l10n/l10n.dart';
 import '../../../../helpers/helpers.dart';
 
 void main() {
-  final tasks = [
-    const Task(
+  final challenges = [
+    const Challenge(
       id: '1',
       question: {
         'en': 'What is Flutter?',
@@ -21,7 +21,7 @@ void main() {
       ],
       correctAnswerIds: ['a1'],
     ),
-    const Task(
+    const Challenge(
       id: '2',
       question: {
         'en': 'What is Dart?',
@@ -35,41 +35,41 @@ void main() {
     ),
   ];
 
-  Future<void> pumpAppWithTasksList(
+  Future<void> pumpAppWithChallengesList(
     WidgetTester tester, {
-    required List<Task> tasks,
+    required List<Challenge> challenges,
   }) async {
     await tester.pumpApp(
       locale: const Locale('de'),
       widget: Material(
-        child: TasksList(tasks: tasks),
+        child: ChallengesList(challenges: challenges),
       ),
     );
   }
 
-  group('TasksList', () {
-    testWidgets('renders empty state when no tasks', (tester) async {
-      await pumpAppWithTasksList(tester, tasks: []);
+  group('ChallengesList', () {
+    testWidgets('renders empty state when no challenges', (tester) async {
+      await pumpAppWithChallengesList(tester, challenges: []);
 
-      expect(find.text('Keine Aufgaben verfügbar'), findsOneWidget);
+      expect(find.text('Keine Herausforderungen verfügbar'), findsOneWidget);
     });
 
     testWidgets('shows correct number of items', (tester) async {
-      await pumpAppWithTasksList(tester, tasks: tasks);
+      await pumpAppWithChallengesList(tester, challenges: challenges);
 
-      expect(find.byType(TaskCard), findsNWidgets(2));
+      expect(find.byType(ChallengeCard), findsNWidgets(2));
     });
 
     testWidgets('shows back button', (tester) async {
-      await pumpAppWithTasksList(tester, tasks: tasks);
+      await pumpAppWithChallengesList(tester, challenges: challenges);
 
       expect(find.byType(FilledButton), findsOneWidget);
       final context = tester.element(find.byType(FilledButton));
-      expect(find.text(context.l10n.tasksDoneButtonLabel), findsOneWidget);
+      expect(find.text(context.l10n.challengesDoneButtonLabel), findsOneWidget);
     });
 
     testWidgets('back button is positioned at the bottom', (tester) async {
-      await pumpAppWithTasksList(tester, tasks: tasks);
+      await pumpAppWithChallengesList(tester, challenges: challenges);
 
       final buttonAlign = tester.widget<Align>(
         find.ancestor(

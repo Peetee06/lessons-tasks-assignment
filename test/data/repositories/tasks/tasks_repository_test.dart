@@ -13,73 +13,75 @@ void main() {
     restClient = MockRestClient();
   });
 
-  test('getTasks returns a list of tasks', () async {
-    when(restClient.getTasks()).thenAnswer(
-      (_) async => [
-        const Task(
-          id: '1',
-          question: {
-            'en': 'What is the capital of France?',
-            'de': 'Was ist die Hauptstadt von Frankreich?',
-          },
-          options: [
-            Answer(id: 'a1', text: {'en': 'Paris', 'de': 'Paris'}),
-            Answer(id: 'a2', text: {'en': 'London', 'de': 'London'}),
-            Answer(id: 'a3', text: {'en': 'Berlin', 'de': 'Berlin'}),
-          ],
-          correctAnswerIds: ['a1'],
-        ),
-        const Task(
-          id: '2',
-          question: {
-            'en': 'Which colors are in the German flag?',
-            'de': 'Welche Farben sind in der deutschen Flagge?',
-          },
-          options: [
-            Answer(id: 'b1', text: {'en': 'Black', 'de': 'Schwarz'}),
-            Answer(id: 'b2', text: {'en': 'Red', 'de': 'Rot'}),
-            Answer(id: 'b3', text: {'en': 'Gold', 'de': 'Gold'}),
-          ],
-          correctAnswerIds: ['b1', 'b2', 'b3'],
-        ),
-      ],
-    );
-    final repository = TasksRepository(
-      restClient: restClient,
-    );
+  group(ChallengesRepository, () {
+    test('getChallenges returns a list of challenges', () async {
+      when(restClient.getChallenges()).thenAnswer(
+        (_) async => [
+          const Challenge(
+            id: '1',
+            question: {
+              'en': 'What is the capital of France?',
+              'de': 'Was ist die Hauptstadt von Frankreich?',
+            },
+            options: [
+              Answer(id: 'a1', text: {'en': 'Paris', 'de': 'Paris'}),
+              Answer(id: 'a2', text: {'en': 'London', 'de': 'London'}),
+              Answer(id: 'a3', text: {'en': 'Berlin', 'de': 'Berlin'}),
+            ],
+            correctAnswerIds: ['a1'],
+          ),
+          const Challenge(
+            id: '2',
+            question: {
+              'en': 'Which colors are in the German flag?',
+              'de': 'Welche Farben sind in der deutschen Flagge?',
+            },
+            options: [
+              Answer(id: 'b1', text: {'en': 'Black', 'de': 'Schwarz'}),
+              Answer(id: 'b2', text: {'en': 'Red', 'de': 'Rot'}),
+              Answer(id: 'b3', text: {'en': 'Gold', 'de': 'Gold'}),
+            ],
+            correctAnswerIds: ['b1', 'b2', 'b3'],
+          ),
+        ],
+      );
+      final repository = ChallengesRepository(
+        restClient: restClient,
+      );
 
-    final tasks = await repository.getTasks();
+      final challenges = await repository.getChallenges();
 
-    expect(
-      tasks,
-      [
-        const Task(
-          id: '1',
-          question: {
-            'en': 'What is the capital of France?',
-            'de': 'Was ist die Hauptstadt von Frankreich?',
-          },
-          options: [
-            Answer(id: 'a1', text: {'en': 'Paris', 'de': 'Paris'}),
-            Answer(id: 'a2', text: {'en': 'London', 'de': 'London'}),
-            Answer(id: 'a3', text: {'en': 'Berlin', 'de': 'Berlin'}),
-          ],
-          correctAnswerIds: ['a1'],
-        ),
-        const Task(
-          id: '2',
-          question: {
-            'en': 'Which colors are in the German flag?',
-            'de': 'Welche Farben sind in der deutschen Flagge?',
-          },
-          options: [
-            Answer(id: 'b1', text: {'en': 'Black', 'de': 'Schwarz'}),
-            Answer(id: 'b2', text: {'en': 'Red', 'de': 'Rot'}),
-            Answer(id: 'b3', text: {'en': 'Gold', 'de': 'Gold'}),
-          ],
-          correctAnswerIds: ['b1', 'b2', 'b3'],
-        ),
-      ],
-    );
+      expect(
+        challenges,
+        [
+          const Challenge(
+            id: '1',
+            question: {
+              'en': 'What is the capital of France?',
+              'de': 'Was ist die Hauptstadt von Frankreich?',
+            },
+            options: [
+              Answer(id: 'a1', text: {'en': 'Paris', 'de': 'Paris'}),
+              Answer(id: 'a2', text: {'en': 'London', 'de': 'London'}),
+              Answer(id: 'a3', text: {'en': 'Berlin', 'de': 'Berlin'}),
+            ],
+            correctAnswerIds: ['a1'],
+          ),
+          const Challenge(
+            id: '2',
+            question: {
+              'en': 'Which colors are in the German flag?',
+              'de': 'Welche Farben sind in der deutschen Flagge?',
+            },
+            options: [
+              Answer(id: 'b1', text: {'en': 'Black', 'de': 'Schwarz'}),
+              Answer(id: 'b2', text: {'en': 'Red', 'de': 'Rot'}),
+              Answer(id: 'b3', text: {'en': 'Gold', 'de': 'Gold'}),
+            ],
+            correctAnswerIds: ['b1', 'b2', 'b3'],
+          ),
+        ],
+      );
+    });
   });
 }
