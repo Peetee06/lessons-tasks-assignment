@@ -4,9 +4,10 @@ import 'package:lessons_tasks_assignment/domain/task.dart';
 part 'tasks_state.freezed.dart';
 
 @freezed
-sealed class TasksState with _$TasksState {
-  const factory TasksState.initial() = TasksInitial;
-  const factory TasksState.loading() = TasksLoading;
-  const factory TasksState.loaded(List<Task> tasks) = TasksLoaded;
-  const factory TasksState.error(String message) = TasksError;
+sealed class ChallengesState with _$ChallengesState {
+  const factory ChallengesState.initial() = ChallengesInitial;
+  const factory ChallengesState.loading() = ChallengesLoading;
+  const factory ChallengesState.loaded(List<Challenge> challenges) =
+      ChallengesLoaded;
+  const factory ChallengesState.error(String message) = ChallengesError;
 }

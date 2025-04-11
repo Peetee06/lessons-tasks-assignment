@@ -15,12 +15,12 @@ final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 /// @nodoc
-mixin _$TasksState {
+mixin _$ChallengesState {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(List<Task> tasks) loaded,
+    required TResult Function(List<Challenge> challenges) loaded,
     required TResult Function(String message) error,
   }) =>
       throw _privateConstructorUsedError;
@@ -28,7 +28,7 @@ mixin _$TasksState {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function(List<Task> tasks)? loaded,
+    TResult? Function(List<Challenge> challenges)? loaded,
     TResult? Function(String message)? error,
   }) =>
       throw _privateConstructorUsedError;
@@ -36,92 +36,92 @@ mixin _$TasksState {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(List<Task> tasks)? loaded,
+    TResult Function(List<Challenge> challenges)? loaded,
     TResult Function(String message)? error,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(TasksInitial value) initial,
-    required TResult Function(TasksLoading value) loading,
-    required TResult Function(TasksLoaded value) loaded,
-    required TResult Function(TasksError value) error,
+    required TResult Function(ChallengesInitial value) initial,
+    required TResult Function(ChallengesLoading value) loading,
+    required TResult Function(ChallengesLoaded value) loaded,
+    required TResult Function(ChallengesError value) error,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(TasksInitial value)? initial,
-    TResult? Function(TasksLoading value)? loading,
-    TResult? Function(TasksLoaded value)? loaded,
-    TResult? Function(TasksError value)? error,
+    TResult? Function(ChallengesInitial value)? initial,
+    TResult? Function(ChallengesLoading value)? loading,
+    TResult? Function(ChallengesLoaded value)? loaded,
+    TResult? Function(ChallengesError value)? error,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(TasksInitial value)? initial,
-    TResult Function(TasksLoading value)? loading,
-    TResult Function(TasksLoaded value)? loaded,
-    TResult Function(TasksError value)? error,
+    TResult Function(ChallengesInitial value)? initial,
+    TResult Function(ChallengesLoading value)? loading,
+    TResult Function(ChallengesLoaded value)? loaded,
+    TResult Function(ChallengesError value)? error,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $TasksStateCopyWith<$Res> {
-  factory $TasksStateCopyWith(
-          TasksState value, $Res Function(TasksState) then) =
-      _$TasksStateCopyWithImpl<$Res, TasksState>;
+abstract class $ChallengesStateCopyWith<$Res> {
+  factory $ChallengesStateCopyWith(
+          ChallengesState value, $Res Function(ChallengesState) then) =
+      _$ChallengesStateCopyWithImpl<$Res, ChallengesState>;
 }
 
 /// @nodoc
-class _$TasksStateCopyWithImpl<$Res, $Val extends TasksState>
-    implements $TasksStateCopyWith<$Res> {
-  _$TasksStateCopyWithImpl(this._value, this._then);
+class _$ChallengesStateCopyWithImpl<$Res, $Val extends ChallengesState>
+    implements $ChallengesStateCopyWith<$Res> {
+  _$ChallengesStateCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
   final $Val _value;
   // ignore: unused_field
   final $Res Function($Val) _then;
 
-  /// Create a copy of TasksState
+  /// Create a copy of ChallengesState
   /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
-abstract class _$$TasksInitialImplCopyWith<$Res> {
-  factory _$$TasksInitialImplCopyWith(
-          _$TasksInitialImpl value, $Res Function(_$TasksInitialImpl) then) =
-      __$$TasksInitialImplCopyWithImpl<$Res>;
+abstract class _$$ChallengesInitialImplCopyWith<$Res> {
+  factory _$$ChallengesInitialImplCopyWith(_$ChallengesInitialImpl value,
+          $Res Function(_$ChallengesInitialImpl) then) =
+      __$$ChallengesInitialImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$TasksInitialImplCopyWithImpl<$Res>
-    extends _$TasksStateCopyWithImpl<$Res, _$TasksInitialImpl>
-    implements _$$TasksInitialImplCopyWith<$Res> {
-  __$$TasksInitialImplCopyWithImpl(
-      _$TasksInitialImpl _value, $Res Function(_$TasksInitialImpl) _then)
+class __$$ChallengesInitialImplCopyWithImpl<$Res>
+    extends _$ChallengesStateCopyWithImpl<$Res, _$ChallengesInitialImpl>
+    implements _$$ChallengesInitialImplCopyWith<$Res> {
+  __$$ChallengesInitialImplCopyWithImpl(_$ChallengesInitialImpl _value,
+      $Res Function(_$ChallengesInitialImpl) _then)
       : super(_value, _then);
 
-  /// Create a copy of TasksState
+  /// Create a copy of ChallengesState
   /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
 
-class _$TasksInitialImpl implements TasksInitial {
-  const _$TasksInitialImpl();
+class _$ChallengesInitialImpl implements ChallengesInitial {
+  const _$ChallengesInitialImpl();
 
   @override
   String toString() {
-    return 'TasksState.initial()';
+    return 'ChallengesState.initial()';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$TasksInitialImpl);
+        (other.runtimeType == runtimeType && other is _$ChallengesInitialImpl);
   }
 
   @override
@@ -132,7 +132,7 @@ class _$TasksInitialImpl implements TasksInitial {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(List<Task> tasks) loaded,
+    required TResult Function(List<Challenge> challenges) loaded,
     required TResult Function(String message) error,
   }) {
     return initial();
@@ -143,7 +143,7 @@ class _$TasksInitialImpl implements TasksInitial {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function(List<Task> tasks)? loaded,
+    TResult? Function(List<Challenge> challenges)? loaded,
     TResult? Function(String message)? error,
   }) {
     return initial?.call();
@@ -154,7 +154,7 @@ class _$TasksInitialImpl implements TasksInitial {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(List<Task> tasks)? loaded,
+    TResult Function(List<Challenge> challenges)? loaded,
     TResult Function(String message)? error,
     required TResult orElse(),
   }) {
@@ -167,10 +167,10 @@ class _$TasksInitialImpl implements TasksInitial {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(TasksInitial value) initial,
-    required TResult Function(TasksLoading value) loading,
-    required TResult Function(TasksLoaded value) loaded,
-    required TResult Function(TasksError value) error,
+    required TResult Function(ChallengesInitial value) initial,
+    required TResult Function(ChallengesLoading value) loading,
+    required TResult Function(ChallengesLoaded value) loaded,
+    required TResult Function(ChallengesError value) error,
   }) {
     return initial(this);
   }
@@ -178,10 +178,10 @@ class _$TasksInitialImpl implements TasksInitial {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(TasksInitial value)? initial,
-    TResult? Function(TasksLoading value)? loading,
-    TResult? Function(TasksLoaded value)? loaded,
-    TResult? Function(TasksError value)? error,
+    TResult? Function(ChallengesInitial value)? initial,
+    TResult? Function(ChallengesLoading value)? loading,
+    TResult? Function(ChallengesLoaded value)? loaded,
+    TResult? Function(ChallengesError value)? error,
   }) {
     return initial?.call(this);
   }
@@ -189,10 +189,10 @@ class _$TasksInitialImpl implements TasksInitial {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(TasksInitial value)? initial,
-    TResult Function(TasksLoading value)? loading,
-    TResult Function(TasksLoaded value)? loaded,
-    TResult Function(TasksError value)? error,
+    TResult Function(ChallengesInitial value)? initial,
+    TResult Function(ChallengesLoading value)? loading,
+    TResult Function(ChallengesLoaded value)? loaded,
+    TResult Function(ChallengesError value)? error,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -202,43 +202,43 @@ class _$TasksInitialImpl implements TasksInitial {
   }
 }
 
-abstract class TasksInitial implements TasksState {
-  const factory TasksInitial() = _$TasksInitialImpl;
+abstract class ChallengesInitial implements ChallengesState {
+  const factory ChallengesInitial() = _$ChallengesInitialImpl;
 }
 
 /// @nodoc
-abstract class _$$TasksLoadingImplCopyWith<$Res> {
-  factory _$$TasksLoadingImplCopyWith(
-          _$TasksLoadingImpl value, $Res Function(_$TasksLoadingImpl) then) =
-      __$$TasksLoadingImplCopyWithImpl<$Res>;
+abstract class _$$ChallengesLoadingImplCopyWith<$Res> {
+  factory _$$ChallengesLoadingImplCopyWith(_$ChallengesLoadingImpl value,
+          $Res Function(_$ChallengesLoadingImpl) then) =
+      __$$ChallengesLoadingImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$TasksLoadingImplCopyWithImpl<$Res>
-    extends _$TasksStateCopyWithImpl<$Res, _$TasksLoadingImpl>
-    implements _$$TasksLoadingImplCopyWith<$Res> {
-  __$$TasksLoadingImplCopyWithImpl(
-      _$TasksLoadingImpl _value, $Res Function(_$TasksLoadingImpl) _then)
+class __$$ChallengesLoadingImplCopyWithImpl<$Res>
+    extends _$ChallengesStateCopyWithImpl<$Res, _$ChallengesLoadingImpl>
+    implements _$$ChallengesLoadingImplCopyWith<$Res> {
+  __$$ChallengesLoadingImplCopyWithImpl(_$ChallengesLoadingImpl _value,
+      $Res Function(_$ChallengesLoadingImpl) _then)
       : super(_value, _then);
 
-  /// Create a copy of TasksState
+  /// Create a copy of ChallengesState
   /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
 
-class _$TasksLoadingImpl implements TasksLoading {
-  const _$TasksLoadingImpl();
+class _$ChallengesLoadingImpl implements ChallengesLoading {
+  const _$ChallengesLoadingImpl();
 
   @override
   String toString() {
-    return 'TasksState.loading()';
+    return 'ChallengesState.loading()';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$TasksLoadingImpl);
+        (other.runtimeType == runtimeType && other is _$ChallengesLoadingImpl);
   }
 
   @override
@@ -249,7 +249,7 @@ class _$TasksLoadingImpl implements TasksLoading {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(List<Task> tasks) loaded,
+    required TResult Function(List<Challenge> challenges) loaded,
     required TResult Function(String message) error,
   }) {
     return loading();
@@ -260,7 +260,7 @@ class _$TasksLoadingImpl implements TasksLoading {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function(List<Task> tasks)? loaded,
+    TResult? Function(List<Challenge> challenges)? loaded,
     TResult? Function(String message)? error,
   }) {
     return loading?.call();
@@ -271,7 +271,7 @@ class _$TasksLoadingImpl implements TasksLoading {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(List<Task> tasks)? loaded,
+    TResult Function(List<Challenge> challenges)? loaded,
     TResult Function(String message)? error,
     required TResult orElse(),
   }) {
@@ -284,10 +284,10 @@ class _$TasksLoadingImpl implements TasksLoading {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(TasksInitial value) initial,
-    required TResult Function(TasksLoading value) loading,
-    required TResult Function(TasksLoaded value) loaded,
-    required TResult Function(TasksError value) error,
+    required TResult Function(ChallengesInitial value) initial,
+    required TResult Function(ChallengesLoading value) loading,
+    required TResult Function(ChallengesLoaded value) loaded,
+    required TResult Function(ChallengesError value) error,
   }) {
     return loading(this);
   }
@@ -295,10 +295,10 @@ class _$TasksLoadingImpl implements TasksLoading {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(TasksInitial value)? initial,
-    TResult? Function(TasksLoading value)? loading,
-    TResult? Function(TasksLoaded value)? loaded,
-    TResult? Function(TasksError value)? error,
+    TResult? Function(ChallengesInitial value)? initial,
+    TResult? Function(ChallengesLoading value)? loading,
+    TResult? Function(ChallengesLoaded value)? loaded,
+    TResult? Function(ChallengesError value)? error,
   }) {
     return loading?.call(this);
   }
@@ -306,10 +306,10 @@ class _$TasksLoadingImpl implements TasksLoading {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(TasksInitial value)? initial,
-    TResult Function(TasksLoading value)? loading,
-    TResult Function(TasksLoaded value)? loaded,
-    TResult Function(TasksError value)? error,
+    TResult Function(ChallengesInitial value)? initial,
+    TResult Function(ChallengesLoading value)? loading,
+    TResult Function(ChallengesLoaded value)? loaded,
+    TResult Function(ChallengesError value)? error,
     required TResult orElse(),
   }) {
     if (loading != null) {
@@ -319,90 +319,93 @@ class _$TasksLoadingImpl implements TasksLoading {
   }
 }
 
-abstract class TasksLoading implements TasksState {
-  const factory TasksLoading() = _$TasksLoadingImpl;
+abstract class ChallengesLoading implements ChallengesState {
+  const factory ChallengesLoading() = _$ChallengesLoadingImpl;
 }
 
 /// @nodoc
-abstract class _$$TasksLoadedImplCopyWith<$Res> {
-  factory _$$TasksLoadedImplCopyWith(
-          _$TasksLoadedImpl value, $Res Function(_$TasksLoadedImpl) then) =
-      __$$TasksLoadedImplCopyWithImpl<$Res>;
+abstract class _$$ChallengesLoadedImplCopyWith<$Res> {
+  factory _$$ChallengesLoadedImplCopyWith(_$ChallengesLoadedImpl value,
+          $Res Function(_$ChallengesLoadedImpl) then) =
+      __$$ChallengesLoadedImplCopyWithImpl<$Res>;
   @useResult
-  $Res call({List<Task> tasks});
+  $Res call({List<Challenge> challenges});
 }
 
 /// @nodoc
-class __$$TasksLoadedImplCopyWithImpl<$Res>
-    extends _$TasksStateCopyWithImpl<$Res, _$TasksLoadedImpl>
-    implements _$$TasksLoadedImplCopyWith<$Res> {
-  __$$TasksLoadedImplCopyWithImpl(
-      _$TasksLoadedImpl _value, $Res Function(_$TasksLoadedImpl) _then)
+class __$$ChallengesLoadedImplCopyWithImpl<$Res>
+    extends _$ChallengesStateCopyWithImpl<$Res, _$ChallengesLoadedImpl>
+    implements _$$ChallengesLoadedImplCopyWith<$Res> {
+  __$$ChallengesLoadedImplCopyWithImpl(_$ChallengesLoadedImpl _value,
+      $Res Function(_$ChallengesLoadedImpl) _then)
       : super(_value, _then);
 
-  /// Create a copy of TasksState
+  /// Create a copy of ChallengesState
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? tasks = null,
+    Object? challenges = null,
   }) {
-    return _then(_$TasksLoadedImpl(
-      null == tasks
-          ? _value._tasks
-          : tasks // ignore: cast_nullable_to_non_nullable
-              as List<Task>,
+    return _then(_$ChallengesLoadedImpl(
+      null == challenges
+          ? _value._challenges
+          : challenges // ignore: cast_nullable_to_non_nullable
+              as List<Challenge>,
     ));
   }
 }
 
 /// @nodoc
 
-class _$TasksLoadedImpl implements TasksLoaded {
-  const _$TasksLoadedImpl(final List<Task> tasks) : _tasks = tasks;
+class _$ChallengesLoadedImpl implements ChallengesLoaded {
+  const _$ChallengesLoadedImpl(final List<Challenge> challenges)
+      : _challenges = challenges;
 
-  final List<Task> _tasks;
+  final List<Challenge> _challenges;
   @override
-  List<Task> get tasks {
-    if (_tasks is EqualUnmodifiableListView) return _tasks;
+  List<Challenge> get challenges {
+    if (_challenges is EqualUnmodifiableListView) return _challenges;
     // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(_tasks);
+    return EqualUnmodifiableListView(_challenges);
   }
 
   @override
   String toString() {
-    return 'TasksState.loaded(tasks: $tasks)';
+    return 'ChallengesState.loaded(challenges: $challenges)';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$TasksLoadedImpl &&
-            const DeepCollectionEquality().equals(other._tasks, _tasks));
+            other is _$ChallengesLoadedImpl &&
+            const DeepCollectionEquality()
+                .equals(other._challenges, _challenges));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(_tasks));
+  int get hashCode => Object.hash(
+      runtimeType, const DeepCollectionEquality().hash(_challenges));
 
-  /// Create a copy of TasksState
+  /// Create a copy of ChallengesState
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
-  _$$TasksLoadedImplCopyWith<_$TasksLoadedImpl> get copyWith =>
-      __$$TasksLoadedImplCopyWithImpl<_$TasksLoadedImpl>(this, _$identity);
+  _$$ChallengesLoadedImplCopyWith<_$ChallengesLoadedImpl> get copyWith =>
+      __$$ChallengesLoadedImplCopyWithImpl<_$ChallengesLoadedImpl>(
+          this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(List<Task> tasks) loaded,
+    required TResult Function(List<Challenge> challenges) loaded,
     required TResult Function(String message) error,
   }) {
-    return loaded(tasks);
+    return loaded(challenges);
   }
 
   @override
@@ -410,10 +413,10 @@ class _$TasksLoadedImpl implements TasksLoaded {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function(List<Task> tasks)? loaded,
+    TResult? Function(List<Challenge> challenges)? loaded,
     TResult? Function(String message)? error,
   }) {
-    return loaded?.call(tasks);
+    return loaded?.call(challenges);
   }
 
   @override
@@ -421,12 +424,12 @@ class _$TasksLoadedImpl implements TasksLoaded {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(List<Task> tasks)? loaded,
+    TResult Function(List<Challenge> challenges)? loaded,
     TResult Function(String message)? error,
     required TResult orElse(),
   }) {
     if (loaded != null) {
-      return loaded(tasks);
+      return loaded(challenges);
     }
     return orElse();
   }
@@ -434,10 +437,10 @@ class _$TasksLoadedImpl implements TasksLoaded {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(TasksInitial value) initial,
-    required TResult Function(TasksLoading value) loading,
-    required TResult Function(TasksLoaded value) loaded,
-    required TResult Function(TasksError value) error,
+    required TResult Function(ChallengesInitial value) initial,
+    required TResult Function(ChallengesLoading value) loading,
+    required TResult Function(ChallengesLoaded value) loaded,
+    required TResult Function(ChallengesError value) error,
   }) {
     return loaded(this);
   }
@@ -445,10 +448,10 @@ class _$TasksLoadedImpl implements TasksLoaded {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(TasksInitial value)? initial,
-    TResult? Function(TasksLoading value)? loading,
-    TResult? Function(TasksLoaded value)? loaded,
-    TResult? Function(TasksError value)? error,
+    TResult? Function(ChallengesInitial value)? initial,
+    TResult? Function(ChallengesLoading value)? loading,
+    TResult? Function(ChallengesLoaded value)? loaded,
+    TResult? Function(ChallengesError value)? error,
   }) {
     return loaded?.call(this);
   }
@@ -456,10 +459,10 @@ class _$TasksLoadedImpl implements TasksLoaded {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(TasksInitial value)? initial,
-    TResult Function(TasksLoading value)? loading,
-    TResult Function(TasksLoaded value)? loaded,
-    TResult Function(TasksError value)? error,
+    TResult Function(ChallengesInitial value)? initial,
+    TResult Function(ChallengesLoading value)? loading,
+    TResult Function(ChallengesLoaded value)? loaded,
+    TResult Function(ChallengesError value)? error,
     required TResult orElse(),
   }) {
     if (loaded != null) {
@@ -469,43 +472,44 @@ class _$TasksLoadedImpl implements TasksLoaded {
   }
 }
 
-abstract class TasksLoaded implements TasksState {
-  const factory TasksLoaded(final List<Task> tasks) = _$TasksLoadedImpl;
+abstract class ChallengesLoaded implements ChallengesState {
+  const factory ChallengesLoaded(final List<Challenge> challenges) =
+      _$ChallengesLoadedImpl;
 
-  List<Task> get tasks;
+  List<Challenge> get challenges;
 
-  /// Create a copy of TasksState
+  /// Create a copy of ChallengesState
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$TasksLoadedImplCopyWith<_$TasksLoadedImpl> get copyWith =>
+  _$$ChallengesLoadedImplCopyWith<_$ChallengesLoadedImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$TasksErrorImplCopyWith<$Res> {
-  factory _$$TasksErrorImplCopyWith(
-          _$TasksErrorImpl value, $Res Function(_$TasksErrorImpl) then) =
-      __$$TasksErrorImplCopyWithImpl<$Res>;
+abstract class _$$ChallengesErrorImplCopyWith<$Res> {
+  factory _$$ChallengesErrorImplCopyWith(_$ChallengesErrorImpl value,
+          $Res Function(_$ChallengesErrorImpl) then) =
+      __$$ChallengesErrorImplCopyWithImpl<$Res>;
   @useResult
   $Res call({String message});
 }
 
 /// @nodoc
-class __$$TasksErrorImplCopyWithImpl<$Res>
-    extends _$TasksStateCopyWithImpl<$Res, _$TasksErrorImpl>
-    implements _$$TasksErrorImplCopyWith<$Res> {
-  __$$TasksErrorImplCopyWithImpl(
-      _$TasksErrorImpl _value, $Res Function(_$TasksErrorImpl) _then)
+class __$$ChallengesErrorImplCopyWithImpl<$Res>
+    extends _$ChallengesStateCopyWithImpl<$Res, _$ChallengesErrorImpl>
+    implements _$$ChallengesErrorImplCopyWith<$Res> {
+  __$$ChallengesErrorImplCopyWithImpl(
+      _$ChallengesErrorImpl _value, $Res Function(_$ChallengesErrorImpl) _then)
       : super(_value, _then);
 
-  /// Create a copy of TasksState
+  /// Create a copy of ChallengesState
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? message = null,
   }) {
-    return _then(_$TasksErrorImpl(
+    return _then(_$ChallengesErrorImpl(
       null == message
           ? _value.message
           : message // ignore: cast_nullable_to_non_nullable
@@ -516,42 +520,43 @@ class __$$TasksErrorImplCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$TasksErrorImpl implements TasksError {
-  const _$TasksErrorImpl(this.message);
+class _$ChallengesErrorImpl implements ChallengesError {
+  const _$ChallengesErrorImpl(this.message);
 
   @override
   final String message;
 
   @override
   String toString() {
-    return 'TasksState.error(message: $message)';
+    return 'ChallengesState.error(message: $message)';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$TasksErrorImpl &&
+            other is _$ChallengesErrorImpl &&
             (identical(other.message, message) || other.message == message));
   }
 
   @override
   int get hashCode => Object.hash(runtimeType, message);
 
-  /// Create a copy of TasksState
+  /// Create a copy of ChallengesState
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
-  _$$TasksErrorImplCopyWith<_$TasksErrorImpl> get copyWith =>
-      __$$TasksErrorImplCopyWithImpl<_$TasksErrorImpl>(this, _$identity);
+  _$$ChallengesErrorImplCopyWith<_$ChallengesErrorImpl> get copyWith =>
+      __$$ChallengesErrorImplCopyWithImpl<_$ChallengesErrorImpl>(
+          this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(List<Task> tasks) loaded,
+    required TResult Function(List<Challenge> challenges) loaded,
     required TResult Function(String message) error,
   }) {
     return error(message);
@@ -562,7 +567,7 @@ class _$TasksErrorImpl implements TasksError {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function(List<Task> tasks)? loaded,
+    TResult? Function(List<Challenge> challenges)? loaded,
     TResult? Function(String message)? error,
   }) {
     return error?.call(message);
@@ -573,7 +578,7 @@ class _$TasksErrorImpl implements TasksError {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(List<Task> tasks)? loaded,
+    TResult Function(List<Challenge> challenges)? loaded,
     TResult Function(String message)? error,
     required TResult orElse(),
   }) {
@@ -586,10 +591,10 @@ class _$TasksErrorImpl implements TasksError {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(TasksInitial value) initial,
-    required TResult Function(TasksLoading value) loading,
-    required TResult Function(TasksLoaded value) loaded,
-    required TResult Function(TasksError value) error,
+    required TResult Function(ChallengesInitial value) initial,
+    required TResult Function(ChallengesLoading value) loading,
+    required TResult Function(ChallengesLoaded value) loaded,
+    required TResult Function(ChallengesError value) error,
   }) {
     return error(this);
   }
@@ -597,10 +602,10 @@ class _$TasksErrorImpl implements TasksError {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(TasksInitial value)? initial,
-    TResult? Function(TasksLoading value)? loading,
-    TResult? Function(TasksLoaded value)? loaded,
-    TResult? Function(TasksError value)? error,
+    TResult? Function(ChallengesInitial value)? initial,
+    TResult? Function(ChallengesLoading value)? loading,
+    TResult? Function(ChallengesLoaded value)? loaded,
+    TResult? Function(ChallengesError value)? error,
   }) {
     return error?.call(this);
   }
@@ -608,10 +613,10 @@ class _$TasksErrorImpl implements TasksError {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(TasksInitial value)? initial,
-    TResult Function(TasksLoading value)? loading,
-    TResult Function(TasksLoaded value)? loaded,
-    TResult Function(TasksError value)? error,
+    TResult Function(ChallengesInitial value)? initial,
+    TResult Function(ChallengesLoading value)? loading,
+    TResult Function(ChallengesLoaded value)? loaded,
+    TResult Function(ChallengesError value)? error,
     required TResult orElse(),
   }) {
     if (error != null) {
@@ -621,14 +626,14 @@ class _$TasksErrorImpl implements TasksError {
   }
 }
 
-abstract class TasksError implements TasksState {
-  const factory TasksError(final String message) = _$TasksErrorImpl;
+abstract class ChallengesError implements ChallengesState {
+  const factory ChallengesError(final String message) = _$ChallengesErrorImpl;
 
   String get message;
 
-  /// Create a copy of TasksState
+  /// Create a copy of ChallengesState
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$TasksErrorImplCopyWith<_$TasksErrorImpl> get copyWith =>
+  _$$ChallengesErrorImplCopyWith<_$ChallengesErrorImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

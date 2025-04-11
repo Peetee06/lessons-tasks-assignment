@@ -2,13 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:lessons_tasks_assignment/common/extensions/localizations_extension.dart';
 import 'package:lessons_tasks_assignment/domain/task.dart';
 
-class TaskCard extends StatelessWidget {
-  const TaskCard({
-    required this.task,
+class ChallengeCard extends StatelessWidget {
+  const ChallengeCard({
+    required this.challenge,
     super.key,
   });
 
-  final Task task;
+  final Challenge challenge;
 
   @override
   Widget build(BuildContext context) {
@@ -20,11 +20,11 @@ class TaskCard extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text(
-              task.question.localizedTo(Localizations.localeOf(context)),
+              challenge.question.localizedTo(Localizations.localeOf(context)),
               style: Theme.of(context).textTheme.titleLarge,
             ),
             const SizedBox(height: 16),
-            ...task.options.map(
+            ...challenge.options.map(
               (option) => Padding(
                 padding: const EdgeInsets.only(bottom: 8),
                 child: Text(

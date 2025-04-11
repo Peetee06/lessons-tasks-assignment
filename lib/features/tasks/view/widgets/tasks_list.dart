@@ -4,13 +4,13 @@ import 'package:lessons_tasks_assignment/features/lessons/lessons_route.dart';
 import 'package:lessons_tasks_assignment/features/tasks/view/widgets/task_card.dart';
 import 'package:lessons_tasks_assignment/l10n/l10n.dart';
 
-class TasksList extends StatelessWidget {
-  const TasksList({
-    required this.tasks,
+class ChallengesList extends StatelessWidget {
+  const ChallengesList({
+    required this.challenges,
     super.key,
   });
 
-  final List<Task> tasks;
+  final List<Challenge> challenges;
 
   static const doneButtonKey = Key('doneButton');
 
@@ -20,23 +20,23 @@ class TasksList extends StatelessWidget {
       padding: const EdgeInsets.all(8),
       child: Stack(
         children: [
-          if (tasks.isEmpty)
-            Center(child: Text(context.l10n.tasksEmpty))
+          if (challenges.isEmpty)
+            Center(child: Text(context.l10n.challengesEmpty))
           else
             ListView.separated(
               physics: const AlwaysScrollableScrollPhysics(),
-              itemCount: tasks.length,
+              itemCount: challenges.length,
               separatorBuilder: (context, index) => const SizedBox(height: 8),
               itemBuilder: (context, index) {
-                return TaskCard(task: tasks[index]);
+                return ChallengeCard(challenge: challenges[index]);
               },
             ),
           Align(
             alignment: Alignment.bottomCenter,
             child: FilledButton(
               key: doneButtonKey,
-              onPressed: () => LessonsRoute().go(context),
-              child: Text(context.l10n.tasksDoneButtonLabel),
+              onPressed: () => ConceptsRoute().go(context),
+              child: Text(context.l10n.challengesDoneButtonLabel),
             ),
           ),
         ],

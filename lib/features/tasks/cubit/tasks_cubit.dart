@@ -4,64 +4,66 @@ import 'package:lessons_tasks_assignment/data/repositories/tasks/tasks_repositor
 import 'package:lessons_tasks_assignment/domain/task.dart';
 import 'package:lessons_tasks_assignment/features/tasks/cubit/tasks_state.dart';
 
-class TasksCubit extends Cubit<TasksState> {
-  TasksCubit({
-    required this.tasksRepository,
-    required this.lessonsRepository,
-    required this.lessonId,
-  }) : super(const TasksState.initial());
+class ChallengesCubit extends Cubit<ChallengesState> {
+  ChallengesCubit({
+    required this.challengesRepository,
+    required this.conceptsRepository,
+    required this.conceptId,
+  }) : super(const ChallengesState.initial());
 
-  final TasksRepository tasksRepository;
-  final LessonsRepository lessonsRepository;
-  final String lessonId;
+  final ChallengesRepository challengesRepository;
+  final ConceptsRepository conceptsRepository;
+  final String conceptId;
 
-  Future<void> fetchTasks() async {
-    emit(const TasksState.loading());
+  Future<void> fetchChallenges() async {
+    emit(const ChallengesState.loading());
     try {
-      final taskIds = await _getLessonTaskIds();
-      final tasks = await _getTasks(taskIds);
-      emit(TasksState.loaded(tasks));
+      final challengeIds = await _getConceptChallengeIds();
+      final challenges = await _getChallenges(challengeIds);
+      emit(ChallengesState.loaded(challenges));
     } catch (e) {
       _handleError(e);
     }
   }
 
-  /// Returns the task ids for the lesson with the given [lessonId].
+  /// Returns the challenge ids for the concept with the given [conceptId].
   ///
-  /// Throws [StateError] if the lesson with the given [lessonId] is not found.
-  Future<List<String>> _getLessonTaskIds() async {
-    final lessons = await lessonsRepository.getLessons();
-    final lesson = lessons.firstWhere((lesson) => lesson.id == lessonId);
+  /// Throws [StateError] if the concept with the given [conceptId] is not found.
+  Future<List<String>> _getConceptChallengeIds() async {
+    final concepts = await conceptsRepository.getConcepts();
+    final concept = concepts.firstWhere((concept) => concept.id == conceptId);
 
-    return lesson.taskIds;
+    return concept.taskIds;
   }
 
-  /// Returns the tasks with the given [taskIds].
+  /// Returns the challenges with the given [challengeIds].
   ///
-  /// Throws [AssertionError] if any of the tasks with the given [taskIds]
+  /// Throws [AssertionError] if any of the challenges with the given [challengeIds]
   /// are not found.
-  Future<List<Task>> _getTasks(List<String> taskIds) async {
-    final allTasks = await tasksRepository.getTasks();
-    final tasksMapped = {for (final task in allTasks) task.id: task};
+  Future<List<Challenge>> _getChallenges(List<String> challengeIds) async {
+    final allChallenges = await challengesRepository.getChallenges();
+    final challengesMapped = {
+      for (final challenge in allChallenges) challenge.id: challenge,
+    };
 
-    return taskIds.map((id) {
-      final task = tasksMapped[id];
-      assert(task != null, 'Task with id $id not found');
-      return task!;
+    return challengeIds.map((id) {
+      final challenge = challengesMapped[id];
+      assert(challenge != null, 'Challenge with id $id not found');
+      return challenge!;
     }).toList();
   }
 
   void _handleError(Object e) {
     switch (e) {
       case AssertionError(:final message):
-        emit(TasksState.error(message!.toString()));
+        emit(ChallengesState.error(message!.toString()));
         addError(Exception(message));
       case StateError():
-        final message = 'Lesson with id $lessonId not found';
-        emit(TasksState.error(message));
+        final message = 'Concept with id $conceptId not found';
+        emit(ChallengesState.error(message));
         addError(Exception(message));
       default:
-        emit(const TasksState.error('Failed to fetch tasks'));
+        emit(const ChallengesState.error('Failed to fetch challenges'));
         addError(e);
     }
   }
