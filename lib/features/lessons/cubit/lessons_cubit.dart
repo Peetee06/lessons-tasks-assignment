@@ -2,17 +2,17 @@ import 'package:bloc/bloc.dart';
 import 'package:lessons_tasks_assignment/data/repositories/lessons/lessons_repository.dart';
 import 'package:lessons_tasks_assignment/features/lessons/cubit/lessons_state.dart';
 
-class LessonsCubit extends Cubit<LessonsState> {
-  LessonsCubit(this.lessonsRepository) : super(const LessonsState.initial());
-  final LessonsRepository lessonsRepository;
+class ConceptsCubit extends Cubit<ConceptsState> {
+  ConceptsCubit(this.conceptsRepository) : super(const ConceptsState.initial());
+  final ConceptsRepository conceptsRepository;
 
-  Future<void> fetchLessons() async {
+  Future<void> fetchConcepts() async {
     try {
-      emit(const LessonsState.loading());
-      final lessons = await lessonsRepository.getLessons();
-      emit(LessonsState.loaded(lessons));
+      emit(const ConceptsState.loading());
+      final concepts = await conceptsRepository.getConcepts();
+      emit(ConceptsState.loaded(concepts));
     } catch (error, stackTrace) {
-      emit(const LessonsState.error('Failed to fetch lessons'));
+      emit(const ConceptsState.error('Failed to fetch concepts'));
       addError(error, stackTrace);
     }
   }
