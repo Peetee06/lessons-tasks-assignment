@@ -16,7 +16,7 @@ import 'package:lessons_tasks_assignment/features/tasks/view/tasks_view.dart';
 import 'package:lessons_tasks_assignment/features/tasks/view/widgets/tasks_list.dart';
 import 'package:mockito/mockito.dart';
 
-import '../mocks.mocks.dart';
+import 'mocks.mocks.dart';
 
 void main() {
   IntegrationTestWidgetsFlutterBinding.ensureInitialized();
@@ -36,44 +36,44 @@ void main() {
     );
     final dio = Dio()..interceptors.add(JsonInterceptor());
     final restClient = RestClient(dio);
-    GetIt.I.registerSingleton<LessonsRepository>(
-      LessonsRepository(restClient: restClient),
+    GetIt.I.registerSingleton<ConceptsRepository>(
+      ConceptsRepository(restClient: restClient),
     );
-    GetIt.I.registerSingleton<TasksRepository>(
-      TasksRepository(restClient: restClient),
+    GetIt.I.registerSingleton<ChallengesRepository>(
+      ChallengesRepository(restClient: restClient),
     );
     GetIt.I.registerSingleton<BaseCacheManager>(cacheManager);
   });
 
   tearDown(() async {
-    GetIt.I.unregister<LessonsRepository>();
-    GetIt.I.unregister<TasksRepository>();
+    GetIt.I.unregister<ConceptsRepository>();
+    GetIt.I.unregister<ChallengesRepository>();
     GetIt.I.unregister<BaseCacheManager>();
   });
 
   group('App Integration Test', () {
-    testWidgets('Lesson flow', (WidgetTester tester) async {
+    testWidgets('Concept flow', (WidgetTester tester) async {
       await tester.pumpWidget(const App());
       await tester.pumpAndSettle();
 
       await tester.tap(find.byType(ListTile).first);
       await tester.pumpAndSettle();
 
-      expect(find.byType(LessonView), findsOneWidget);
+      expect(find.byType(ConceptView), findsOneWidget);
 
-      await tester.tap(find.byKey(LessonPagesView.forwardButtonKey));
+      await tester.tap(find.byKey(ConceptSectionsView.forwardButtonKey));
       await tester.pumpAndSettle();
-      await tester.tap(find.byKey(LessonPagesView.forwardButtonKey));
+      await tester.tap(find.byKey(ConceptSectionsView.forwardButtonKey));
       await tester.pumpAndSettle();
-      await tester.tap(find.byKey(LessonPagesView.forwardButtonKey));
-      await tester.pumpAndSettle();
-
-      expect(find.byType(TasksView), findsOneWidget);
-
-      await tester.tap(find.byKey(TasksList.doneButtonKey));
+      await tester.tap(find.byKey(ConceptSectionsView.forwardButtonKey));
       await tester.pumpAndSettle();
 
-      expect(find.byType(LessonsView), findsOneWidget);
+      expect(find.byType(ChallengesView), findsOneWidget);
+
+      await tester.tap(find.byKey(ChallengesList.doneButtonKey));
+      await tester.pumpAndSettle();
+
+      expect(find.byType(ConceptsView), findsOneWidget);
     });
   });
 }
