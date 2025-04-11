@@ -13,45 +13,46 @@ import '../../../helpers/helpers.dart';
 import '../../../mocks.mocks.dart';
 
 void main() {
-  provideDummy(const TasksState.initial());
-  late MockTasksCubit cubit;
+  provideDummy(const ChallengesState.initial());
+  late MockChallengesCubit cubit;
 
   setUp(() {
-    cubit = MockTasksCubit();
+    cubit = MockChallengesCubit();
     when(cubit.stream).thenAnswer((_) => const Stream.empty());
   });
 
   Future<void> pumpTestWidget(WidgetTester tester) {
     return tester.pumpApp(
-      widget: BlocProvider<TasksCubit>.value(
+      widget: BlocProvider<ChallengesCubit>.value(
         value: cubit,
-        child: const TasksView(),
+        child: const ChallengesView(),
       ),
     );
   }
 
-  group('TasksView', () {
+  group('ChallengesView', () {
     testWidgets('renders initial state', (WidgetTester tester) async {
-      when(cubit.state).thenReturn(const TasksState.initial());
+      when(cubit.state).thenReturn(const ChallengesState.initial());
       await pumpTestWidget(tester);
       expect(find.byType(SizedBox), findsOneWidget);
       expect(find.byType(AppBar), findsOneWidget);
     });
 
     testWidgets('renders loading state', (WidgetTester tester) async {
-      when(cubit.state).thenReturn(const TasksState.loading());
+      when(cubit.state).thenReturn(const ChallengesState.loading());
       await pumpTestWidget(tester);
       expect(find.byType(CircularProgressIndicator), findsOneWidget);
       expect(find.byType(AppBar), findsOneWidget);
     });
 
-    testWidgets('passes tasks to TasksList', (WidgetTester tester) async {
-      final tasks = [
-        const Task(
+    testWidgets('passes challenges to ChallengesList',
+        (WidgetTester tester) async {
+      final challenges = [
+        const Challenge(
           id: '1',
           question: {
-            'en': 'Test Task',
-            'de': 'Test Aufgabe',
+            'en': 'Test Challenge',
+            'de': 'Test Herausforderung',
           },
           options: [
             Answer(
@@ -65,15 +66,16 @@ void main() {
           correctAnswerIds: ['1'],
         ),
       ];
-      when(cubit.state).thenReturn(TasksState.loaded(tasks));
+      when(cubit.state).thenReturn(ChallengesState.loaded(challenges));
       await pumpTestWidget(tester);
-      final tasksList = tester.widget<TasksList>(find.byType(TasksList));
-      expect(tasksList.tasks, tasks);
+      final challengesList =
+          tester.widget<ChallengesList>(find.byType(ChallengesList));
+      expect(challengesList.challenges, challenges);
       expect(find.byType(AppBar), findsOneWidget);
     });
 
     testWidgets('renders error state', (WidgetTester tester) async {
-      when(cubit.state).thenReturn(const TasksState.error('Error'));
+      when(cubit.state).thenReturn(const ChallengesState.error('Error'));
       await pumpTestWidget(tester);
       expect(find.text('Error'), findsOneWidget);
       expect(find.byType(AppBar), findsOneWidget);

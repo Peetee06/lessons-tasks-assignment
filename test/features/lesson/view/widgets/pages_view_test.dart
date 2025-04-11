@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart' hide Page;
+import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:go_router/go_router.dart';
 import 'package:lessons_tasks_assignment/domain/content_component.dart';
@@ -15,34 +15,34 @@ import '../../../../helpers/helpers.dart';
 import '../../../../mocks.mocks.dart';
 
 void main() {
-  group('LessonPagesView', () {
+  group(ConceptSectionsView, () {
     Future<void> pumpTestWidget(
       WidgetTester tester, {
-      required List<Page> pages,
-      bool hasTasks = false,
+      required List<Section> sections,
+      bool hasChallenges = false,
       Locale? locale,
     }) {
       return tester.pumpApp(
         locale: locale,
-        widget: LessonPagesView(
+        widget: ConceptSectionsView(
           id: 'id',
-          pages: pages,
-          hasTasks: hasTasks,
+          sections: sections,
+          hasChallenges: hasChallenges,
         ),
       );
     }
 
-    testWidgets('renders no pages text when pages is empty',
+    testWidgets('renders no sections text when sections is empty',
         (WidgetTester tester) async {
-      await pumpTestWidget(tester, pages: []);
-      final context = tester.element(find.byType(LessonPagesView));
-      expect(find.text(context.l10n.lessonPageEmpty), findsOneWidget);
+      await pumpTestWidget(tester, sections: []);
+      final context = tester.element(find.byType(ConceptSectionsView));
+      expect(find.text(context.l10n.conceptSectionEmpty), findsOneWidget);
     });
 
-    testWidgets('renders LessonPageView and passes current page',
+    testWidgets('renders ConceptSectionView and passes current section',
         (WidgetTester tester) async {
-      const pages = [
-        Page(
+      const sections = [
+        Section(
           content: [
             ContentComponent.text(
               text: {
@@ -52,7 +52,7 @@ void main() {
             ),
           ],
         ),
-        Page(
+        Section(
           content: [
             ContentComponent.text(
               text: {
@@ -65,27 +65,27 @@ void main() {
       ];
       await pumpTestWidget(
         tester,
-        pages: pages,
+        sections: sections,
       );
-      final pageView = tester.widget<LessonPageView>(
-        find.byType(LessonPageView),
+      final sectionView = tester.widget<ConceptSectionView>(
+        find.byType(ConceptSectionView),
       );
-      expect(pageView.page, pages.first);
+      expect(sectionView.section, sections.first);
 
-      await tester.tap(find.byKey(LessonPagesView.forwardButtonKey));
+      await tester.tap(find.byKey(ConceptSectionsView.forwardButtonKey));
       await tester.pumpAndSettle();
-      final updatedPageView = tester.widget<LessonPageView>(
-        find.byType(LessonPageView),
+      final updatedSectionView = tester.widget<ConceptSectionView>(
+        find.byType(ConceptSectionView),
       );
-      expect(updatedPageView.page, pages.last);
+      expect(updatedSectionView.section, sections.last);
     });
 
     testWidgets('renders smooth page indicator', (WidgetTester tester) async {
       await pumpTestWidget(
         tester,
-        pages: [
-          const Page(content: []),
-          const Page(content: []),
+        sections: [
+          const Section(content: []),
+          const Section(content: []),
         ],
       );
       final smoothIndicator = tester.widget<SmoothIndicator>(
@@ -94,12 +94,12 @@ void main() {
       expect(
         smoothIndicator.count,
         [
-          const Page(content: []),
-          const Page(content: []),
+          const Section(content: []),
+          const Section(content: []),
         ].length,
       );
       expect(smoothIndicator.offset, 0);
-      await tester.tap(find.byKey(LessonPagesView.forwardButtonKey));
+      await tester.tap(find.byKey(ConceptSectionsView.forwardButtonKey));
       await tester.pumpAndSettle();
 
       final updatedSmoothIndicator = tester.widget<SmoothIndicator>(
@@ -108,36 +108,37 @@ void main() {
       expect(updatedSmoothIndicator.offset, 1);
     });
 
-    testWidgets('hides smooth page indicator when pages is empty',
+    testWidgets('hides smooth page indicator when sections is empty',
         (WidgetTester tester) async {
-      await pumpTestWidget(tester, pages: []);
+      await pumpTestWidget(tester, sections: []);
       expect(find.byType(SmoothIndicator), findsNothing);
     });
 
-    testWidgets('renders task icon when hasTasks is true',
+    testWidgets('renders challenge icon when hasChallenges is true',
         (WidgetTester tester) async {
-      await pumpTestWidget(tester, pages: [], hasTasks: true);
+      await pumpTestWidget(tester, sections: [], hasChallenges: true);
       expect(find.byIcon(Icons.task_outlined), findsOneWidget);
     });
 
-    testWidgets('hides task icon by default', (WidgetTester tester) async {
-      await pumpTestWidget(tester, pages: []);
+    testWidgets('hides challenge icon by default', (WidgetTester tester) async {
+      await pumpTestWidget(tester, sections: []);
       expect(find.byIcon(Icons.task_outlined), findsNothing);
     });
 
-    testWidgets('hides task icon when hasTasks is false',
+    testWidgets('hides challenge icon when hasChallenges is false',
         (WidgetTester tester) async {
       // ignore: avoid_redundant_argument_values
-      await pumpTestWidget(tester, pages: [], hasTasks: false);
+      await pumpTestWidget(tester, sections: [], hasChallenges: false);
       expect(find.byIcon(Icons.task_outlined), findsNothing);
     });
 
-    testWidgets('has separator when hasTasks is true and pages is not empty',
+    testWidgets(
+        'has separator when hasChallenges is true and sections is not empty',
         (WidgetTester tester) async {
       await pumpTestWidget(
         tester,
-        pages: [const Page(content: [])],
-        hasTasks: true,
+        sections: [const Section(content: [])],
+        hasChallenges: true,
       );
       final row = tester.widget<Row>(find.byType(Row).first);
       expect(
@@ -146,107 +147,110 @@ void main() {
       );
     });
 
-    testWidgets('hides separator when hasTasks is false and pages is not empty',
+    testWidgets(
+        'hides separator when hasChallenges is false and sections is not empty',
         (WidgetTester tester) async {
-      await pumpTestWidget(tester, pages: [const Page(content: [])]);
+      await pumpTestWidget(tester, sections: [const Section(content: [])]);
       final row = tester.widget<Row>(find.byType(Row).first);
       expect(
         row.children.any((child) => child is SizedBox),
         false,
       );
-    });
-
-    testWidgets('hides separator when hasTasks is true and pages is empty',
-        (WidgetTester tester) async {
-      await pumpTestWidget(tester, pages: [], hasTasks: true);
-      final row = tester.widget<Row>(find.byType(Row).first);
-      expect(
-        row.children.any((child) => child is SizedBox),
-        false,
-      );
-    });
-
-    testWidgets('hides separator when hasTasks is false and pages is empty',
-        (WidgetTester tester) async {
-      await pumpTestWidget(tester, pages: []);
-      final row = tester.widget<Row>(find.byType(Row).first);
-      expect(
-        row.children.any((child) => child is SizedBox),
-        false,
-      );
-    });
-
-    testWidgets('back button is hidden on first page',
-        (WidgetTester tester) async {
-      await pumpTestWidget(
-        tester,
-        pages: [
-          const Page(content: []),
-          const Page(content: []),
-        ],
-      );
-      expect(find.byKey(LessonPagesView.backButtonKey), findsNothing);
-      expect(find.byKey(LessonPagesView.forwardButtonKey), findsOneWidget);
-    });
-
-    testWidgets('forward button is hidden on last page when no tasks',
-        (WidgetTester tester) async {
-      await pumpTestWidget(
-        tester,
-        pages: [
-          const Page(content: []),
-          const Page(content: []),
-        ],
-      );
-      await tester.tap(find.byKey(LessonPagesView.forwardButtonKey));
-      await tester.pumpAndSettle();
-      expect(find.byKey(LessonPagesView.forwardButtonKey), findsNothing);
-      expect(find.byKey(LessonPagesView.backButtonKey), findsOneWidget);
     });
 
     testWidgets(
-        'back and forward buttons are hidden when only one page and no tasks',
+        'hides separator when hasChallenges is true and sections is empty',
         (WidgetTester tester) async {
-      await pumpTestWidget(tester, pages: [const Page(content: [])]);
-      expect(find.byKey(LessonPagesView.backButtonKey), findsNothing);
-      expect(find.byKey(LessonPagesView.forwardButtonKey), findsNothing);
+      await pumpTestWidget(tester, sections: [], hasChallenges: true);
+      final row = tester.widget<Row>(find.byType(Row).first);
+      expect(
+        row.children.any((child) => child is SizedBox),
+        false,
+      );
     });
 
-    testWidgets('navigation between pages works when no tasks',
+    testWidgets(
+        'hides separator when hasChallenges is false and sections is empty',
+        (WidgetTester tester) async {
+      await pumpTestWidget(tester, sections: []);
+      final row = tester.widget<Row>(find.byType(Row).first);
+      expect(
+        row.children.any((child) => child is SizedBox),
+        false,
+      );
+    });
+
+    testWidgets('back button is hidden on first section',
         (WidgetTester tester) async {
       await pumpTestWidget(
         tester,
-        pages: [
-          const Page(content: []),
-          const Page(content: []),
-          const Page(content: []),
+        sections: [
+          const Section(content: []),
+          const Section(content: []),
         ],
       );
-      expect(find.byKey(LessonPagesView.backButtonKey), findsNothing);
-      expect(find.byKey(LessonPagesView.forwardButtonKey), findsOneWidget);
-
-      await tester.tap(find.byKey(LessonPagesView.forwardButtonKey));
-      await tester.pumpAndSettle();
-      expect(find.byKey(LessonPagesView.backButtonKey), findsOneWidget);
-      expect(find.byKey(LessonPagesView.forwardButtonKey), findsOneWidget);
-
-      await tester.tap(find.byKey(LessonPagesView.forwardButtonKey));
-      await tester.pumpAndSettle();
-      expect(find.byKey(LessonPagesView.backButtonKey), findsOneWidget);
-      expect(find.byKey(LessonPagesView.forwardButtonKey), findsNothing);
-
-      await tester.tap(find.byKey(LessonPagesView.backButtonKey));
-      await tester.pumpAndSettle();
-      expect(find.byKey(LessonPagesView.backButtonKey), findsOneWidget);
-      expect(find.byKey(LessonPagesView.forwardButtonKey), findsOneWidget);
-
-      await tester.tap(find.byKey(LessonPagesView.backButtonKey));
-      await tester.pumpAndSettle();
-      expect(find.byKey(LessonPagesView.backButtonKey), findsNothing);
-      expect(find.byKey(LessonPagesView.forwardButtonKey), findsOneWidget);
+      expect(find.byKey(ConceptSectionsView.backButtonKey), findsNothing);
+      expect(find.byKey(ConceptSectionsView.forwardButtonKey), findsOneWidget);
     });
 
-    group('navigates to tasks when', () {
+    testWidgets('forward button is hidden on last section when no challenges',
+        (WidgetTester tester) async {
+      await pumpTestWidget(
+        tester,
+        sections: [
+          const Section(content: []),
+          const Section(content: []),
+        ],
+      );
+      await tester.tap(find.byKey(ConceptSectionsView.forwardButtonKey));
+      await tester.pumpAndSettle();
+      expect(find.byKey(ConceptSectionsView.forwardButtonKey), findsNothing);
+      expect(find.byKey(ConceptSectionsView.backButtonKey), findsOneWidget);
+    });
+
+    testWidgets(
+        'back and forward buttons are hidden when only one section and no challenges',
+        (WidgetTester tester) async {
+      await pumpTestWidget(tester, sections: [const Section(content: [])]);
+      expect(find.byKey(ConceptSectionsView.backButtonKey), findsNothing);
+      expect(find.byKey(ConceptSectionsView.forwardButtonKey), findsNothing);
+    });
+
+    testWidgets('navigation between sections works when no challenges',
+        (WidgetTester tester) async {
+      await pumpTestWidget(
+        tester,
+        sections: [
+          const Section(content: []),
+          const Section(content: []),
+          const Section(content: []),
+        ],
+      );
+      expect(find.byKey(ConceptSectionsView.backButtonKey), findsNothing);
+      expect(find.byKey(ConceptSectionsView.forwardButtonKey), findsOneWidget);
+
+      await tester.tap(find.byKey(ConceptSectionsView.forwardButtonKey));
+      await tester.pumpAndSettle();
+      expect(find.byKey(ConceptSectionsView.backButtonKey), findsOneWidget);
+      expect(find.byKey(ConceptSectionsView.forwardButtonKey), findsOneWidget);
+
+      await tester.tap(find.byKey(ConceptSectionsView.forwardButtonKey));
+      await tester.pumpAndSettle();
+      expect(find.byKey(ConceptSectionsView.backButtonKey), findsOneWidget);
+      expect(find.byKey(ConceptSectionsView.forwardButtonKey), findsNothing);
+
+      await tester.tap(find.byKey(ConceptSectionsView.backButtonKey));
+      await tester.pumpAndSettle();
+      expect(find.byKey(ConceptSectionsView.backButtonKey), findsOneWidget);
+      expect(find.byKey(ConceptSectionsView.forwardButtonKey), findsOneWidget);
+
+      await tester.tap(find.byKey(ConceptSectionsView.backButtonKey));
+      await tester.pumpAndSettle();
+      expect(find.byKey(ConceptSectionsView.backButtonKey), findsNothing);
+      expect(find.byKey(ConceptSectionsView.forwardButtonKey), findsOneWidget);
+    });
+
+    group('navigates to challenges when', () {
       late MockGoRouter router;
       setUp(() {
         router = MockGoRouter();
@@ -255,7 +259,7 @@ void main() {
 
       Future<void> pumpWithGoRouter(
         WidgetTester tester, {
-        required List<Page> pages,
+        required List<Section> sections,
       }) {
         return tester.pumpWidget(
           MaterialApp(
@@ -263,10 +267,10 @@ void main() {
             supportedLocales: AppLocalizations.supportedLocales,
             home: InheritedGoRouter(
               goRouter: router,
-              child: LessonPagesView(
+              child: ConceptSectionsView(
                 id: 'id',
-                pages: pages,
-                hasTasks: true,
+                sections: sections,
+                hasChallenges: true,
               ),
             ),
           ),
@@ -274,54 +278,57 @@ void main() {
       }
 
       testWidgets(
-          'forward button is pressed on last page when hasTasks is true',
+          'forward button is pressed on last section when hasChallenges is true',
           (WidgetTester tester) async {
         await pumpWithGoRouter(
           tester,
-          pages: [
-            const Page(content: []),
-            const Page(content: []),
+          sections: [
+            const Section(content: []),
+            const Section(content: []),
           ],
         );
 
-        await tester.tap(find.byKey(LessonPagesView.forwardButtonKey));
+        await tester.tap(find.byKey(ConceptSectionsView.forwardButtonKey));
         await tester.pumpAndSettle();
 
-        expect(find.byKey(LessonPagesView.forwardButtonKey), findsOneWidget);
-        expect(find.byKey(LessonPagesView.backButtonKey), findsOneWidget);
+        expect(
+          find.byKey(ConceptSectionsView.forwardButtonKey),
+          findsOneWidget,
+        );
+        expect(find.byKey(ConceptSectionsView.backButtonKey), findsOneWidget);
 
-        await tester.tap(find.byKey(LessonPagesView.forwardButtonKey));
-        verify(router.go(const TasksRoute(id: 'id').location)).called(1);
+        await tester.tap(find.byKey(ConceptSectionsView.forwardButtonKey));
+        verify(router.go(const ChallengesRoute(id: 'id').location)).called(1);
       });
 
       testWidgets(
-          'forward button is pressed on first page when hasTasks is true',
+          'forward button is pressed on first section when hasChallenges is true',
           (WidgetTester tester) async {
         await pumpWithGoRouter(
           tester,
-          pages: [
-            const Page(content: []),
+          sections: [
+            const Section(content: []),
           ],
         );
 
-        await tester.tap(find.byKey(LessonPagesView.forwardButtonKey));
+        await tester.tap(find.byKey(ConceptSectionsView.forwardButtonKey));
         await tester.pumpAndSettle();
 
-        verify(router.go(const TasksRoute(id: 'id').location)).called(1);
+        verify(router.go(const ChallengesRoute(id: 'id').location)).called(1);
       });
 
       testWidgets(
-          'forward button is pressed with no pages when hasTasks is true',
+          'forward button is pressed with no sections when hasChallenges is true',
           (WidgetTester tester) async {
         await pumpWithGoRouter(
           tester,
-          pages: [],
+          sections: [],
         );
 
-        await tester.tap(find.byKey(LessonPagesView.forwardButtonKey));
+        await tester.tap(find.byKey(ConceptSectionsView.forwardButtonKey));
         await tester.pumpAndSettle();
 
-        verify(router.go(const TasksRoute(id: 'id').location)).called(1);
+        verify(router.go(const ChallengesRoute(id: 'id').location)).called(1);
       });
     });
   });

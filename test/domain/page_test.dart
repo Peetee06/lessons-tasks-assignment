@@ -3,7 +3,7 @@ import 'package:lessons_tasks_assignment/domain/content_component.dart';
 import 'package:lessons_tasks_assignment/domain/page.dart';
 
 void main() {
-  group('Page', () {
+  group(Section, () {
     test('should be deserialized from JSON', () {
       const json = {
         'content': [
@@ -18,8 +18,8 @@ void main() {
         ],
       };
 
-      final page = Page.fromJson(json);
-      final expected = Page(
+      final section = Section.fromJson(json);
+      final expected = Section(
         content: [
           const TextComponent(
             text: {'de': 'Hallo', 'en': 'Hello'},
@@ -30,13 +30,13 @@ void main() {
         ],
       );
 
-      expect(page, expected);
+      expect(section, expected);
     });
 
     test('should throw an exception if content is missing', () {
       const json = <String, dynamic>{};
       expect(
-        () => Page.fromJson(json),
+        () => Section.fromJson(json),
         throwsA(isA<TypeError>()),
       );
     });
@@ -44,7 +44,7 @@ void main() {
     test('should throw an exception if content is not a list', () {
       const json = {'content': 'not_a_list'};
       expect(
-        () => Page.fromJson(json),
+        () => Section.fromJson(json),
         throwsA(isA<TypeError>()),
       );
     });

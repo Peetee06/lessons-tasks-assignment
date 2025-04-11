@@ -3,10 +3,10 @@ import 'package:lessons_tasks_assignment/domain/answer.dart';
 import 'package:lessons_tasks_assignment/domain/task.dart';
 
 void main() {
-  group('Task', () {
+  group(Challenge, () {
     test('should be deserialized from JSON', () {
       const json = {
-        'id': 'task1',
+        'id': 'challenge1',
         'question': {
           'en': 'Choose correct answer',
           'de': 'Wähle die richtige Antwort',
@@ -24,9 +24,9 @@ void main() {
         'correctAnswerIds': ['answer1'],
       };
 
-      final task = Task.fromJson(json);
-      const expected = Task(
-        id: 'task1',
+      final challenge = Challenge.fromJson(json);
+      const expected = Challenge(
+        id: 'challenge1',
         question: {
           'en': 'Choose correct answer',
           'de': 'Wähle die richtige Antwort',
@@ -44,7 +44,7 @@ void main() {
         correctAnswerIds: ['answer1'],
       );
 
-      expect(task, expected);
+      expect(challenge, expected);
     });
 
     test('should throw an exception if id is missing', () {
@@ -57,26 +57,26 @@ void main() {
         'correctAnswerIds': <String>[],
       };
       expect(
-        () => Task.fromJson(json),
+        () => Challenge.fromJson(json),
         throwsA(isA<TypeError>()),
       );
     });
 
     test('should throw an exception if title is missing', () {
       const json = {
-        'id': 'task1',
+        'id': 'challenge1',
         'options': <Answer>[],
         'correctAnswerIds': <String>[],
       };
       expect(
-        () => Task.fromJson(json),
+        () => Challenge.fromJson(json),
         throwsA(isA<TypeError>()),
       );
     });
 
     test('should throw an exception if options is missing', () {
       const json = {
-        'id': 'task1',
+        'id': 'challenge1',
         'question': {
           'en': 'Choose correct answer',
           'de': 'Wähle die richtige Antwort',
@@ -84,14 +84,14 @@ void main() {
         'correctAnswerIds': <String>[],
       };
       expect(
-        () => Task.fromJson(json),
+        () => Challenge.fromJson(json),
         throwsA(isA<TypeError>()),
       );
     });
 
     test('should throw an exception if correctAnswerIds is missing', () {
       const json = {
-        'id': 'task1',
+        'id': 'challenge1',
         'question': {
           'en': 'Choose correct answer',
           'de': 'Wähle die richtige Antwort',
@@ -99,14 +99,14 @@ void main() {
         'options': <Answer>[],
       };
       expect(
-        () => Task.fromJson(json),
+        () => Challenge.fromJson(json),
         throwsA(isA<TypeError>()),
       );
     });
 
     test('should handle empty options and correctAnswerIds lists', () {
       const json = {
-        'id': 'task1',
+        'id': 'challenge1',
         'question': {
           'en': 'Choose correct answer',
           'de': 'Wähle die richtige Antwort',
@@ -115,9 +115,9 @@ void main() {
         'correctAnswerIds': <String>[],
       };
 
-      final task = Task.fromJson(json);
-      const expected = Task(
-        id: 'task1',
+      final challenge = Challenge.fromJson(json);
+      const expected = Challenge(
+        id: 'challenge1',
         question: {
           'en': 'Choose correct answer',
           'de': 'Wähle die richtige Antwort',
@@ -126,7 +126,7 @@ void main() {
         correctAnswerIds: [],
       );
 
-      expect(task, expected);
+      expect(challenge, expected);
     });
   });
 }

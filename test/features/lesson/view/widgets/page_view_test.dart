@@ -1,5 +1,5 @@
 import 'package:cached_network_image/cached_network_image.dart';
-import 'package:flutter/material.dart' hide Page;
+import 'package:flutter/material.dart';
 import 'package:flutter_cache_manager/flutter_cache_manager.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:get_it/get_it.dart';
@@ -36,22 +36,23 @@ void main() {
   testWidgets('renders text component', (tester) async {
     await tester.pumpApp(
       locale: const Locale('de'),
-      widget: const LessonPageView(
-        page: Page(
+      widget: const ConceptSectionView(
+        section: Section(
           content: [
-            TextComponent(text: {'en': 'Hello', 'de': 'Hallo'}),
+            ContentComponent.text(text: {'en': 'Hello', 'de': 'Hallo'}),
           ],
         ),
       ),
     );
     expect(find.text('Hallo'), findsOneWidget);
   });
+
   testWidgets('renders image component', (tester) async {
     await tester.pumpApp(
-      widget: LessonPageView(
-        page: Page(
+      widget: ConceptSectionView(
+        section: Section(
           content: [
-            ImageComponent(
+            ContentComponent.image(
               imageUri: Uri.parse('https://example.com/image.jpg'),
             ),
           ],
@@ -63,11 +64,11 @@ void main() {
 
   testWidgets('renders multiple components', (WidgetTester tester) async {
     await tester.pumpApp(
-      widget: LessonPageView(
-        page: Page(
+      widget: ConceptSectionView(
+        section: Section(
           content: [
-            const TextComponent(text: {'en': 'Hello', 'de': 'Hallo'}),
-            ImageComponent(
+            const ContentComponent.text(text: {'en': 'Hello', 'de': 'Hallo'}),
+            ContentComponent.image(
               imageUri: Uri.parse('https://example.com/image.jpg'),
             ),
           ],

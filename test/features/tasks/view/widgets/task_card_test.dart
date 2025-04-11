@@ -7,7 +7,7 @@ import 'package:lessons_tasks_assignment/features/tasks/view/widgets/task_card.d
 import '../../../../helpers/helpers.dart';
 
 void main() {
-  const task = Task(
+  const challenge = Challenge(
     id: '1',
     question: {
       'en': 'What is Flutter?',
@@ -32,11 +32,11 @@ void main() {
     correctAnswerIds: ['a1'],
   );
 
-  testWidgets('TaskCard displays question and options', (tester) async {
+  testWidgets('ChallengeCard displays question and options', (tester) async {
     await tester.pumpApp(
       locale: const Locale('de'),
       widget: const Material(
-        child: TaskCard(task: task),
+        child: ChallengeCard(challenge: challenge),
       ),
     );
 

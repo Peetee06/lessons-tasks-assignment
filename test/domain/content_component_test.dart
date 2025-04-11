@@ -3,7 +3,7 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:lessons_tasks_assignment/domain/content_component.dart';
 
 void main() {
-  group('ContentComponent', () {
+  group(ContentComponent, () {
     group('image', () {
       test('should be deserialized from JSON', () {
         const json = {

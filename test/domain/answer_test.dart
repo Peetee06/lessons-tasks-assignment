@@ -2,7 +2,7 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:lessons_tasks_assignment/domain/answer.dart';
 
 void main() {
-  group('Answer', () {
+  group(Answer, () {
     test('should be deserialized from JSON', () {
       const json = {
         'id': 'answer1',

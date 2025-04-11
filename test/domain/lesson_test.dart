@@ -4,12 +4,12 @@ import 'package:lessons_tasks_assignment/domain/lesson.dart';
 import 'package:lessons_tasks_assignment/domain/page.dart';
 
 void main() {
-  group('Lesson', () {
+  group(Concept, () {
     test('should be deserialized from JSON', () {
       const json = {
-        'id': 'lesson1',
-        'title': {'en': 'Lesson 1', 'de': 'Lektion 1'},
-        'pages': [
+        'id': 'concept1',
+        'title': {'en': 'Concept 1', 'de': 'Konzept 1'},
+        'sections': [
           {
             'content': [
               {
@@ -19,15 +19,15 @@ void main() {
             ],
           },
         ],
-        'taskIds': ['task1', 'task2'],
+        'challengeIds': ['challenge1', 'challenge2'],
       };
 
-      final lesson = Lesson.fromJson(json);
-      const expected = Lesson(
-        id: 'lesson1',
-        title: {'en': 'Lesson 1', 'de': 'Lektion 1'},
-        pages: [
-          Page(
+      final concept = Concept.fromJson(json);
+      const expected = Concept(
+        id: 'concept1',
+        title: {'en': 'Concept 1', 'de': 'Konzept 1'},
+        sections: [
+          Section(
             content: [
               TextComponent(
                 text: {'de': 'Hallo', 'en': 'Hello'},
@@ -35,69 +35,69 @@ void main() {
             ],
           ),
         ],
-        taskIds: ['task1', 'task2'],
+        challengeIds: ['challenge1', 'challenge2'],
       );
 
-      expect(lesson, expected);
+      expect(concept, expected);
     });
 
     test('should throw an exception if id is missing', () {
       const json = {
-        'title': {'en': 'Lesson 1', 'de': 'Lektion 1'},
-        'pages': <Page>[],
-        'taskIds': <String>[],
+        'title': {'en': 'Concept 1', 'de': 'Konzept 1'},
+        'sections': <Section>[],
+        'challengeIds': <String>[],
       };
       expect(
-        () => Lesson.fromJson(json),
+        () => Concept.fromJson(json),
         throwsA(isA<TypeError>()),
       );
     });
 
     test('should throw an exception if title is missing', () {
       const json = {
-        'id': 'lesson1',
-        'pages': <Page>[],
-        'taskIds': <String>[],
+        'id': 'concept1',
+        'sections': <Section>[],
+        'challengeIds': <String>[],
       };
       expect(
-        () => Lesson.fromJson(json),
+        () => Concept.fromJson(json),
         throwsA(isA<TypeError>()),
       );
     });
 
     test('should throw an exception if title is not a map', () {
       const json = {
-        'id': 'lesson1',
-        'title': 'Lesson 1',
-        'pages': <Page>[],
-        'taskIds': <String>[],
+        'id': 'concept1',
+        'title': 'Concept 1',
+        'sections': <Section>[],
+        'challengeIds': <String>[],
       };
       expect(
-        () => Lesson.fromJson(json),
+        () => Concept.fromJson(json),
         throwsA(isA<TypeError>()),
       );
     });
 
-    test('should throw an exception if pages is missing', () {
+    test('should throw an exception if sections is missing', () {
       const json = {
-        'id': 'lesson1',
-        'title': {'en': 'Lesson 1', 'de': 'Lektion 1'},
-        'taskIds': <String>[],
+        'id': 'concept1',
+        'title': {'en': 'Concept 1', 'de': 'Konzept 1'},
+        'challengeIds': <String>[],
       };
       expect(
-        () => Lesson.fromJson(json),
+        () => Concept.fromJson(json),
         throwsA(isA<TypeError>()),
       );
     });
 
-    test('should throw an exception if taskIds is missing', () {
+    test('should throw an exception if challengeIds is missing', () {
       const json = {
-        'id': 'lesson1',
-        'title': {'en': 'Lesson 1', 'de': 'Lektion 1'},
-        'pages': <Page>[],
+        'id': 'concept1',
+        'title': {'en': 'Concept 1', 'de': 'Konzept 1'},
+        'sections': <Section>[],
       };
       expect(
-        () => Lesson.fromJson(json),
+        () => Concept.fromJson(json),
         throwsA(isA<TypeError>()),
       );
     });
