@@ -1,55 +1,55 @@
 {
     "@@locale": "en",
-    "lessonsViewTitle": "Lessons",
-    "@lessonsViewTitle": {
-        "description": "Title of the lessons view"
+    "conceptsViewTitle": "Concepts",
+    "@conceptsViewTitle": {
+        "description": "Title of the concepts view"
     },
-    "lessonsPages": "{count, plural, =0{no pages} =1{one page} other{{count} pages}}",
-    "@lessonsPages": {
-        "description": "Number of pages in a lesson",
+    "conceptsSections": "{count, plural, =0{no sections} =1{one section} other{{count} sections}}",
+    "@conceptsSections": {
+        "description": "Number of sections in a concept",
         "placeholders": {
             "count": {
                 "type": "int",
-                "description": "Number of pages"
+                "description": "Number of sections"
             }
         }
     },
-    "lessonsTasks": "{count, plural, =0{no tasks} =1{one task} other{{count} tasks}}",
-    "@lessonsTasks": {
-        "description": "Number of tasks in a lesson",
+    "conceptsChallenges": "{count, plural, =0{no challenges} =1{one challenge} other{{count} challenges}}",
+    "@conceptsChallenges": {
+        "description": "Number of challenges in a concept",
         "placeholders": {
             "count": {
                 "type": "int",
-                "description": "Number of tasks"
+                "description": "Number of challenges"
             }
         }
     },
-    "lessonsTryAgain": "Try again",
-    "@lessonsTryAgain": {
+    "conceptsTryAgain": "Try again",
+    "@conceptsTryAgain": {
         "description": "Text of the button to try again"
     },
-    "lessonsEmpty": "No lessons found",
-    "@lessonsEmpty": {
-        "description": "Text shown when there are no lessons"
+    "conceptsEmpty": "No concepts found",
+    "@conceptsEmpty": {
+        "description": "Text shown when there are no concepts"
     },
-    "lessonPageEmpty": "No pages available",
-    "@lessonPageEmpty": {
-        "description": "Text shown when there are no pages"
+    "conceptSectionEmpty": "No sections available",
+    "@conceptSectionEmpty": {
+        "description": "Text shown when there are no sections"
     },
-    "lessonPageForwardButtonLabel": "Forward",
-    "@lessonPageForwardButtonLabel": {
+    "conceptSectionForwardButtonLabel": "Forward",
+    "@conceptSectionForwardButtonLabel": {
         "description": "Text of the button to go forward"
     },
-    "lessonPageBackButtonLabel": "Back",
-    "@lessonPageBackButtonLabel": {
+    "conceptSectionBackButtonLabel": "Back",
+    "@conceptSectionBackButtonLabel": {
         "description": "Text of the button to go back"
     },
-    "tasksEmpty": "No tasks available",
-    "@tasksEmpty": {
-        "description": "Text shown when there are no tasks"
+    "challengesEmpty": "No challenges available",
+    "@challengesEmpty": {
+        "description": "Text shown when there are no challenges"
     },
-    "tasksDoneButtonLabel": "Done",
-    "@tasksDoneButtonLabel": {
-        "description": "Text of the button to finish the lesson"
+    "challengesDoneButtonLabel": "Done",
+    "@challengesDoneButtonLabel": {
+        "description": "Text of the button to finish the concept"
     }
 }
