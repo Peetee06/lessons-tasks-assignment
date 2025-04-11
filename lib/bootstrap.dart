@@ -44,11 +44,11 @@ Future<void> bootstrap(FutureOr<Widget> Function() builder) async {
 void _registerDependencies() {
   final dio = Dio()..interceptors.add(JsonInterceptor());
   final restClient = RestClient(dio);
-  GetIt.I.registerSingleton<LessonsRepository>(
-    LessonsRepository(restClient: restClient),
+  GetIt.I.registerSingleton<ConceptsRepository>(
+    ConceptsRepository(restClient: restClient),
   );
-  GetIt.I.registerSingleton<TasksRepository>(
-    TasksRepository(restClient: restClient),
+  GetIt.I.registerSingleton<ChallengesRepository>(
+    ChallengesRepository(restClient: restClient),
   );
   GetIt.I.registerSingleton<BaseCacheManager>(
     DefaultCacheManager(),
