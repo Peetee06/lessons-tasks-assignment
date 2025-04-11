@@ -64,7 +64,7 @@ class _ConceptSectionsViewState extends State<ConceptSectionsView> {
   void _navigateForward() {
     final hasNoSections = widget.sections.isEmpty;
     if (hasNoSections || _pageController.page == widget.sections.length - 1) {
-      TasksRoute(id: widget.id).go(context);
+      ChallengesRoute(id: widget.id).go(context);
     } else {
       _pageController.nextPage(
         duration: const Duration(milliseconds: 200),
