@@ -6,26 +6,26 @@ import 'package:lessons_tasks_assignment/features/tasks/tasks_route.dart';
 import 'package:lessons_tasks_assignment/l10n/l10n.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
-class LessonPagesView extends StatefulWidget {
-  const LessonPagesView({
+class ConceptSectionsView extends StatefulWidget {
+  const ConceptSectionsView({
     required this.id,
-    required this.pages,
-    required this.hasTasks,
+    required this.sections,
+    required this.hasChallenges,
     super.key,
   });
 
   final String id;
-  final List<Page> pages;
-  final bool hasTasks;
+  final List<Section> sections;
+  final bool hasChallenges;
 
-  static const Key backButtonKey = Key('lessonPagesViewBackButton');
-  static const Key forwardButtonKey = Key('lessonPagesViewForwardButton');
+  static const Key backButtonKey = Key('conceptSectionsViewBackButton');
+  static const Key forwardButtonKey = Key('conceptSectionsViewForwardButton');
 
   @override
-  State<LessonPagesView> createState() => _LessonPagesViewState();
+  State<ConceptSectionsView> createState() => _ConceptSectionsViewState();
 }
 
-class _LessonPagesViewState extends State<LessonPagesView> {
+class _ConceptSectionsViewState extends State<ConceptSectionsView> {
   late PageController _pageController;
 
   bool _canNavigateBack = false;
@@ -34,7 +34,7 @@ class _LessonPagesViewState extends State<LessonPagesView> {
   @override
   void initState() {
     super.initState();
-    _canNavigateForward = widget.pages.length > 1 || widget.hasTasks;
+    _canNavigateForward = widget.sections.length > 1 || widget.hasChallenges;
     _pageController = PageController()..addListener(_updateNavigationButtons);
   }
 
@@ -47,10 +47,10 @@ class _LessonPagesViewState extends State<LessonPagesView> {
   void _updateNavigationButtons() {
     setState(() {
       final isNotFirstPage = _pageController.page != 0;
-      final isNotLastPage = _pageController.page != widget.pages.length - 1;
+      final isNotLastPage = _pageController.page != widget.sections.length - 1;
 
       _canNavigateBack = isNotFirstPage;
-      _canNavigateForward = isNotLastPage || widget.hasTasks;
+      _canNavigateForward = isNotLastPage || widget.hasChallenges;
     });
   }
 
@@ -62,8 +62,8 @@ class _LessonPagesViewState extends State<LessonPagesView> {
   }
 
   void _navigateForward() {
-    final hasNoPages = widget.pages.isEmpty;
-    if (hasNoPages || _pageController.page == widget.pages.length - 1) {
+    final hasNoSections = widget.sections.isEmpty;
+    if (hasNoSections || _pageController.page == widget.sections.length - 1) {
       TasksRoute(id: widget.id).go(context);
     } else {
       _pageController.nextPage(
@@ -82,23 +82,23 @@ class _LessonPagesViewState extends State<LessonPagesView> {
         children: [
           Column(
             children: [
-              _PageAndTasksIndicator(
+              _SectionAndChallengesIndicator(
                 controller: _pageController,
-                pageCount: widget.pages.length,
-                hasTasks: widget.hasTasks,
+                sectionCount: widget.sections.length,
+                hasChallenges: widget.hasChallenges,
               ),
               Expanded(
-                child: widget.pages.isEmpty
+                child: widget.sections.isEmpty
                     ? Center(
-                        child: Text(context.l10n.lessonPageEmpty),
+                        child: Text(context.l10n.conceptSectionEmpty),
                       )
                     : PageView.builder(
                         controller: _pageController,
                         physics: const NeverScrollableScrollPhysics(),
-                        itemCount: widget.pages.length,
+                        itemCount: widget.sections.length,
                         itemBuilder: (context, index) {
-                          final page = widget.pages[index];
-                          return LessonPageView(page: page);
+                          final section = widget.sections[index];
+                          return ConceptSectionView(page: section);
                         },
                       ),
               ),
@@ -109,13 +109,13 @@ class _LessonPagesViewState extends State<LessonPagesView> {
               children: [
                 if (_canNavigateBack)
                   _BackButton(
-                    key: LessonPagesView.backButtonKey,
+                    key: ConceptSectionsView.backButtonKey,
                     onPressed: _navigateBack,
                   ),
                 const Spacer(),
                 if (_canNavigateForward)
                   _ForwardButton(
-                    key: LessonPagesView.forwardButtonKey,
+                    key: ConceptSectionsView.forwardButtonKey,
                     onPressed: _navigateForward,
                   ),
               ],
@@ -139,7 +139,7 @@ class _BackButton extends StatelessWidget {
     return TextButton.icon(
       onPressed: onPressed,
       icon: const Icon(Icons.arrow_back),
-      label: Text(context.l10n.lessonPageBackButtonLabel),
+      label: Text(context.l10n.conceptSectionBackButtonLabel),
     );
   }
 }
@@ -156,39 +156,39 @@ class _ForwardButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return FilledButton.icon(
       onPressed: onPressed,
-      label: Text(context.l10n.lessonPageForwardButtonLabel),
+      label: Text(context.l10n.conceptSectionForwardButtonLabel),
       iconAlignment: IconAlignment.end,
       icon: const Icon(Icons.arrow_forward),
     );
   }
 }
 
-class _PageAndTasksIndicator extends StatelessWidget {
-  const _PageAndTasksIndicator({
+class _SectionAndChallengesIndicator extends StatelessWidget {
+  const _SectionAndChallengesIndicator({
     required this.controller,
-    required this.pageCount,
-    required this.hasTasks,
+    required this.sectionCount,
+    required this.hasChallenges,
   });
 
   final PageController controller;
-  final int pageCount;
-  final bool hasTasks;
+  final int sectionCount;
+  final bool hasChallenges;
 
   @override
   Widget build(BuildContext context) => Row(
         mainAxisAlignment: MainAxisAlignment.center,
         mainAxisSize: MainAxisSize.min,
         children: [
-          if (pageCount > 0)
+          if (sectionCount > 0)
             SmoothPageIndicator(
               controller: controller,
-              count: pageCount,
+              count: sectionCount,
               effect: WormEffect(
                 activeDotColor: Theme.of(context).colorScheme.primary,
               ),
             ),
-          if (pageCount > 0 && hasTasks) const SizedBox(width: 6),
-          if (hasTasks)
+          if (sectionCount > 0 && hasChallenges) const SizedBox(width: 6),
+          if (hasChallenges)
             const Icon(
               Icons.task_outlined,
               size: 20,
