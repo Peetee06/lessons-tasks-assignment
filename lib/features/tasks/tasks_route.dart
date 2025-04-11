@@ -8,21 +8,21 @@ import 'package:lessons_tasks_assignment/features/tasks/cubit/tasks_cubit.dart';
 import 'package:lessons_tasks_assignment/features/tasks/view/tasks_view.dart';
 
 @immutable
-class TasksRoute extends GoRouteData {
-  const TasksRoute({required this.id});
+class ChallengesRoute extends GoRouteData {
+  const ChallengesRoute({required this.id});
 
-  /// The id of the lesson to fetch the tasks for.
+  /// The id of the concept to fetch the challenges for.
   final String id;
 
   @override
   Widget build(BuildContext context, GoRouterState state) {
     return BlocProvider(
-      create: (context) => TasksCubit(
-        tasksRepository: GetIt.I<TasksRepository>(),
-        lessonsRepository: GetIt.I<LessonsRepository>(),
-        lessonId: id,
-      )..fetchTasks(),
-      child: const TasksView(),
+      create: (context) => ChallengesCubit(
+        challengesRepository: GetIt.I<ChallengesRepository>(),
+        conceptsRepository: GetIt.I<ConceptsRepository>(),
+        conceptId: id,
+      )..fetchChallenges(),
+      child: const ChallengesView(),
     );
   }
 }
