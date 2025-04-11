@@ -6,13 +6,14 @@ part 'task.freezed.dart';
 part 'task.g.dart';
 
 @freezed
-class Task with _$Task {
-  const factory Task({
+class Challenge with _$Challenge {
+  const factory Challenge({
     required String id,
     required Localizations question,
     required List<Answer> options,
     required List<String> correctAnswerIds,
-  }) = _Task;
+  }) = _Challenge;
 
-  factory Task.fromJson(Map<String, dynamic> json) => _$TaskFromJson(json);
+  factory Challenge.fromJson(Map<String, dynamic> json) =>
+      _$ChallengeFromJson(json);
 }

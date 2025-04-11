@@ -14,42 +14,42 @@ T _$identity<T>(T value) => value;
 final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
-Page _$PageFromJson(Map<String, dynamic> json) {
-  return _Page.fromJson(json);
+Section _$SectionFromJson(Map<String, dynamic> json) {
+  return _Section.fromJson(json);
 }
 
 /// @nodoc
-mixin _$Page {
+mixin _$Section {
   List<ContentComponent> get content => throw _privateConstructorUsedError;
 
-  /// Serializes this Page to a JSON map.
+  /// Serializes this Section to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
 
-  /// Create a copy of Page
+  /// Create a copy of Section
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
-  $PageCopyWith<Page> get copyWith => throw _privateConstructorUsedError;
+  $SectionCopyWith<Section> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $PageCopyWith<$Res> {
-  factory $PageCopyWith(Page value, $Res Function(Page) then) =
-      _$PageCopyWithImpl<$Res, Page>;
+abstract class $SectionCopyWith<$Res> {
+  factory $SectionCopyWith(Section value, $Res Function(Section) then) =
+      _$SectionCopyWithImpl<$Res, Section>;
   @useResult
   $Res call({List<ContentComponent> content});
 }
 
 /// @nodoc
-class _$PageCopyWithImpl<$Res, $Val extends Page>
-    implements $PageCopyWith<$Res> {
-  _$PageCopyWithImpl(this._value, this._then);
+class _$SectionCopyWithImpl<$Res, $Val extends Section>
+    implements $SectionCopyWith<$Res> {
+  _$SectionCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
   final $Val _value;
   // ignore: unused_field
   final $Res Function($Val) _then;
 
-  /// Create a copy of Page
+  /// Create a copy of Section
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
@@ -66,30 +66,31 @@ class _$PageCopyWithImpl<$Res, $Val extends Page>
 }
 
 /// @nodoc
-abstract class _$$PageImplCopyWith<$Res> implements $PageCopyWith<$Res> {
-  factory _$$PageImplCopyWith(
-          _$PageImpl value, $Res Function(_$PageImpl) then) =
-      __$$PageImplCopyWithImpl<$Res>;
+abstract class _$$SectionImplCopyWith<$Res> implements $SectionCopyWith<$Res> {
+  factory _$$SectionImplCopyWith(
+          _$SectionImpl value, $Res Function(_$SectionImpl) then) =
+      __$$SectionImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({List<ContentComponent> content});
 }
 
 /// @nodoc
-class __$$PageImplCopyWithImpl<$Res>
-    extends _$PageCopyWithImpl<$Res, _$PageImpl>
-    implements _$$PageImplCopyWith<$Res> {
-  __$$PageImplCopyWithImpl(_$PageImpl _value, $Res Function(_$PageImpl) _then)
+class __$$SectionImplCopyWithImpl<$Res>
+    extends _$SectionCopyWithImpl<$Res, _$SectionImpl>
+    implements _$$SectionImplCopyWith<$Res> {
+  __$$SectionImplCopyWithImpl(
+      _$SectionImpl _value, $Res Function(_$SectionImpl) _then)
       : super(_value, _then);
 
-  /// Create a copy of Page
+  /// Create a copy of Section
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? content = null,
   }) {
-    return _then(_$PageImpl(
+    return _then(_$SectionImpl(
       content: null == content
           ? _value._content
           : content // ignore: cast_nullable_to_non_nullable
@@ -100,12 +101,12 @@ class __$$PageImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$PageImpl implements _Page {
-  const _$PageImpl({required final List<ContentComponent> content})
+class _$SectionImpl implements _Section {
+  const _$SectionImpl({required final List<ContentComponent> content})
       : _content = content;
 
-  factory _$PageImpl.fromJson(Map<String, dynamic> json) =>
-      _$$PageImplFromJson(json);
+  factory _$SectionImpl.fromJson(Map<String, dynamic> json) =>
+      _$$SectionImplFromJson(json);
 
   final List<ContentComponent> _content;
   @override
@@ -117,14 +118,14 @@ class _$PageImpl implements _Page {
 
   @override
   String toString() {
-    return 'Page(content: $content)';
+    return 'Section(content: $content)';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$PageImpl &&
+            other is _$SectionImpl &&
             const DeepCollectionEquality().equals(other._content, _content));
   }
 
@@ -133,35 +134,35 @@ class _$PageImpl implements _Page {
   int get hashCode =>
       Object.hash(runtimeType, const DeepCollectionEquality().hash(_content));
 
-  /// Create a copy of Page
+  /// Create a copy of Section
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
-  _$$PageImplCopyWith<_$PageImpl> get copyWith =>
-      __$$PageImplCopyWithImpl<_$PageImpl>(this, _$identity);
+  _$$SectionImplCopyWith<_$SectionImpl> get copyWith =>
+      __$$SectionImplCopyWithImpl<_$SectionImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$PageImplToJson(
+    return _$$SectionImplToJson(
       this,
     );
   }
 }
 
-abstract class _Page implements Page {
-  const factory _Page({required final List<ContentComponent> content}) =
-      _$PageImpl;
+abstract class _Section implements Section {
+  const factory _Section({required final List<ContentComponent> content}) =
+      _$SectionImpl;
 
-  factory _Page.fromJson(Map<String, dynamic> json) = _$PageImpl.fromJson;
+  factory _Section.fromJson(Map<String, dynamic> json) = _$SectionImpl.fromJson;
 
   @override
   List<ContentComponent> get content;
 
-  /// Create a copy of Page
+  /// Create a copy of Section
   /// with the given fields replaced by the non-null parameter values.
   @override
   @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$PageImplCopyWith<_$PageImpl> get copyWith =>
+  _$$SectionImplCopyWith<_$SectionImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
