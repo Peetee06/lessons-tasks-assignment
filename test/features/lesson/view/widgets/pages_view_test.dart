@@ -209,8 +209,8 @@ void main() {
     });
 
     testWidgets(
-        'back and forward buttons are hidden when only one section and no challenges',
-        (WidgetTester tester) async {
+        'back and forward buttons are hidden when only one section and '
+        'no challenges', (WidgetTester tester) async {
       await pumpTestWidget(tester, sections: [const Section(content: [])]);
       expect(find.byKey(ConceptSectionsView.backButtonKey), findsNothing);
       expect(find.byKey(ConceptSectionsView.forwardButtonKey), findsNothing);
@@ -278,8 +278,8 @@ void main() {
       }
 
       testWidgets(
-          'forward button is pressed on last section when hasChallenges is true',
-          (WidgetTester tester) async {
+          'forward button is pressed on last section when hasChallenges '
+          'is true', (WidgetTester tester) async {
         await pumpWithGoRouter(
           tester,
           sections: [
@@ -302,8 +302,8 @@ void main() {
       });
 
       testWidgets(
-          'forward button is pressed on first section when hasChallenges is true',
-          (WidgetTester tester) async {
+          'forward button is pressed on first section when hasChallenges '
+          'is true', (WidgetTester tester) async {
         await pumpWithGoRouter(
           tester,
           sections: [
@@ -318,8 +318,8 @@ void main() {
       });
 
       testWidgets(
-          'forward button is pressed with no sections when hasChallenges is true',
-          (WidgetTester tester) async {
+          'forward button is pressed with no sections when hasChallenges '
+          'is true', (WidgetTester tester) async {
         await pumpWithGoRouter(
           tester,
           sections: [],
