@@ -14,49 +14,49 @@ T _$identity<T>(T value) => value;
 final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
-Lesson _$LessonFromJson(Map<String, dynamic> json) {
-  return _Lesson.fromJson(json);
+Concept _$ConceptFromJson(Map<String, dynamic> json) {
+  return _Concept.fromJson(json);
 }
 
 /// @nodoc
-mixin _$Lesson {
+mixin _$Concept {
   String get id => throw _privateConstructorUsedError;
   Map<String, String> get title => throw _privateConstructorUsedError;
-  List<Page> get pages => throw _privateConstructorUsedError;
+  List<Section> get pages => throw _privateConstructorUsedError;
   List<String> get taskIds => throw _privateConstructorUsedError;
 
-  /// Serializes this Lesson to a JSON map.
+  /// Serializes this Concept to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
 
-  /// Create a copy of Lesson
+  /// Create a copy of Concept
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
-  $LessonCopyWith<Lesson> get copyWith => throw _privateConstructorUsedError;
+  $ConceptCopyWith<Concept> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $LessonCopyWith<$Res> {
-  factory $LessonCopyWith(Lesson value, $Res Function(Lesson) then) =
-      _$LessonCopyWithImpl<$Res, Lesson>;
+abstract class $ConceptCopyWith<$Res> {
+  factory $ConceptCopyWith(Concept value, $Res Function(Concept) then) =
+      _$ConceptCopyWithImpl<$Res, Concept>;
   @useResult
   $Res call(
       {String id,
       Map<String, String> title,
-      List<Page> pages,
+      List<Section> pages,
       List<String> taskIds});
 }
 
 /// @nodoc
-class _$LessonCopyWithImpl<$Res, $Val extends Lesson>
-    implements $LessonCopyWith<$Res> {
-  _$LessonCopyWithImpl(this._value, this._then);
+class _$ConceptCopyWithImpl<$Res, $Val extends Concept>
+    implements $ConceptCopyWith<$Res> {
+  _$ConceptCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
   final $Val _value;
   // ignore: unused_field
   final $Res Function($Val) _then;
 
-  /// Create a copy of Lesson
+  /// Create a copy of Concept
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
@@ -78,7 +78,7 @@ class _$LessonCopyWithImpl<$Res, $Val extends Lesson>
       pages: null == pages
           ? _value.pages
           : pages // ignore: cast_nullable_to_non_nullable
-              as List<Page>,
+              as List<Section>,
       taskIds: null == taskIds
           ? _value.taskIds
           : taskIds // ignore: cast_nullable_to_non_nullable
@@ -88,28 +88,28 @@ class _$LessonCopyWithImpl<$Res, $Val extends Lesson>
 }
 
 /// @nodoc
-abstract class _$$LessonImplCopyWith<$Res> implements $LessonCopyWith<$Res> {
-  factory _$$LessonImplCopyWith(
-          _$LessonImpl value, $Res Function(_$LessonImpl) then) =
-      __$$LessonImplCopyWithImpl<$Res>;
+abstract class _$$ConceptImplCopyWith<$Res> implements $ConceptCopyWith<$Res> {
+  factory _$$ConceptImplCopyWith(
+          _$ConceptImpl value, $Res Function(_$ConceptImpl) then) =
+      __$$ConceptImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
       {String id,
       Map<String, String> title,
-      List<Page> pages,
+      List<Section> pages,
       List<String> taskIds});
 }
 
 /// @nodoc
-class __$$LessonImplCopyWithImpl<$Res>
-    extends _$LessonCopyWithImpl<$Res, _$LessonImpl>
-    implements _$$LessonImplCopyWith<$Res> {
-  __$$LessonImplCopyWithImpl(
-      _$LessonImpl _value, $Res Function(_$LessonImpl) _then)
+class __$$ConceptImplCopyWithImpl<$Res>
+    extends _$ConceptCopyWithImpl<$Res, _$ConceptImpl>
+    implements _$$ConceptImplCopyWith<$Res> {
+  __$$ConceptImplCopyWithImpl(
+      _$ConceptImpl _value, $Res Function(_$ConceptImpl) _then)
       : super(_value, _then);
 
-  /// Create a copy of Lesson
+  /// Create a copy of Concept
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
@@ -119,7 +119,7 @@ class __$$LessonImplCopyWithImpl<$Res>
     Object? pages = null,
     Object? taskIds = null,
   }) {
-    return _then(_$LessonImpl(
+    return _then(_$ConceptImpl(
       id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
@@ -131,7 +131,7 @@ class __$$LessonImplCopyWithImpl<$Res>
       pages: null == pages
           ? _value._pages
           : pages // ignore: cast_nullable_to_non_nullable
-              as List<Page>,
+              as List<Section>,
       taskIds: null == taskIds
           ? _value._taskIds
           : taskIds // ignore: cast_nullable_to_non_nullable
@@ -142,18 +142,18 @@ class __$$LessonImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$LessonImpl implements _Lesson {
-  const _$LessonImpl(
+class _$ConceptImpl implements _Concept {
+  const _$ConceptImpl(
       {required this.id,
       required final Map<String, String> title,
-      required final List<Page> pages,
+      required final List<Section> pages,
       required final List<String> taskIds})
       : _title = title,
         _pages = pages,
         _taskIds = taskIds;
 
-  factory _$LessonImpl.fromJson(Map<String, dynamic> json) =>
-      _$$LessonImplFromJson(json);
+  factory _$ConceptImpl.fromJson(Map<String, dynamic> json) =>
+      _$$ConceptImplFromJson(json);
 
   @override
   final String id;
@@ -165,9 +165,9 @@ class _$LessonImpl implements _Lesson {
     return EqualUnmodifiableMapView(_title);
   }
 
-  final List<Page> _pages;
+  final List<Section> _pages;
   @override
-  List<Page> get pages {
+  List<Section> get pages {
     if (_pages is EqualUnmodifiableListView) return _pages;
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableListView(_pages);
@@ -183,14 +183,14 @@ class _$LessonImpl implements _Lesson {
 
   @override
   String toString() {
-    return 'Lesson(id: $id, title: $title, pages: $pages, taskIds: $taskIds)';
+    return 'Concept(id: $id, title: $title, pages: $pages, taskIds: $taskIds)';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$LessonImpl &&
+            other is _$ConceptImpl &&
             (identical(other.id, id) || other.id == id) &&
             const DeepCollectionEquality().equals(other._title, _title) &&
             const DeepCollectionEquality().equals(other._pages, _pages) &&
@@ -206,44 +206,44 @@ class _$LessonImpl implements _Lesson {
       const DeepCollectionEquality().hash(_pages),
       const DeepCollectionEquality().hash(_taskIds));
 
-  /// Create a copy of Lesson
+  /// Create a copy of Concept
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
-  _$$LessonImplCopyWith<_$LessonImpl> get copyWith =>
-      __$$LessonImplCopyWithImpl<_$LessonImpl>(this, _$identity);
+  _$$ConceptImplCopyWith<_$ConceptImpl> get copyWith =>
+      __$$ConceptImplCopyWithImpl<_$ConceptImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$LessonImplToJson(
+    return _$$ConceptImplToJson(
       this,
     );
   }
 }
 
-abstract class _Lesson implements Lesson {
-  const factory _Lesson(
+abstract class _Concept implements Concept {
+  const factory _Concept(
       {required final String id,
       required final Map<String, String> title,
-      required final List<Page> pages,
-      required final List<String> taskIds}) = _$LessonImpl;
+      required final List<Section> pages,
+      required final List<String> taskIds}) = _$ConceptImpl;
 
-  factory _Lesson.fromJson(Map<String, dynamic> json) = _$LessonImpl.fromJson;
+  factory _Concept.fromJson(Map<String, dynamic> json) = _$ConceptImpl.fromJson;
 
   @override
   String get id;
   @override
   Map<String, String> get title;
   @override
-  List<Page> get pages;
+  List<Section> get pages;
   @override
   List<String> get taskIds;
 
-  /// Create a copy of Lesson
+  /// Create a copy of Concept
   /// with the given fields replaced by the non-null parameter values.
   @override
   @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$LessonImplCopyWith<_$LessonImpl> get copyWith =>
+  _$$ConceptImplCopyWith<_$ConceptImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

@@ -14,30 +14,31 @@ T _$identity<T>(T value) => value;
 final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
-Task _$TaskFromJson(Map<String, dynamic> json) {
-  return _Task.fromJson(json);
+Challenge _$ChallengeFromJson(Map<String, dynamic> json) {
+  return _Challenge.fromJson(json);
 }
 
 /// @nodoc
-mixin _$Task {
+mixin _$Challenge {
   String get id => throw _privateConstructorUsedError;
   Map<String, String> get question => throw _privateConstructorUsedError;
   List<Answer> get options => throw _privateConstructorUsedError;
   List<String> get correctAnswerIds => throw _privateConstructorUsedError;
 
-  /// Serializes this Task to a JSON map.
+  /// Serializes this Challenge to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
 
-  /// Create a copy of Task
+  /// Create a copy of Challenge
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
-  $TaskCopyWith<Task> get copyWith => throw _privateConstructorUsedError;
+  $ChallengeCopyWith<Challenge> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $TaskCopyWith<$Res> {
-  factory $TaskCopyWith(Task value, $Res Function(Task) then) =
-      _$TaskCopyWithImpl<$Res, Task>;
+abstract class $ChallengeCopyWith<$Res> {
+  factory $ChallengeCopyWith(Challenge value, $Res Function(Challenge) then) =
+      _$ChallengeCopyWithImpl<$Res, Challenge>;
   @useResult
   $Res call(
       {String id,
@@ -47,16 +48,16 @@ abstract class $TaskCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$TaskCopyWithImpl<$Res, $Val extends Task>
-    implements $TaskCopyWith<$Res> {
-  _$TaskCopyWithImpl(this._value, this._then);
+class _$ChallengeCopyWithImpl<$Res, $Val extends Challenge>
+    implements $ChallengeCopyWith<$Res> {
+  _$ChallengeCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
   final $Val _value;
   // ignore: unused_field
   final $Res Function($Val) _then;
 
-  /// Create a copy of Task
+  /// Create a copy of Challenge
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
@@ -88,10 +89,11 @@ class _$TaskCopyWithImpl<$Res, $Val extends Task>
 }
 
 /// @nodoc
-abstract class _$$TaskImplCopyWith<$Res> implements $TaskCopyWith<$Res> {
-  factory _$$TaskImplCopyWith(
-          _$TaskImpl value, $Res Function(_$TaskImpl) then) =
-      __$$TaskImplCopyWithImpl<$Res>;
+abstract class _$$ChallengeImplCopyWith<$Res>
+    implements $ChallengeCopyWith<$Res> {
+  factory _$$ChallengeImplCopyWith(
+          _$ChallengeImpl value, $Res Function(_$ChallengeImpl) then) =
+      __$$ChallengeImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -102,13 +104,14 @@ abstract class _$$TaskImplCopyWith<$Res> implements $TaskCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$TaskImplCopyWithImpl<$Res>
-    extends _$TaskCopyWithImpl<$Res, _$TaskImpl>
-    implements _$$TaskImplCopyWith<$Res> {
-  __$$TaskImplCopyWithImpl(_$TaskImpl _value, $Res Function(_$TaskImpl) _then)
+class __$$ChallengeImplCopyWithImpl<$Res>
+    extends _$ChallengeCopyWithImpl<$Res, _$ChallengeImpl>
+    implements _$$ChallengeImplCopyWith<$Res> {
+  __$$ChallengeImplCopyWithImpl(
+      _$ChallengeImpl _value, $Res Function(_$ChallengeImpl) _then)
       : super(_value, _then);
 
-  /// Create a copy of Task
+  /// Create a copy of Challenge
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
@@ -118,7 +121,7 @@ class __$$TaskImplCopyWithImpl<$Res>
     Object? options = null,
     Object? correctAnswerIds = null,
   }) {
-    return _then(_$TaskImpl(
+    return _then(_$ChallengeImpl(
       id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
@@ -141,8 +144,8 @@ class __$$TaskImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$TaskImpl implements _Task {
-  const _$TaskImpl(
+class _$ChallengeImpl implements _Challenge {
+  const _$ChallengeImpl(
       {required this.id,
       required final Map<String, String> question,
       required final List<Answer> options,
@@ -151,8 +154,8 @@ class _$TaskImpl implements _Task {
         _options = options,
         _correctAnswerIds = correctAnswerIds;
 
-  factory _$TaskImpl.fromJson(Map<String, dynamic> json) =>
-      _$$TaskImplFromJson(json);
+  factory _$ChallengeImpl.fromJson(Map<String, dynamic> json) =>
+      _$$ChallengeImplFromJson(json);
 
   @override
   final String id;
@@ -183,14 +186,14 @@ class _$TaskImpl implements _Task {
 
   @override
   String toString() {
-    return 'Task(id: $id, question: $question, options: $options, correctAnswerIds: $correctAnswerIds)';
+    return 'Challenge(id: $id, question: $question, options: $options, correctAnswerIds: $correctAnswerIds)';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$TaskImpl &&
+            other is _$ChallengeImpl &&
             (identical(other.id, id) || other.id == id) &&
             const DeepCollectionEquality().equals(other._question, _question) &&
             const DeepCollectionEquality().equals(other._options, _options) &&
@@ -207,30 +210,31 @@ class _$TaskImpl implements _Task {
       const DeepCollectionEquality().hash(_options),
       const DeepCollectionEquality().hash(_correctAnswerIds));
 
-  /// Create a copy of Task
+  /// Create a copy of Challenge
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
-  _$$TaskImplCopyWith<_$TaskImpl> get copyWith =>
-      __$$TaskImplCopyWithImpl<_$TaskImpl>(this, _$identity);
+  _$$ChallengeImplCopyWith<_$ChallengeImpl> get copyWith =>
+      __$$ChallengeImplCopyWithImpl<_$ChallengeImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$TaskImplToJson(
+    return _$$ChallengeImplToJson(
       this,
     );
   }
 }
 
-abstract class _Task implements Task {
-  const factory _Task(
+abstract class _Challenge implements Challenge {
+  const factory _Challenge(
       {required final String id,
       required final Map<String, String> question,
       required final List<Answer> options,
-      required final List<String> correctAnswerIds}) = _$TaskImpl;
+      required final List<String> correctAnswerIds}) = _$ChallengeImpl;
 
-  factory _Task.fromJson(Map<String, dynamic> json) = _$TaskImpl.fromJson;
+  factory _Challenge.fromJson(Map<String, dynamic> json) =
+      _$ChallengeImpl.fromJson;
 
   @override
   String get id;
@@ -241,10 +245,10 @@ abstract class _Task implements Task {
   @override
   List<String> get correctAnswerIds;
 
-  /// Create a copy of Task
+  /// Create a copy of Challenge
   /// with the given fields replaced by the non-null parameter values.
   @override
   @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$TaskImplCopyWith<_$TaskImpl> get copyWith =>
+  _$$ChallengeImplCopyWith<_$ChallengeImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

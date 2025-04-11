@@ -6,7 +6,8 @@ part of 'task.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$TaskImpl _$$TaskImplFromJson(Map<String, dynamic> json) => _$TaskImpl(
+_$ChallengeImpl _$$ChallengeImplFromJson(Map<String, dynamic> json) =>
+    _$ChallengeImpl(
       id: json['id'] as String,
       question: Map<String, String>.from(json['question'] as Map),
       options: (json['options'] as List<dynamic>)
@@ -17,7 +18,7 @@ _$TaskImpl _$$TaskImplFromJson(Map<String, dynamic> json) => _$TaskImpl(
           .toList(),
     );
 
-Map<String, dynamic> _$$TaskImplToJson(_$TaskImpl instance) =>
+Map<String, dynamic> _$$ChallengeImplToJson(_$ChallengeImpl instance) =>
     <String, dynamic>{
       'id': instance.id,
       'question': instance.question,

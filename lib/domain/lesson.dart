@@ -6,13 +6,14 @@ part 'lesson.freezed.dart';
 part 'lesson.g.dart';
 
 @freezed
-class Lesson with _$Lesson {
-  const factory Lesson({
+class Concept with _$Concept {
+  const factory Concept({
     required String id,
     required Localizations title,
-    required List<Page> pages,
+    required List<Section> pages,
     required List<String> taskIds,
-  }) = _Lesson;
+  }) = _Concept;
 
-  factory Lesson.fromJson(Map<String, dynamic> json) => _$LessonFromJson(json);
+  factory Concept.fromJson(Map<String, dynamic> json) =>
+      _$ConceptFromJson(json);
 }

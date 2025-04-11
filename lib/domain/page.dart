@@ -5,10 +5,11 @@ part 'page.freezed.dart';
 part 'page.g.dart';
 
 @freezed
-class Page with _$Page {
-  const factory Page({
+class Section with _$Section {
+  const factory Section({
     required List<ContentComponent> content,
-  }) = _Page;
+  }) = _Section;
 
-  factory Page.fromJson(Map<String, dynamic> json) => _$PageFromJson(json);
+  factory Section.fromJson(Map<String, dynamic> json) =>
+      _$SectionFromJson(json);
 }
