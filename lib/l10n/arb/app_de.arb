@@ -1,55 +1,55 @@
 {
     "@@locale": "de",
-    "lessonsViewTitle": "Lektionen",
-    "@lessonsViewTitle": {
-        "description": "Titel der Lektionen-Seite"
+    "conceptsViewTitle": "Konzepte",
+    "@conceptsViewTitle": {
+        "description": "Titel der Konzepte-Seite"
     },
-    "lessonsPages": "{count, plural, =0{keine Seiten} =1{eine Seite} other{{count} Seiten}}",
-    "@lessonsPages": {
-        "description": "Anzahl der Seiten einer Lektion",
+    "conceptsSections": "{count, plural, =0{keine Abschnitte} =1{ein Abschnitt} other{{count} Abschnitte}}",
+    "@conceptsSections": {
+        "description": "Anzahl der Abschnitte eines Konzepts",
         "placeholders": {
             "count": {
                 "type": "int",
-                "description": "Anzahl der Seiten"
+                "description": "Anzahl der Abschnitte"
             }
         }
     },
-    "lessonsTasks": "{count, plural, =0{keine Aufgaben} =1{eine Aufgabe} other{{count} Aufgaben}}",
-    "@lessonsTasks": {
-        "description": "Anzahl der Aufgaben einer Lektion",
+    "conceptsChallenges": "{count, plural, =0{keine Herausforderungen} =1{eine Herausforderung} other{{count} Herausforderungen}}",
+    "@conceptsChallenges": {
+        "description": "Anzahl der Herausforderungen eines Konzepts",
         "placeholders": {
             "count": {
                 "type": "int",
-                "description": "Anzahl der Aufgaben"
+                "description": "Anzahl der Herausforderungen"
             }
         }
     },
-    "lessonsTryAgain": "Nochmal versuchen",
-    "@lessonsTryAgain": {
+    "conceptsTryAgain": "Nochmal versuchen",
+    "@conceptsTryAgain": {
         "description": "Text des Buttons zum erneuten Versuchen"
     },
-    "lessonsEmpty": "Keine Lektionen gefunden",
-    "@lessonsEmpty": {
-          "description": "Text, der angezeigt wird, wenn keine Lektionen gefunden werden"
+    "conceptsEmpty": "Keine Konzepte gefunden",
+    "@conceptsEmpty": {
+          "description": "Text, der angezeigt wird, wenn keine Konzepte gefunden werden"
     },
-    "lessonPageEmpty": "Keine Seiten verfügbar",
-    "@lessonPageEmpty": {
-        "description": "Text, der angezeigt wird, wenn keine Seiten verfügbar sind"
+    "conceptSectionEmpty": "Keine Abschnitte verfügbar",
+    "@conceptSectionEmpty": {
+        "description": "Text, der angezeigt wird, wenn keine Abschnitte verfügbar sind"
     },
-    "lessonPageForwardButtonLabel": "Weiter",
-    "@lessonPageForwardButtonLabel": {
+    "conceptSectionForwardButtonLabel": "Weiter",
+    "@conceptSectionForwardButtonLabel": {
         "description": "Text des Buttons zum Weitergehen"
     },
-    "lessonPageBackButtonLabel": "Zurück",
-    "@lessonPageBackButtonLabel": {
+    "conceptSectionBackButtonLabel": "Zurück",
+    "@conceptSectionBackButtonLabel": {
         "description": "Text des Buttons zum Zurückgehen"
     },
-    "tasksEmpty": "Keine Aufgaben verfügbar",
-    "@tasksEmpty": {
-        "description": "Text, der angezeigt wird, wenn keine Aufgaben verfügbar sind"
+    "challengesEmpty": "Keine Herausforderungen verfügbar",
+    "@challengesEmpty": {
+        "description": "Text, der angezeigt wird, wenn keine Herausforderungen verfügbar sind"
     },
-    "tasksDoneButtonLabel": "Fertig",
-    "@tasksDoneButtonLabel": {
-        "description": "Text des Buttons zum Beenden der Lektion"
+    "challengesDoneButtonLabel": "Fertig",
+    "@challengesDoneButtonLabel": {
+        "description": "Text des Buttons zum Beenden des Konzepts"
     }
 }
