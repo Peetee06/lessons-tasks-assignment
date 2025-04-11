@@ -22,8 +22,8 @@ Concept _$ConceptFromJson(Map<String, dynamic> json) {
 mixin _$Concept {
   String get id => throw _privateConstructorUsedError;
   Map<String, String> get title => throw _privateConstructorUsedError;
-  List<Section> get pages => throw _privateConstructorUsedError;
-  List<String> get taskIds => throw _privateConstructorUsedError;
+  List<Section> get sections => throw _privateConstructorUsedError;
+  List<String> get challengeIds => throw _privateConstructorUsedError;
 
   /// Serializes this Concept to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -42,8 +42,8 @@ abstract class $ConceptCopyWith<$Res> {
   $Res call(
       {String id,
       Map<String, String> title,
-      List<Section> pages,
-      List<String> taskIds});
+      List<Section> sections,
+      List<String> challengeIds});
 }
 
 /// @nodoc
@@ -63,8 +63,8 @@ class _$ConceptCopyWithImpl<$Res, $Val extends Concept>
   $Res call({
     Object? id = null,
     Object? title = null,
-    Object? pages = null,
-    Object? taskIds = null,
+    Object? sections = null,
+    Object? challengeIds = null,
   }) {
     return _then(_value.copyWith(
       id: null == id
@@ -75,13 +75,13 @@ class _$ConceptCopyWithImpl<$Res, $Val extends Concept>
           ? _value.title
           : title // ignore: cast_nullable_to_non_nullable
               as Map<String, String>,
-      pages: null == pages
-          ? _value.pages
-          : pages // ignore: cast_nullable_to_non_nullable
+      sections: null == sections
+          ? _value.sections
+          : sections // ignore: cast_nullable_to_non_nullable
               as List<Section>,
-      taskIds: null == taskIds
-          ? _value.taskIds
-          : taskIds // ignore: cast_nullable_to_non_nullable
+      challengeIds: null == challengeIds
+          ? _value.challengeIds
+          : challengeIds // ignore: cast_nullable_to_non_nullable
               as List<String>,
     ) as $Val);
   }
@@ -97,8 +97,8 @@ abstract class _$$ConceptImplCopyWith<$Res> implements $ConceptCopyWith<$Res> {
   $Res call(
       {String id,
       Map<String, String> title,
-      List<Section> pages,
-      List<String> taskIds});
+      List<Section> sections,
+      List<String> challengeIds});
 }
 
 /// @nodoc
@@ -116,8 +116,8 @@ class __$$ConceptImplCopyWithImpl<$Res>
   $Res call({
     Object? id = null,
     Object? title = null,
-    Object? pages = null,
-    Object? taskIds = null,
+    Object? sections = null,
+    Object? challengeIds = null,
   }) {
     return _then(_$ConceptImpl(
       id: null == id
@@ -128,13 +128,13 @@ class __$$ConceptImplCopyWithImpl<$Res>
           ? _value._title
           : title // ignore: cast_nullable_to_non_nullable
               as Map<String, String>,
-      pages: null == pages
-          ? _value._pages
-          : pages // ignore: cast_nullable_to_non_nullable
+      sections: null == sections
+          ? _value._sections
+          : sections // ignore: cast_nullable_to_non_nullable
               as List<Section>,
-      taskIds: null == taskIds
-          ? _value._taskIds
-          : taskIds // ignore: cast_nullable_to_non_nullable
+      challengeIds: null == challengeIds
+          ? _value._challengeIds
+          : challengeIds // ignore: cast_nullable_to_non_nullable
               as List<String>,
     ));
   }
@@ -146,11 +146,11 @@ class _$ConceptImpl implements _Concept {
   const _$ConceptImpl(
       {required this.id,
       required final Map<String, String> title,
-      required final List<Section> pages,
-      required final List<String> taskIds})
+      required final List<Section> sections,
+      required final List<String> challengeIds})
       : _title = title,
-        _pages = pages,
-        _taskIds = taskIds;
+        _sections = sections,
+        _challengeIds = challengeIds;
 
   factory _$ConceptImpl.fromJson(Map<String, dynamic> json) =>
       _$$ConceptImplFromJson(json);
@@ -165,25 +165,25 @@ class _$ConceptImpl implements _Concept {
     return EqualUnmodifiableMapView(_title);
   }
 
-  final List<Section> _pages;
+  final List<Section> _sections;
   @override
-  List<Section> get pages {
-    if (_pages is EqualUnmodifiableListView) return _pages;
+  List<Section> get sections {
+    if (_sections is EqualUnmodifiableListView) return _sections;
     // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(_pages);
+    return EqualUnmodifiableListView(_sections);
   }
 
-  final List<String> _taskIds;
+  final List<String> _challengeIds;
   @override
-  List<String> get taskIds {
-    if (_taskIds is EqualUnmodifiableListView) return _taskIds;
+  List<String> get challengeIds {
+    if (_challengeIds is EqualUnmodifiableListView) return _challengeIds;
     // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(_taskIds);
+    return EqualUnmodifiableListView(_challengeIds);
   }
 
   @override
   String toString() {
-    return 'Concept(id: $id, title: $title, pages: $pages, taskIds: $taskIds)';
+    return 'Concept(id: $id, title: $title, sections: $sections, challengeIds: $challengeIds)';
   }
 
   @override
@@ -193,8 +193,9 @@ class _$ConceptImpl implements _Concept {
             other is _$ConceptImpl &&
             (identical(other.id, id) || other.id == id) &&
             const DeepCollectionEquality().equals(other._title, _title) &&
-            const DeepCollectionEquality().equals(other._pages, _pages) &&
-            const DeepCollectionEquality().equals(other._taskIds, _taskIds));
+            const DeepCollectionEquality().equals(other._sections, _sections) &&
+            const DeepCollectionEquality()
+                .equals(other._challengeIds, _challengeIds));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
@@ -203,8 +204,8 @@ class _$ConceptImpl implements _Concept {
       runtimeType,
       id,
       const DeepCollectionEquality().hash(_title),
-      const DeepCollectionEquality().hash(_pages),
-      const DeepCollectionEquality().hash(_taskIds));
+      const DeepCollectionEquality().hash(_sections),
+      const DeepCollectionEquality().hash(_challengeIds));
 
   /// Create a copy of Concept
   /// with the given fields replaced by the non-null parameter values.
@@ -226,8 +227,8 @@ abstract class _Concept implements Concept {
   const factory _Concept(
       {required final String id,
       required final Map<String, String> title,
-      required final List<Section> pages,
-      required final List<String> taskIds}) = _$ConceptImpl;
+      required final List<Section> sections,
+      required final List<String> challengeIds}) = _$ConceptImpl;
 
   factory _Concept.fromJson(Map<String, dynamic> json) = _$ConceptImpl.fromJson;
 
@@ -236,9 +237,9 @@ abstract class _Concept implements Concept {
   @override
   Map<String, String> get title;
   @override
-  List<Section> get pages;
+  List<Section> get sections;
   @override
-  List<String> get taskIds;
+  List<String> get challengeIds;
 
   /// Create a copy of Concept
   /// with the given fields replaced by the non-null parameter values.
