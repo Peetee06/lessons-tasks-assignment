@@ -33,8 +33,8 @@ class ConceptView extends StatelessWidget {
               ),
             ConceptLoaded(:final concept) => ConceptSectionsView(
                 id: concept.id,
-                sections: concept.pages,
-                hasChallenges: concept.taskIds.isNotEmpty,
+                sections: concept.sections,
+                hasChallenges: concept.challengeIds.isNotEmpty,
               ),
           },
         );

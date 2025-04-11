@@ -28,18 +28,19 @@ class ChallengesCubit extends Cubit<ChallengesState> {
 
   /// Returns the challenge ids for the concept with the given [conceptId].
   ///
-  /// Throws [StateError] if the concept with the given [conceptId] is not found.
+  /// Throws [StateError] if the concept with the given [conceptId]
+  /// is not found.
   Future<List<String>> _getConceptChallengeIds() async {
     final concepts = await conceptsRepository.getConcepts();
     final concept = concepts.firstWhere((concept) => concept.id == conceptId);
 
-    return concept.taskIds;
+    return concept.challengeIds;
   }
 
   /// Returns the challenges with the given [challengeIds].
   ///
-  /// Throws [AssertionError] if any of the challenges with the given [challengeIds]
-  /// are not found.
+  /// Throws [AssertionError] if any of the challenges with the given
+  /// [challengeIds] are not found.
   Future<List<Challenge>> _getChallenges(List<String> challengeIds) async {
     final allChallenges = await challengesRepository.getChallenges();
     final challengesMapped = {

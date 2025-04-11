@@ -44,13 +44,13 @@ class ConceptsView extends StatelessWidget {
                             ),
                             subtitle: Text(
                               context.l10n.conceptsSections(
-                                concept.pages.length,
+                                concept.sections.length,
                               ),
                             ),
                             trailing: Chip(
                               label: Text(
                                 context.l10n.conceptsChallenges(
-                                  concept.taskIds.length,
+                                  concept.challengeIds.length,
                                 ),
                               ),
                             ),
