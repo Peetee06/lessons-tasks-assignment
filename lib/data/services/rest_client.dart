@@ -15,8 +15,8 @@ abstract class RestClient {
       'https://raw.githubusercontent.com/Peetee06/lessons-tasks-assignment/refs/heads/main/';
 
   @GET('/mock_lessons.json')
-  Future<List<Lesson>> getLessons();
+  Future<List<Concept>> getConcepts();
 
   @GET('/mock_tasks.json')
-  Future<List<Task>> getTasks();
+  Future<List<Challenge>> getChallenges();
 }

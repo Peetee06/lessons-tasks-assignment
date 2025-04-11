@@ -25,12 +25,12 @@ class _RestClient implements RestClient {
   final ParseErrorLogger? errorLogger;
 
   @override
-  Future<List<Lesson>> getLessons() async {
+  Future<List<InvalidType>> getLessons() async {
     final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
     const Map<String, dynamic>? _data = null;
-    final _options = _setStreamType<List<Lesson>>(Options(
+    final _options = _setStreamType<List<InvalidType>>(Options(
       method: 'GET',
       headers: _headers,
       extra: _extra,
@@ -47,10 +47,10 @@ class _RestClient implements RestClient {
           baseUrl,
         )));
     final _result = await _dio.fetch<List<dynamic>>(_options);
-    late List<Lesson> _value;
+    late List<InvalidType> _value;
     try {
       _value = _result.data!
-          .map((dynamic i) => Lesson.fromJson(i as Map<String, dynamic>))
+          .map((dynamic i) => InvalidType.fromJson(i as Map<String, dynamic>))
           .toList();
     } on Object catch (e, s) {
       errorLogger?.logError(e, s, _options);
@@ -60,12 +60,12 @@ class _RestClient implements RestClient {
   }
 
   @override
-  Future<List<Task>> getTasks() async {
+  Future<List<InvalidType>> getTasks() async {
     final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
     const Map<String, dynamic>? _data = null;
-    final _options = _setStreamType<List<Task>>(Options(
+    final _options = _setStreamType<List<InvalidType>>(Options(
       method: 'GET',
       headers: _headers,
       extra: _extra,
@@ -82,10 +82,10 @@ class _RestClient implements RestClient {
           baseUrl,
         )));
     final _result = await _dio.fetch<List<dynamic>>(_options);
-    late List<Task> _value;
+    late List<InvalidType> _value;
     try {
       _value = _result.data!
-          .map((dynamic i) => Task.fromJson(i as Map<String, dynamic>))
+          .map((dynamic i) => InvalidType.fromJson(i as Map<String, dynamic>))
           .toList();
     } on Object catch (e, s) {
       errorLogger?.logError(e, s, _options);
