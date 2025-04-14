@@ -1,18 +1,18 @@
 [
     {
-        "id": "lesson1",
+        "id": "concept1",
         "title": {
             "de": "Einführung zu Thema 1",
             "en": "Introduction to Topic 1"
         },
-        "pages": [
+        "sections": [
             {
                 "content": [
                     {
                         "type": "text",
                         "text": {
-                            "de": "Inhalt Seite 1 von Lektion 1",
-                            "en": "Content Page 1 of Lesson 1"
+                            "de": "Inhalt Section 1 von Konzept 1",
+                            "en": "Content Section 1 of Concept 1"
                         }
                     },
                     {
@@ -26,8 +26,8 @@
                     {
                         "type": "text",
                         "text": {
-                            "de": "Inhalt Seite 2 von Lektion 1",
-                            "en": "Content Page 2 of Lesson 1"
+                            "de": "Inhalt Section 2 von Konzept 1",
+                            "en": "Content Section 2 of Concept 1"
                         }
                     }
                 ]
@@ -37,32 +37,32 @@
                     {
                         "type": "text",
                         "text": {
-                            "de": "Inhalt Seite 3 von Lektion 1",
-                            "en": "Content Page 3 of Lesson 1"
+                            "de": "Inhalt Section 3 von Konzept 1",
+                            "en": "Content Section 3 of Concept 1"
                         }
                     }
                 ]
             }
         ],
-        "taskIds": [
-            "task2",
-            "task1"
+        "challengeIds": [
+            "challenge2",
+            "challenge1"
         ]
     },
     {
-        "id": "lesson2",
+        "id": "concept2",
         "title": {
             "de": "Einführung zu Thema 2",
             "en": "Introduction to Topic 2"
         },
-        "pages": [
+        "sections": [
             {
                 "content": [
                     {
                         "type": "text",
                         "text": {
-                            "de": "Inhalt Seite 1 von Lektion 2",
-                            "en": "Content Page 1 of Lesson 2"
+                            "de": "Inhalt Section 1 von Konzept 2",
+                            "en": "Content Section 1 of Concept 2"
                         }
                     }
                 ]
@@ -72,8 +72,8 @@
                     {
                         "type": "text",
                         "text": {
-                            "de": "Inhalt Seite 2 von Lektion 2",
-                            "en": "Content Page 2 of Lesson 2"
+                            "de": "Inhalt Section 2 von Konzept 2",
+                            "en": "Content Section 2 of Concept 2"
                         }
                     },
                     {
@@ -87,32 +87,32 @@
                     {
                         "type": "text",
                         "text": {
-                            "de": "Inhalt Seite 3 von Lektion 2",
-                            "en": "Content Page 3 of Lesson 2"
+                            "de": "Inhalt Section 3 von Konzept 2",
+                            "en": "Content Section 3 of Concept 2"
                         }
                     }
                 ]
             }
         ],
-        "taskIds": [
-            "task8",
-            "task9"
+        "challengeIds": [
+            "challenge8",
+            "challenge9"
         ]
     },
     {
-        "id": "lesson3",
+        "id": "concept3",
         "title": {
             "de": "Einführung zu Thema 3",
             "en": "Introduction to Topic 3"
         },
-        "pages": [
+        "sections": [
             {
                 "content": [
                     {
                         "type": "text",
                         "text": {
-                            "de": "Inhalt Seite 1 von Lektion 3",
-                            "en": "Content Page 1 of Lesson 3"
+                            "de": "Inhalt Section 1 von Konzept 3",
+                            "en": "Content Section 1 of Concept 3"
                         }
                     }
                 ]
@@ -122,8 +122,8 @@
                     {
                         "type": "text",
                         "text": {
-                            "de": "Inhalt Seite 2 von Lektion 3",
-                            "en": "Content Page 2 of Lesson 3"
+                            "de": "Inhalt Section 2 von Konzept 3",
+                            "en": "Content Section 2 of Concept 3"
                         }
                     }
                 ]
@@ -133,8 +133,8 @@
                     {
                         "type": "text",
                         "text": {
-                            "de": "Inhalt Seite 3 von Lektion 3",
-                            "en": "Content Page 3 of Lesson 3"
+                            "de": "Inhalt Section 3 von Konzept 3",
+                            "en": "Content Section 3 of Concept 3"
                         }
                     },
                     {
@@ -144,25 +144,25 @@
                 ]
             }
         ],
-        "taskIds": [
-            "task5",
-            "task10"
+        "challengeIds": [
+            "challenge5",
+            "challenge10"
         ]
     },
     {
-        "id": "lesson4",
+        "id": "concept4",
         "title": {
             "de": "Einführung zu Thema 4",
             "en": "Introduction to Topic 4"
         },
-        "pages": [
+        "sections": [
             {
                 "content": [
                     {
                         "type": "text",
                         "text": {
-                            "de": "Inhalt Seite 1 von Lektion 4",
-                            "en": "Content Page 1 of Lesson 4"
+                            "de": "Inhalt Section 1 von Konzept 4",
+                            "en": "Content Section 1 of Concept 4"
                         }
                     },
                     {
@@ -176,8 +176,8 @@
                     {
                         "type": "text",
                         "text": {
-                            "de": "Inhalt Seite 2 von Lektion 4",
-                            "en": "Content Page 2 of Lesson 4"
+                            "de": "Inhalt Section 2 von Konzept 4",
+                            "en": "Content Section 2 of Concept 4"
                         }
                     }
                 ]
@@ -187,32 +187,32 @@
                     {
                         "type": "text",
                         "text": {
-                            "de": "Inhalt Seite 3 von Lektion 4",
-                            "en": "Content Page 3 of Lesson 4"
+                            "de": "Inhalt Section 3 von Konzept 4",
+                            "en": "Content Section 3 of Concept 4"
                         }
                     }
                 ]
             }
         ],
-        "taskIds": [
-            "task4",
-            "task6"
+        "challengeIds": [
+            "challenge4",
+            "challenge6"
         ]
     },
     {
-        "id": "lesson5",
+        "id": "concept5",
         "title": {
             "de": "Lektion ohne Aufgaben",
-            "en": "Lesson Without TaskIds"
+            "en": "Concept Without ChallengeIds"
         },
-        "pages": [
+        "sections": [
             {
                 "content": [
                     {
                         "type": "text",
                         "text": {
-                            "de": "Inhalt Seite 1 von Lektion 5",
-                            "en": "Content Page 1 of Lesson 5"
+                            "de": "Inhalt Section 1 von Konzept 5",
+                            "en": "Content Section 1 of Concept 5"
                         }
                     }
                 ]
@@ -222,8 +222,8 @@
                     {
                         "type": "text",
                         "text": {
-                            "de": "Inhalt Seite 2 von Lektion 5",
-                            "en": "Content Page 2 of Lesson 5"
+                            "de": "Inhalt Section 2 von Konzept 5",
+                            "en": "Content Section 2 of Concept 5"
                         }
                     },
                     {
@@ -237,34 +237,34 @@
                     {
                         "type": "text",
                         "text": {
-                            "de": "Inhalt Seite 3 von Lektion 5",
-                            "en": "Content Page 3 of Lesson 5"
+                            "de": "Inhalt Section 3 von Konzept 5",
+                            "en": "Content Section 3 of Concept 5"
                         }
                     }
                 ]
             }
         ],
-        "taskIds": []
+        "challengeIds": []
     },
     {
-        "id": "lesson6",
+        "id": "concept6",
         "title": {
             "de": "Lektion ohne Seiten",
-            "en": "Lesson Without Pages"
+            "en": "Concept Without Sections"
         },
-        "pages": [],
-        "taskIds": [
-            "task2",
-            "task1"
+        "sections": [],
+        "challengeIds": [
+            "challenge2",
+            "challenge1"
         ]
     },
     {
-        "id": "lesson7",
+        "id": "concept7",
         "title": {
             "de": "Leere Lektion",
-            "en": "Empty Lesson"
+            "en": "Empty Concept"
         },
-        "pages": [],
-        "taskIds": []
+        "sections": [],
+        "challengeIds": []
     }
 ]
