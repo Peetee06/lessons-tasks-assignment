@@ -6,8 +6,8 @@ import 'package:dio/dio.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_cache_manager/flutter_cache_manager.dart';
 import 'package:get_it/get_it.dart';
-import 'package:lessons_tasks_assignment/data/repositories/lessons/lessons_repository.dart';
-import 'package:lessons_tasks_assignment/data/repositories/tasks/tasks_repository.dart';
+import 'package:lessons_tasks_assignment/data/repositories/challenges/challenges_repository.dart';
+import 'package:lessons_tasks_assignment/data/repositories/concepts/concepts_repository.dart';
 import 'package:lessons_tasks_assignment/data/services/interceptors/json_interceptor.dart';
 import 'package:lessons_tasks_assignment/data/services/rest_client.dart';
 

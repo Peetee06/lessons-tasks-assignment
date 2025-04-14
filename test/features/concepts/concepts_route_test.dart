@@ -2,17 +2,21 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:get_it/get_it.dart';
 import 'package:lessons_tasks_assignment/data/repositories/concepts/concepts_repository.dart';
 import 'package:lessons_tasks_assignment/features/concepts/concepts_route.dart';
+import 'package:lessons_tasks_assignment/features/concepts/view/concepts_view.dart';
 import 'package:lessons_tasks_assignment/routing/go_router.dart';
 import 'package:mockito/mockito.dart';
 
-import '../mocks.mocks.dart';
+import '../../helpers/helpers.dart';
+import '../../mocks.mocks.dart';
 
 void main() {
   late MockConceptsRepository mockConceptsRepository;
 
   setUp(() {
     mockConceptsRepository = MockConceptsRepository();
+
     when(mockConceptsRepository.getConcepts()).thenAnswer((_) async => []);
+
     GetIt.I.registerSingleton<ConceptsRepository>(mockConceptsRepository);
   });
 
@@ -20,28 +24,21 @@ void main() {
     GetIt.I.reset();
   });
 
-  group('router', () {
-    final conceptsLocation = ConceptsRoute().location;
+  Future<void> pumpTestWidget(WidgetTester tester) async {
+    await tester.pumpAppWithRouter(
+      router: router(
+        initialLocation: ConceptsRoute().location,
+      ),
+    );
+  }
 
-    testWidgets('uses $conceptsLocation as default initial location',
-        (tester) async {
-      final testRouter = router();
+  group(ConceptsRoute, () {
+    testWidgets('renders $ConceptsView and fetches concepts', (tester) async {
+      await pumpTestWidget(tester);
 
-      expect(
-        testRouter.routeInformationProvider.value.uri.toString(),
-        conceptsLocation,
-      );
-    });
+      expect(find.byType(ConceptsView), findsOneWidget);
 
-    testWidgets('uses provided initial location when specified',
-        (tester) async {
-      const customLocation = '/custom';
-      final testRouter = router(initialLocation: customLocation);
-
-      expect(
-        testRouter.routeInformationProvider.value.uri.toString(),
-        customLocation,
-      );
+      verify(mockConceptsRepository.getConcepts()).called(1);
     });
   });
 }

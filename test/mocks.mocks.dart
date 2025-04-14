@@ -25,26 +25,26 @@ import 'package:go_router/src/information_provider.dart' as _i14;
 import 'package:go_router/src/match.dart' as _i25;
 import 'package:go_router/src/parser.dart' as _i15;
 import 'package:go_router/src/router.dart' as _i23;
-import 'package:lessons_tasks_assignment/data/repositories/lessons/lessons_repository.dart'
-    as _i16;
-import 'package:lessons_tasks_assignment/data/repositories/tasks/tasks_repository.dart'
+import 'package:lessons_tasks_assignment/data/repositories/challenges/challenges_repository.dart'
     as _i18;
+import 'package:lessons_tasks_assignment/data/repositories/concepts/concepts_repository.dart'
+    as _i16;
 import 'package:lessons_tasks_assignment/data/services/rest_client.dart'
     as _i17;
-import 'package:lessons_tasks_assignment/domain/lesson.dart' as _i31;
-import 'package:lessons_tasks_assignment/domain/task.dart' as _i32;
-import 'package:lessons_tasks_assignment/features/lesson/cubit/lesson_cubit.dart'
-    as _i26;
-import 'package:lessons_tasks_assignment/features/lesson/cubit/lesson_state.dart'
-    as _i27;
-import 'package:lessons_tasks_assignment/features/lessons/cubit/lessons_cubit.dart'
-    as _i29;
-import 'package:lessons_tasks_assignment/features/lessons/cubit/lessons_state.dart'
-    as _i30;
-import 'package:lessons_tasks_assignment/features/tasks/cubit/tasks_cubit.dart'
+import 'package:lessons_tasks_assignment/domain/challenge.dart' as _i32;
+import 'package:lessons_tasks_assignment/domain/concept.dart' as _i31;
+import 'package:lessons_tasks_assignment/features/challenges/cubit/challenges_cubit.dart'
     as _i33;
-import 'package:lessons_tasks_assignment/features/tasks/cubit/tasks_state.dart'
+import 'package:lessons_tasks_assignment/features/challenges/cubit/challenges_state.dart'
     as _i34;
+import 'package:lessons_tasks_assignment/features/concept/cubit/concept_cubit.dart'
+    as _i26;
+import 'package:lessons_tasks_assignment/features/concept/cubit/concept_state.dart'
+    as _i27;
+import 'package:lessons_tasks_assignment/features/concepts/cubit/concepts_cubit.dart'
+    as _i29;
+import 'package:lessons_tasks_assignment/features/concepts/cubit/concepts_state.dart'
+    as _i30;
 import 'package:mockito/mockito.dart' as _i1;
 import 'package:mockito/src/dummies.dart' as _i24;
 

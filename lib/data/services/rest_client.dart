@@ -1,6 +1,6 @@
 import 'package:dio/dio.dart';
-import 'package:lessons_tasks_assignment/domain/lesson.dart';
-import 'package:lessons_tasks_assignment/domain/task.dart';
+import 'package:lessons_tasks_assignment/domain/challenge.dart';
+import 'package:lessons_tasks_assignment/domain/concept.dart';
 import 'package:retrofit/retrofit.dart';
 
 part 'rest_client.g.dart';
