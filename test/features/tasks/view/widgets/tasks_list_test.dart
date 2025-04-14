@@ -1,14 +1,25 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
+import 'package:go_router/go_router.dart';
 import 'package:lessons_tasks_assignment/domain/answer.dart';
 import 'package:lessons_tasks_assignment/domain/task.dart';
+import 'package:lessons_tasks_assignment/features/lessons/lessons_route.dart';
 import 'package:lessons_tasks_assignment/features/tasks/view/widgets/task_card.dart';
 import 'package:lessons_tasks_assignment/features/tasks/view/widgets/tasks_list.dart';
 import 'package:lessons_tasks_assignment/l10n/l10n.dart';
+import 'package:mockito/mockito.dart';
 
 import '../../../../helpers/helpers.dart';
+import '../../../../mocks.mocks.dart';
 
 void main() {
+  late MockGoRouter router;
+
+  setUp(() {
+    router = MockGoRouter();
+    when(router.go(any)).thenAnswer((_) {});
+  });
+
   final challenges = [
     const Challenge(
       id: '1',
@@ -42,7 +53,10 @@ void main() {
     await tester.pumpApp(
       locale: const Locale('de'),
       widget: Material(
-        child: ChallengesList(challenges: challenges),
+        child: InheritedGoRouter(
+          goRouter: router,
+          child: ChallengesList(challenges: challenges),
+        ),
       ),
     );
   }
@@ -79,6 +93,16 @@ void main() {
       );
 
       expect(buttonAlign.alignment, Alignment.bottomCenter);
+    });
+
+    testWidgets('navigates back to concepts when done button is tapped',
+        (tester) async {
+      await pumpAppWithChallengesList(tester, challenges: challenges);
+
+      await tester.tap(find.byKey(ChallengesList.doneButtonKey));
+      await tester.pumpAndSettle();
+
+      verify(router.go(ConceptsRoute().location)).called(1);
     });
   });
 }
