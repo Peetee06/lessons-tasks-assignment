@@ -1,11 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_test/flutter_test.dart';
+import 'package:go_router/go_router.dart';
 import 'package:lessons_tasks_assignment/domain/content_component.dart';
 import 'package:lessons_tasks_assignment/domain/lesson.dart';
 import 'package:lessons_tasks_assignment/domain/page.dart';
+import 'package:lessons_tasks_assignment/features/lesson/lesson_route.dart';
 import 'package:lessons_tasks_assignment/features/lessons/cubit/lessons_cubit.dart';
 import 'package:lessons_tasks_assignment/features/lessons/cubit/lessons_state.dart';
+import 'package:lessons_tasks_assignment/features/lessons/lessons_route.dart';
 import 'package:lessons_tasks_assignment/features/lessons/view/lessons_view.dart';
 import 'package:lessons_tasks_assignment/l10n/l10n.dart';
 import 'package:mockito/mockito.dart';
@@ -16,17 +19,23 @@ import '../../../mocks.mocks.dart';
 void main() {
   provideDummy(const ConceptsState.initial());
   late MockConceptsCubit cubit;
+  late MockGoRouter router;
 
   setUp(() {
     cubit = MockConceptsCubit();
     when(cubit.stream).thenAnswer((_) => const Stream.empty());
+    router = MockGoRouter();
+    when(router.go(any)).thenAnswer((_) {});
   });
 
   Future<void> pumpTestWidget(WidgetTester tester) {
     return tester.pumpApp(
-      widget: BlocProvider<ConceptsCubit>.value(
-        value: cubit,
-        child: const ConceptsView(),
+      widget: InheritedGoRouter(
+        goRouter: router,
+        child: BlocProvider<ConceptsCubit>.value(
+          value: cubit,
+          child: const ConceptsView(),
+        ),
       ),
     );
   }
@@ -93,6 +102,33 @@ void main() {
       expect(find.text('Test Konzept 2'), findsOneWidget);
       expect(find.text(context.l10n.conceptsSections(0)), findsOneWidget);
       expect(find.text(context.l10n.conceptsChallenges(0)), findsOneWidget);
+    });
+
+    testWidgets('navigates to concept on concept tap', (tester) async {
+      const conceptId = 'concept1';
+      final concepts = [
+        const Concept(
+          id: conceptId,
+          title: {'en': 'Test Concept', 'de': 'Test Konzept'},
+          sections: [],
+          challengeIds: [],
+        ),
+      ];
+      when(cubit.state).thenReturn(ConceptsState.loaded(concepts));
+      await pumpTestWidget(tester);
+
+      await tester.tap(find.text('Test Konzept'));
+      await tester.pumpAndSettle();
+
+      verify(
+        router.go(
+          argThat(
+            equals(
+              const ConceptRoute(id: conceptId).location,
+            ),
+          ),
+        ),
+      ).called(1);
     });
 
     testWidgets('renders error state and fetches concepts on try again tap',
