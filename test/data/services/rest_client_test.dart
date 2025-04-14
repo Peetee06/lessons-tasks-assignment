@@ -2,10 +2,10 @@ import 'package:dio/dio.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:lessons_tasks_assignment/data/services/rest_client.dart';
 import 'package:lessons_tasks_assignment/domain/answer.dart';
+import 'package:lessons_tasks_assignment/domain/challenge.dart';
+import 'package:lessons_tasks_assignment/domain/concept.dart';
 import 'package:lessons_tasks_assignment/domain/content_component.dart';
-import 'package:lessons_tasks_assignment/domain/lesson.dart';
-import 'package:lessons_tasks_assignment/domain/page.dart';
-import 'package:lessons_tasks_assignment/domain/task.dart';
+import 'package:lessons_tasks_assignment/domain/section.dart';
 import 'package:mockito/mockito.dart';
 
 import '../../mocks.mocks.dart';
