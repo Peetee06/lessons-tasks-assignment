@@ -1,7 +1,7 @@
 name: lessons_tasks_assignment
 
 concurrency:
-  group: $-$
+  group: ${{ github.workflow }}-${{ github.ref }}
   cancel-in-progress: true
 
 on:
