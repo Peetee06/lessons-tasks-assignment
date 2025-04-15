@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart' hide Page;
+import 'package:flutter/material.dart';
 import 'package:lessons_tasks_assignment/domain/section.dart';
 import 'package:lessons_tasks_assignment/features/challenges/challenges_route.dart';
 import 'package:lessons_tasks_assignment/features/concept/view/widgets/section_view.dart';

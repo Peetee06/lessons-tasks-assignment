@@ -1,5 +1,5 @@
 # Lessons Tasks Assignment
-This is a practice project for a Flutter app that allows users to view mock lessons and tasks.
+This is a practice project for a Flutter app that allows users to view mock concepts and challenges.
 
 ## Domain model
 The domain model is defined in the `lib/domain` folder based on the following data diagram:
@@ -13,9 +13,9 @@ The domain model is defined in the `lib/domain` folder based on the following da
 - `test`: contains the tests for the app in the same structure as the `lib` folder.
 
 ### Features
-- `lessons`: Displays a list of lessons.
-- `lesson`: Displays the pages of a lesson.
-- `tasks`: Displays the list of tasks for a lesson.
+- `concepts`: Displays a list of concepts.
+- `concept`: Displays the sections of a concept.
+- `challenges`: Displays the list of challenges for a concept.
 
 ## Core Packages
 - `flutter_bloc`: Used for the MVVM pattern using Cubits.
